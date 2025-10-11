@@ -3,7 +3,7 @@
     <!-- Wrap components in Suspense to handle loading -->
     <Suspense>
       <template #default>
-        <!-- Wrap all Components inside a single root element -->
+        <!-- Wrap all components inside a single root element -->
         <div>
           <NavBar />
           <HeroSection />
@@ -28,19 +28,19 @@
 
 <script>
 import { defineAsyncComponent } from 'vue';
-//Import Components Asynchronously
+//Import components Asynchronously
 const NavBar = defineAsyncComponent(()=>import('./components/NavBar.vue'));
 const HeroSection = defineAsyncComponent(()=>import('./components/HeroSection.vue'));
-const ServicesSection = defineAsyncComponent(()=>import('./Components/ServicesSection.vue'));
-const AboutSection = defineAsyncComponent(()=>import('./Components/AboutSection.vue'));
-const TestimonialsSection = defineAsyncComponent(()=>import('./Components/TestimonialsSection.vue'));
-const LatestProjSection = defineAsyncComponent(()=>import('./Components/LatestProjSection.vue'));
-const ExperienceAndSkills = defineAsyncComponent(()=>import('./Components/ExperienceAndSkills.vue'));
-const ContactSection = defineAsyncComponent(()=>import('./Components/ContactSection.vue'));
-const Footer = defineAsyncComponent(()=>import('./Components/Footer.vue'));
-const BackToTop = defineAsyncComponent(()=>import('./Components/BackToTop.vue'));
-import loadingSpinner from './Components/loadingSpinner.vue';
-//import NavBar from "./Components/NavBar.vue";
+const ServicesSection = defineAsyncComponent(()=>import('./components/ServicesSection.vue'));
+const AboutSection = defineAsyncComponent(()=>import('./components/AboutSection.vue'));
+const TestimonialsSection = defineAsyncComponent(()=>import('./components/TestimonialsSection.vue'));
+const LatestProjSection = defineAsyncComponent(()=>import('./components/LatestProjSection.vue'));
+const ExperienceAndSkills = defineAsyncComponent(()=>import('./components/ExperienceAndSkills.vue'));
+const ContactSection = defineAsyncComponent(()=>import('./components/ContactSection.vue'));
+const Footer = defineAsyncComponent(()=>import('./components/Footer.vue'));
+const BackToTop = defineAsyncComponent(()=>import('./components/BackToTop.vue'));
+import loadingSpinner from './components/loadingSpinner.vue';
+//import NavBar from "./components/NavBar.vue";
 
 export default {
   components: {
