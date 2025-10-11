@@ -7,11 +7,11 @@
         <div>
           <NavBar />
           <HeroSection />
-          <ServicesSection class="min-h-screen"  />
-          <AboutSection class="min-h-screen"  />
-          <ExperienceAndSkills class="min-h-screen"  />
-          <LatestProjSection class="min-h-screen"  />
-          <ContactSection class="min-h-screen"  />
+          <ServicesSection />
+          <AboutSection />
+          <ExperienceAndSkills />
+          <LatestProjSection />
+          <ContactSection />
 <!--          <TestimonialsSection />-->
           <Footer />
           <BackToTop />
