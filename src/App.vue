@@ -1,116 +1,60 @@
 <template>
-  <div>
-    <a href="https://genezio.com" target="_blank">
-      <img
-        src="https://raw.githubusercontent.com/Genez-io/graphics/main/svg/Logo_Genezio_White.svg"
-        class="logo genezio light"
-        alt="Genezio Logo"
-      />
-      <img
-        src="https://raw.githubusercontent.com/Genez-io/graphics/main/svg/Logo_Genezio_Black.svg"
-        class="logo genezio dark"
-        alt="Genezio Logo"
-      />
-    </a>
-    <a href="https://vuejs.org" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue.js logo" />
-    </a>
-
-    <h1>Genezio + Vue = ❤️</h1>
-
-    <div class="card">
-      <input
-        type="text"
-        class="input-box"
-        v-model="name"
-        placeholder="Enter your name"
-      />
-      <br />
-      <br />
-
-      <button @click="sayHello">Say Hello</button>
-      <p class="read-the-docs">{{ response }}</p>
-    </div>
-
-
-    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Click Me</button>
-
+  <div class="bg-[#111827] ">
+    <!-- Wrap components in Suspense to handle loading -->
+    <Suspense>
+      <template #default>
+        <!-- Wrap all Components inside a single root element -->
+        <div>
+          <NavBar />
+          <HeroSection />
+          <ServicesSection class="min-h-screen"  />
+          <AboutSection class="min-h-screen"  />
+          <ExperienceAndSkills class="min-h-screen"  />
+          <LatestProjSection class="min-h-screen"  />
+          <ContactSection class="min-h-screen"  />
+<!--          <TestimonialsSection />-->
+          <Footer />
+          <BackToTop />
+        </div>
+      </template>
+      <template #fallback>
+        <div class="flex justify-center items-center min-h-screen">
+          <loadingSpinner />
+        </div>
+      </template>
+    </Suspense>
   </div>
 </template>
 
 <script>
+import { defineAsyncComponent } from 'vue';
+//Import Components Asynchronously
+const NavBar = defineAsyncComponent(()=>import('./components/NavBar.vue'));
+const HeroSection = defineAsyncComponent(()=>import('./components/HeroSection.vue'));
+const ServicesSection = defineAsyncComponent(()=>import('./Components/ServicesSection.vue'));
+const AboutSection = defineAsyncComponent(()=>import('./Components/AboutSection.vue'));
+const TestimonialsSection = defineAsyncComponent(()=>import('./Components/TestimonialsSection.vue'));
+const LatestProjSection = defineAsyncComponent(()=>import('./Components/LatestProjSection.vue'));
+const ExperienceAndSkills = defineAsyncComponent(()=>import('./Components/ExperienceAndSkills.vue'));
+const ContactSection = defineAsyncComponent(()=>import('./Components/ContactSection.vue'));
+const Footer = defineAsyncComponent(()=>import('./Components/Footer.vue'));
+const BackToTop = defineAsyncComponent(()=>import('./Components/BackToTop.vue'));
+import loadingSpinner from './Components/loadingSpinner.vue';
+//import NavBar from "./Components/NavBar.vue";
 
 export default {
-  data() {
-    return {
-      name: "",
-      response: "",
-    };
-  },
-  methods: {
-    async sayHello() {
-      this.response = this.name
-    },
-  },
+  components: {
+    NavBar,
+    BackToTop,
+    TestimonialsSection,
+    LatestProjSection,
+    AboutSection, ExperienceAndSkills, HeroSection, ServicesSection, loadingSpinner, Footer, ContactSection},
 };
 </script>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@media (prefers-color-scheme: dark) {
-  .dark {
-    display: none; /* Hide light logo in light mode */
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  .light {
-    display: none; /* Hide dark logo in dark mode */
-  }
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-.input-box {
-  width: 25%;
-  border-radius: 5px;
-  box-shadow: none !important;
-  border: 2px solid #888;
-  padding: 10px;
+*{
+  scrollbar-width: thin;
+  scrollbar-color: #111827 #f1f1f1;
 }
 </style>
