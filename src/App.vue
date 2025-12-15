@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-[#111827] ">
+  <div class="bg-[#0f1219] ">
     <!-- Wrap components in Suspense to handle loading -->
     <Suspense>
       <template #default>
@@ -8,11 +8,9 @@
           <NavBar />
           <HeroSection />
           <ServicesSection />
-          <AboutSection />
-          <ExperienceAndSkills />
           <LatestProjSection />
           <ContactSection />
-<!--          <TestimonialsSection />-->
+          <AboutSection />
           <Footer />
           <BackToTop />
         </div>
@@ -35,12 +33,11 @@ const ServicesSection = defineAsyncComponent(()=>import('./components/ServicesSe
 const AboutSection = defineAsyncComponent(()=>import('./components/AboutSection.vue'));
 const TestimonialsSection = defineAsyncComponent(()=>import('./components/TestimonialsSection.vue'));
 const LatestProjSection = defineAsyncComponent(()=>import('./components/LatestProjSection.vue'));
-const ExperienceAndSkills = defineAsyncComponent(()=>import('./components/ExperienceAndSkills.vue'));
+// const ExperienceAndSkills = defineAsyncComponent(()=>import('./components/ExperienceAndSkills.vue'));
 const ContactSection = defineAsyncComponent(()=>import('./components/ContactSection.vue'));
 const Footer = defineAsyncComponent(()=>import('./components/Footer.vue'));
 const BackToTop = defineAsyncComponent(()=>import('./components/BackToTop.vue'));
 import loadingSpinner from './components/loadingSpinner.vue';
-//import NavBar from "./components/NavBar.vue";
 
 export default {
   components: {
@@ -48,13 +45,13 @@ export default {
     BackToTop,
     TestimonialsSection,
     LatestProjSection,
-    AboutSection, ExperienceAndSkills, HeroSection, ServicesSection, loadingSpinner, Footer, ContactSection},
+    HeroSection, ServicesSection, AboutSection, loadingSpinner, Footer, ContactSection},
 };
 </script>
 
 <style scoped>
 *{
   scrollbar-width: thin;
-  scrollbar-color: #111827 #f1f1f1;
+  scrollbar-color: #0f1219 #f1f1f1;
 }
 </style>

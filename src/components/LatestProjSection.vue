@@ -1,133 +1,133 @@
 <template>
-    <section class="text-white mt-20" id="projects">
-        <div class="px-4 xl:pl-16">
-            <div class="mb-4 md:flex md:justify-between xl:pr-16">
-                <h2 class="text-4xl font-bold text-white"> My Latest Projects</h2>
-                <div class="flex space-x-4 mb-4 mt-5 md:mt-0">
-                    <button class="hover:text-primary" v-for="category in ['all', 'web development', 'Mobile App']"
-                        :key="category" @click="() => selectedCategory = category">
-                        {{ category }}
-                    </button>
+    <section class="bg-white" id="projects">
+        <!-- Header with Background Image -->
+        <div class="relative w-full h-80 flex items-center justify-center text-center text-white">
+            <div class="absolute inset-0 overflow-hidden">
+                <img src="../assets/image.png" alt="Portfolio header" class="w-full h-full object-cover" />
+                <div class="absolute inset-0 bg-black/50"></div>
+            </div>
+            <div class="relative z-10 px-4">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Naše portfolio</h2>
+                <p class="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto">
+                    Prohlédněte si naše dokončené stavební projekty a nechte se inspirovat.
+                </p>
+            </div>
+        </div>
+
+        <!-- Filter Navigation -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button 
+                    v-for="category in categories" 
+                    :key="category"
+                    @click="selectedCategory = category"
+                    :class="[
+                        'px-6 py-2 rounded-sm text-sm font-bold transition-all duration-200',
+                        selectedCategory === category 
+                            ? 'bg-[#4b4845] text-white' 
+                            : 'bg-transparent text-[#4b4845] hover:bg-gray-100'
+                    ]"
+                >
+                    {{ category }}
+                </button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" data-aos="fade-up">
+                <div v-for="project in filteredProjects" :key="project.id" class="group cursor-pointer">
+                    <!-- Image Card -->
+                    <div class="relative overflow-hidden aspect-[4/3] bg-gray-200 mb-4">
+                        <img 
+                            :src="project.image" 
+                            :alt="project.title" 
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                    </div>
+                    
+                    <!-- Content -->
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                                {{ project.title }}
+                            </h3>
+                            <p class="text-sm text-gray-500 mt-1" v-if="project.location">
+                                {{ project.location }}
+                            </p>
+                        </div>
+                        <div class="text-gray-400 group-hover:text-blue-600 transition-colors transform group-hover:translate-x-1 group-hover:-translate-y-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <ul class="px-4 sm:py-16 xl:pr-16 grid grid-cols-1 gap-6 pt-10 sm:grid-cols-2 md:gap-10 md:pt-12 lg:grid-cols-3"
-                data-aos="fade-right">
-                <div v-for="project in filteredProjects" :key="project.id">
-                    <div class="h-52 md:h-[24rem] rounded-t-xl relative group"
-                    :style="{ backgroundImage: 'url(' + project.image + ')', backgroundSize: 'cover' }">                    
-                    <div class="overlay items-center justify-center absolute top-0 left-0 w-full h-full bg-[#181818] bg-opacity-0
-                    hidden group-hover:flex group-hover:bg-opacity-80 transition-all duration-500
-                    ">
-                        <a class="h-14 w-14 mr-2 border-2 relative rounded-full border-[#ADB7BE] hover:border-white group/link"
-                            :href="project.webURL"> <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"
-                                data-slot="icon"
-                                class="h-10 w-10 text-[#ADB7BE] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  cursor-pointer group-hover/link:text-white">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5">
-                                </path>
-                            </svg></a><a
-                            class="h-14 w-14 border-2 relative rounded-full border-[#ADB7BE] hover:border-white group/link"
-                            :href="project.gitURL"> <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"
-                                data-slot="icon"
-                                class="h-10 w-10 text-[#ADB7BE] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  cursor-pointer group-hover/link:text-white">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z">
-                                </path>
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path>
-                            </svg></a>
-                    </div>
-                </div>
-                <div class="text-white rounded-b-xl mt-3 bg-[#111a3e] shadow-lg border border-[#1f1641] py-6 px-4">
-                    <h3 class="text-lg font-semibold uppercase lg:text-xl"> {{ project.title }}</h3>
-                    <p class="text-[#ADB7BE]">{{ project.description }}</p>
-                    <div class="flex flex-wrap p-2.5">
-                        <div v-for="technology in project.technologies" :key="technology" class="text-center ml-1 mt-1 rounded-3xl bg-[#111827]"
-                        style="box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); border: 1px solid #111827;backdrop-filter: blur(9px);-webkit-backdrop-filter: blur(9px);"
-                        >
-                    <p class="px-1 py-2">{{ technology }}</p>
-                    </div>
-                    </div>
-                </div>
-                </div>
-            </ul>
         </div>
     </section>
 </template>
+
 <script setup>
 import { ref, computed } from 'vue';
+import projectKitchen from '../assets/project_kitchen.png';
+import projectHouse from '../assets/project_house.png';
+import projectBathroom from '../assets/project_bathroom.png';
+import projectLoft from '../assets/project_loft.png';
+import projectOffice from '../assets/project_office.png';
+
+// Categories matching the screenshot
+const categories = ['Vše', 'Novostavby', 'Rekonstrukce', 'Koupelny', 'Interiéry', 'Exteriéry'];
+const selectedCategory = ref('Vše');
 
 const Projects = ref([
     {
         id: 1,
-        category: 'web development',
-        image: 'src/assets/project.png',
-        title: 'project 1',
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic tenetur quasi ipsam labore sapiente, accusamus necessitatibus laboriosam non voluptas inventore deserunt dolore modi ex, praesentium at provident nihil magni ratione!',
-        technologies: ['vue.js 3', 'vuex', 'Express'],
-        gitURL: '',
-        webURL: ''
+        category: 'Rekonstrukce',
+        image: projectKitchen,
+        title: 'Rekonstrukce kuchyně v Praze',
+        location: 'Praha'
     },
     {
         id: 2,
-        category: 'Mobile App',
-        image: 'src/assets/mobile.jpg',
-        title: 'project 1',
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic tenetur quasi ipsam labore sapiente, accusamus necessitatibus laboriosam non voluptas inventore deserunt dolore modi ex, praesentium at provident nihil magni ratione!',
-        technologies: ['vue.js 3', 'vuex', 'Express'],
-        gitURL: '',
-        webURL: ''
+        category: 'Novostavby',
+        image: projectHouse,
+        title: 'Novostavba rodinného domu',
+        location: 'Brno'
     },
     {
         id: 3,
-        category: 'web development',
-        image: 'src/assets/project.png',
-        title: 'project 1',
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic tenetur quasi ipsam labore sapiente, accusamus necessitatibus laboriosam non voluptas inventore deserunt dolore modi ex, praesentium at provident nihil magni ratione!',
-        technologies: ['vue.js 3', 'vuex', 'Express'],
-        gitURL: '',
-        webURL: ''
+        category: 'Koupelny',
+        image: projectBathroom,
+        title: 'Designová koupelna',
+        location: 'Plzeň'
     },
     {
         id: 4,
-        category: 'Mobile App',
-        image: 'src/assets/mobile.jpg',
-        title: 'project 1',
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic tenetur quasi ipsam labore sapiente, accusamus necessitatibus laboriosam non voluptas inventore deserunt dolore modi ex, praesentium at provident nihil magni ratione!',
-        technologies: ['vue.js 3', 'vuex', 'Express'],
-        gitURL: '',
-        webURL: ''
+        category: 'Interiéry',
+        image: projectLoft,
+        title: 'Půdní vestavba',
+        location: 'Olomouc'
     },
     {
         id: 5,
-        category: 'web development',
-        image: 'src/assets/project.png',
-        title: 'project 1',
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic tenetur quasi ipsam labore sapiente, accusamus necessitatibus laboriosam non voluptas inventore deserunt dolore modi ex, praesentium at provident nihil magni ratione!',
-        technologies: ['vue.js 3', 'vuex', 'Express'],
-        gitURL: '',
-        webURL: ''
+        category: 'Rekonstrukce',
+        image: projectOffice,
+        title: 'Rekonstrukce kanceláří',
+        location: 'Ostrava'
     },
     {
         id: 6,
-        category: 'Mobile App',
-        image: 'src/assets/mobile.jpg',
-        title: 'project 1',
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic tenetur quasi ipsam labore sapiente, accusamus necessitatibus laboriosam non voluptas inventore deserunt dolore modi ex, praesentium at provident nihil magni ratione!',
-        technologies: ['vue.js 3', 'vuex', 'Express'],
-        gitURL: '',
-        webURL: ''
+        category: 'Exteriéry',
+        image: projectHouse,
+        title: 'Terasa a pergolové přístřešky',
+        location: 'Liberec'
     }
 ]);
 
-const selectedCategory = ref('all');
 const filteredProjects = computed(() => {
-    if (selectedCategory.value === 'all') {
+    if (selectedCategory.value === 'Vše') {
         return Projects.value;
     }
-    return Projects.value.filter(project => project.category.toLocaleLowerCase() === selectedCategory.value.toLocaleLowerCase());
+    return Projects.value.filter(project => project.category === selectedCategory.value);
 })
 
 </script>
