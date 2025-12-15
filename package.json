@@ -24,6 +24,7 @@
     "tabWidth": 2
   },
   "dependencies": {
+    "@genezio/email-service": "^1.0.2",
     "aos": "^2.3.4",
     "vue3-carousel": "^0.16.0"
   }
