@@ -66,7 +66,25 @@
         <!-- Form Right Column -->
         <div class="bg-gray-200/80 rounded-2xl p-8 shadow-sm" data-aos="fade-left">
           <h3 class="text-2xl font-bold text-gray-900 mb-6">Nezávazná poptávka a konzultace</h3>
+          
+          <!-- System Error Alert -->
+          <div v-if="!hasEmailToken" class="mb-6 bg-red-50 border-l-4 border-red-500 p-4 rounded-md">
+            <div class="flex">
+              <div class="flex-shrink-0">
+                <svg class="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <div class="ml-3">
+                <p class="text-sm text-red-700">
+                  Odesílání emailů dočasně nefunguje, zkuste to prosím později.
+                </p>
+              </div>
+            </div>
+          </div>
+
           <form class="space-y-4">
+            <fieldset :disabled="!hasEmailToken" class="space-y-4 group-disabled:opacity-50">
             <div class="grid md:grid-cols-2 gap-4">
               <div>
                 <label class="block text-sm font-bold text-gray-700 mb-1">Vaše jméno a příjmení *</label>
@@ -152,10 +170,13 @@
                 <input type="file" multiple @change="handleFileUpload" class="hidden" />
                 <span v-if="files.length === 0">⬆ Nahrát soubory (plány, fotky)</span>
                 <span v-else class="text-blue-600">
-                    Vybráno souborů: {{ files.length }}
+                    Přidat soubory
                 </span>
               </label>
               <p v-if="fileError" class="text-red-500 text-sm mt-1 text-center">{{ fileError }}</p>
+              
+              <!-- Component for File List -->
+              <FilePreview :files="files" @remove="removeFile" />
             </div>
 
             <!-- Submit Button -->
@@ -169,6 +190,7 @@
             
             <p v-if="submitStatus === 'success'" class="text-green-600 mt-2 font-bold text-center">Zpráva byla úspěšně odeslána!</p>
             <p v-if="submitStatus === 'error'" class="text-red-600 mt-2 font-bold text-center">Chyba při odesílání. Zkuste to prosím znovu.</p>
+            </fieldset>
           </form>
         </div>
       </div>
@@ -179,6 +201,9 @@
 <script setup>
 import { ref } from 'vue';
 import { MailService } from "@genezio/email-service";
+import FilePreview from './FilePreview.vue';
+
+const hasEmailToken = !!import.meta.env.VITE_EMAIL_SERVICE_TOKEN;
 
 const name = ref('');
 const email = ref('');
@@ -186,11 +211,23 @@ const phone = ref('');
 const serviceType = ref('Vyberte z nabídky...');
 const message = ref('');
 const isSubmitting = ref(false);
+
+// Validation Errors
 const emailError = ref('');
 const nameError = ref('');
 const messageError = ref('');
 const phoneError = ref('');
 const serviceError = ref('');
+
+// File Upload State
+const files = ref([]);
+const fileError = ref('');
+const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10 MB
+
+// Actions
+const removeFile = (index) => {
+    files.value.splice(index, 1);
+};
 
 const validateEmail = () => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -248,13 +285,9 @@ const validateMessage = () => {
     return true;
 };
 
-const files = ref([]);
-const fileError = ref('');
-const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10 MB
-
 const handleFileUpload = (event) => {
     const selectedFiles = Array.from(event.target.files);
-    files.value = [];
+    // Do NOT clear files.value here to allow accumulation
     fileError.value = '';
 
     selectedFiles.forEach(file => {
@@ -273,7 +306,12 @@ const handleFileUpload = (event) => {
         };
         reader.readAsDataURL(file);
     });
+    
+    // Clear the input value so the same file can be selected again if needed (or if deleted and re-added)
+    event.target.value = ''; 
 };
+
+const submitStatus = ref(null);
 
 const handleSubmit = async () => {
     // Validate all fields
@@ -305,7 +343,7 @@ const handleSubmit = async () => {
                 Zpráva:
                 ${message.value}
             `,
-            files: files.value // Passing the files array
+            files: files.value 
         });
 
         if (response.success) {
