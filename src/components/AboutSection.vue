@@ -1,5 +1,5 @@
 <template>
-    <section id="about" class="bg-white">
+    <section id="about" class="bg-white scroll-mt-28">
         <!-- Hero Part: House background with O NAS text -->
         <div class="relative w-full h-[500px]">
             <img 
