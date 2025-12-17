@@ -1,5 +1,5 @@
 <template>
-  <section class="py-20 bg-white scroll-mt-28" id="contact">
+  <section class="py-20 bg-white/90 scroll-mt-28 backdrop-blur-sm" id="contact">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-8items-start">
         

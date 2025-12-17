@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-[#0f1219] ">
+  <div class="fixed-bg min-h-screen">
     <!-- Wrap components in Suspense to handle loading -->
     <Suspense>
       <template #default>
@@ -50,8 +50,16 @@ export default {
 </script>
 
 <style scoped>
-*{
+* {
   scrollbar-width: thin;
   scrollbar-color: #0f1219 #f1f1f1;
+}
+
+.fixed-bg {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./assets/project_house.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 </style>

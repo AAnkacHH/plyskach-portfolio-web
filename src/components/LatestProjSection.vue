@@ -1,5 +1,5 @@
 <template>
-    <section class="bg-white scroll-mt-28" id="projects">
+    <section class="bg-white/90 scroll-mt-28 backdrop-blur-sm" id="projects">
         <!-- Header with Background Image -->
         <div class="relative w-full h-80 flex items-center justify-center text-center text-white">
             <div class="absolute inset-0 overflow-hidden">
