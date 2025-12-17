@@ -199,11 +199,13 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import { MailService } from "@genezio/email-service";
+import { ref, computed } from 'vue';
 import FilePreview from './FilePreview.vue';
 
-const hasEmailToken = !!import.meta.env.VITE_EMAIL_SERVICE_TOKEN;
+// We assume the API endpoint /api/send-email exists. 
+// If you want to toggle the form based on env vars, you'd need to expose a VITE_ var.
+// For now, we assume it's always available if the app is deployed.
+const hasEmailToken = true; 
 
 const name = ref('');
 const email = ref('');
@@ -222,11 +224,13 @@ const serviceError = ref('');
 // File Upload State
 const files = ref([]);
 const fileError = ref('');
-const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10 MB
+// Vercel Serverless Payload limit is 4.5MB. We set a safe limit of 4MB for the total request body.
+const MAX_TOTAL_SIZE = 4 * 1024 * 1024; // 4 MB
 
 // Actions
 const removeFile = (index) => {
     files.value.splice(index, 1);
+    fileError.value = ''; // Clear error when removing files
 };
 
 const validateEmail = () => {
@@ -285,29 +289,45 @@ const validateMessage = () => {
     return true;
 };
 
+// Calculate current total size of existing files
+const currentTotalSize = computed(() => {
+    return files.value.reduce((acc, file) => {
+        // file.data is base64 string. 
+        // Rough size approximation: (base64 length * 3) / 4 = original bytes
+        // Or we can store original size. 
+        // For simplicity, let's assume we store original size or calculate from base64.
+        // But in `files` array we only have `data` (base64) and names.
+        // Let's store the size when adding.
+        return acc + (file.size || 0);
+    }, 0);
+});
+
 const handleFileUpload = (event) => {
     const selectedFiles = Array.from(event.target.files);
-    // Do NOT clear files.value here to allow accumulation
     fileError.value = '';
 
-    selectedFiles.forEach(file => {
-        if (file.size > MAX_FILE_SIZE) {
-            fileError.value = `Soubor ${file.name} je příliš velký. Maximální velikost je 10 MB.`;
-            return;
-        }
+    let newSize = 0;
+    selectedFiles.forEach(f => newSize += f.size);
 
+    if (currentTotalSize.value + newSize > MAX_TOTAL_SIZE) {
+        fileError.value = `Celková velikost souborů nesmí přesáhnout 4 MB. Vybráno: ${((currentTotalSize.value + newSize) / 1024 / 1024).toFixed(2)} MB`;
+        event.target.value = '';
+        return;
+    }
+
+    selectedFiles.forEach(file => {
         const reader = new FileReader();
         reader.onload = (e) => {
              files.value.push({
                  name: file.name,
                  data: e.target.result.split(',')[1],
-                 mimeType: file.type
+                 mimeType: file.type,
+                 size: file.size // Store size for calculation
              });
         };
         reader.readAsDataURL(file);
     });
     
-    // Clear the input value so the same file can be selected again if needed (or if deleted and re-added)
     event.target.value = ''; 
 };
 
@@ -329,10 +349,9 @@ const handleSubmit = async () => {
     submitStatus.value = null;
 
     try {
-        const response = await MailService.sendMail({
-            emailServiceToken: import.meta.env.VITE_EMAIL_SERVICE_TOKEN,
+        const payload = {
             from: email.value, 
-            to: "info@stavitelpro.cz", 
+            // to: is handled by backend env var CONTACT_EMAIL
             subject: `Nová poptávka: ${serviceType.value} - ${name.value}`,
             text: `
                 Jméno: ${name.value}
@@ -344,9 +363,19 @@ const handleSubmit = async () => {
                 ${message.value}
             `,
             files: files.value 
+        };
+
+        const response = await fetch('/api/send-email', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(payload)
         });
 
-        if (response.success) {
+        const result = await response.json();
+
+        if (response.ok && result.success) {
             submitStatus.value = 'success';
             // Reset form
             name.value = '';
@@ -354,7 +383,7 @@ const handleSubmit = async () => {
             phone.value = '';
             serviceType.value = 'Vyberte z nabídky...';
             message.value = '';
-            files.value = []; // Reset files
+            files.value = []; 
             
             // Reset errors
             nameError.value = '';
@@ -363,7 +392,7 @@ const handleSubmit = async () => {
             phoneError.value = '';
             serviceError.value = '';
         } else {
-            console.error(response.errorMessage);
+            console.error(result.errorMessage || result.message);
             submitStatus.value = 'error';
         }
     } catch (error) {
