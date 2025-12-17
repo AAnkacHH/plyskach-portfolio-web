@@ -1,17 +1,7 @@
 <template>
-  <section class="relative w-full h-[600px] md:h-[700px] bg-gray-900" id="home">
-    <!-- Background Content -->
-    <div class="absolute inset-0 z-0">
-        <!-- Using a placeholder image that resembles construction or one from assets if available -->
-        <!-- Since 'test.png' and 'top_picture.jpg' exist, we try top_picture.jpg as it might be a header img -->
-        <img 
-            src="../assets/top_picture.jpg" 
-            alt="Hero Background" 
-            class="w-full h-full object-cover"
-        />
-        <!-- Dark Overlay -->
-        <div class="absolute inset-0 bg-black/40"></div>
-    </div>
+  <section class="relative w-full h-[600px] md:h-[700px]" id="home">
+    <!-- Background Content Removed to show Global Fixed Background -->
+    <!-- The global background in App.vue handles the image and overlay -->
 
     <!-- Content -->
     <div class="relative z-10 h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center">
