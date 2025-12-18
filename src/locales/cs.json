@@ -1,0 +1,169 @@
+{
+    "general": {
+        "welcome": "Vítejte",
+        "home": "Domů",
+        "about": "O mně",
+        "services": "Služby",
+        "portfolio": "Portfolio",
+        "testimonials": "Reference",
+        "contact": "Kontakt",
+        "brand": "Michal Stavitel"
+    },
+    "nav": {
+        "about": "O nás",
+        "services": "Služby",
+        "references": "Reference",
+        "contact": "Kontakt",
+        "quote_btn": "Požádat o cenovou nabídku"
+    },
+    "hero": {
+        "title_line1": "Stavíme vaše sny",
+        "title_line2": "s důvěrou",
+        "cta_btn": "Objednat konzultaci"
+    },
+    "services": {
+        "title": "Naše služby",
+        "subtitle": "Komplexní stavební řešení pro váš domov a firmu.",
+        "cta_btn": "Mám zájem o nezávaznou poptávku",
+        "rough_construction": {
+            "title": "Hrubá stavba",
+            "foundations": {
+                "title": "Základy a základové desky",
+                "desc": "Realizace pevných základů pro rodinné domy a komerční objekty."
+            },
+            "walls": {
+                "title": "Zdění a nosné konstrukce",
+                "desc": "Profesionální vyzdívání z cihel, tvárnic a jiných materiálů."
+            },
+            "roofs": {
+                "title": "Střechy a krovy",
+                "desc": "Montáž krovů, pokládka střešních krytin a klempířské práce."
+            }
+        },
+        "reconstruction": {
+            "title": "Rekonstrukce a úpravy",
+            "apartments": {
+                "title": "Kompletní rekonstrukce bytů",
+                "desc": "Modernizace bytových jader, elektroinstalace a nové rozvody."
+            },
+            "bathrooms": {
+                "title": "Rekonstrukce koupelen",
+                "desc": "Obklady, dlažby, sanita a instalatérské práce na klíč."
+            },
+            "insulation": {
+                "title": "Zateplení fasád",
+                "desc": "Energeticky úsporná řešení a renovace vnějších omítek."
+            }
+        },
+        "finishing": {
+            "title": "Dokončovací práce",
+            "plaster": {
+                "title": "Omítky a štuky",
+                "desc": "Ruční i strojní omítání vnitřních a vnějších stěn."
+            },
+            "painting": {
+                "title": "Malířské a natěračské práce",
+                "desc": "Kvalitní výmalba interiérů a nátěry fasád."
+            },
+            "floors": {
+                "title": "Pokládka podlah",
+                "desc": "Instalace plovoucích podlah, parket, vinylu a dlažby."
+            }
+        }
+    },
+    "about": {
+        "title": "O NÁS",
+        "subtitle_line1": "Profesionální stavební služby",
+        "subtitle_line2": "s důrazem na kvalitu a spolehlivost.",
+        "person_name": "Mykhaylo Plyskach",
+        "person_role": "Stavební inženýr",
+        "bio_p1": "S více než 20 lety zkušeností v oboru stavíme domy, které vydrží. Mým posláním je přeměňovat vize klientů v realitu, s důrazem na preciznost, inovace a trvalou udržitelnost.",
+        "bio_p2": "Specializujeme se na kompletní realizace rodinných domů, rekonstrukce a komerční projekty.",
+        "contact_btn": "Kontaktovat",
+        "values_title": "NAŠE HODNOTY A FILOZOFIE",
+        "values": {
+            "quality": {
+                "title": "Kvalita",
+                "desc": "Používáme pouze prvotřídní materiály a moderní technologie."
+            },
+            "transparency": {
+                "title": "Transparentnost",
+                "desc": "Jasná komunikace a dodržování rozpočtu a termínů."
+            },
+            "reliability": {
+                "title": "Spolehlivost",
+                "desc": "Jsme partnerem, na kterého se můžete spolehnout od návrhu po předání."
+            }
+        }
+    },
+    "contact": {
+        "title": "Spojte se s námi",
+        "subtitle": "Kontaktujte nás pro nezávaznou konzultaci nebo cenovou nabídku. Jsme tu pro vás, abychom zrealizovali vaše stavební plány.",
+        "info": {
+            "phone": "+420 123 456 789",
+            "email": "info@profistavitel.cz",
+            "address": "Dělnická 123, 170 00 Praha 7",
+            "hours": "Po-Pá: 8:00 - 17:00"
+        },
+        "form": {
+            "title": "Nezávazná poptávka a konzultace",
+            "error_email_down": "Odesílání emailů dočasně nefunguje, zkuste to prosím později.",
+            "name_label": "Vaše jméno a příjmení *",
+            "name_placeholder": "Vaše jméno a příjmení",
+            "email_label": "E-mailová adresa *",
+            "email_placeholder": "E-mailová adresa",
+            "phone_label": "Telefonní číslo *",
+            "phone_placeholder": "Telefonní číslo",
+            "service_label": "Typ služby *",
+            "service_placeholder": "Vyberte z nabídky...",
+            "service_options": {
+                "rough": "Hrubá stavba",
+                "reconstruction": "Rekonstrukce"
+            },
+            "message_label": "Popis vašeho projektu *",
+            "message_placeholder": "Popis vašeho projektu",
+            "upload_default": "⬆ Nahrát soubory (plány, fotky)",
+            "upload_add": "Přidat soubory",
+            "submit_btn": "Odeslat poptávku",
+            "submitting_btn": "Odesílání...",
+            "success_msg": "Zpráva byla úspěšně odeslána!",
+            "error_msg": "Chyba při odesílání. Zkuste to prosím znovu."
+        },
+        "validation": {
+            "name_required": "Jméno je povinné.",
+            "email_required": "E-mail je povinný.",
+            "email_invalid": "Prosím zadejte platnou e-mailovou adresu.",
+            "phone_required": "Telefonní číslo je povinné.",
+            "phone_invalid": "Zadejte platné telefonní číslo.",
+            "service_required": "Vyberte prosím typ služby.",
+            "message_required": "Popis projektu je povinný.",
+            "file_size_error": "Celková velikost souborů nesmí přesáhnout 4 MB."
+        }
+    },
+    "testimonials": {
+        "title": "Reference"
+    },
+    "footer": {
+        "contact_title": "KONTAKT",
+        "services_title": "NAŠE SLUŽBY",
+        "follow_us_title": "SLEDUJTE NÁS",
+        "follow_us_desc": "Sledujte naše nejnovější realizace na sociálních sítích.",
+        "copyright": "© 2025 Mykhaylo Plyskach. Všechna práva vyhrazena.",
+        "design_credit": "Design & Vývoj: Ing. Andrii Plyskach."
+    },
+    "portfolio": {
+        "title": "Naše portfolio",
+        "subtitle": "Prohlédněte si naše dokončené stavební projekty a nechte se inspirovat.",
+        "categories": {
+            "all": "Vše",
+            "new_buildings": "Novostavby",
+            "reconstruction": "Rekonstrukce",
+            "bathrooms": "Koupelny",
+            "interiors": "Interiéry",
+            "exteriors": "Exteriéry"
+        }
+    },
+    "file_preview": {
+        "remove_file_title": "Odstranit soubor"
+    }
+}

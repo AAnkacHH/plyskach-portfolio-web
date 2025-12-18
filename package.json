@@ -10,6 +10,7 @@
     "lint": "eslint --ext .js,.vue,.ts src"
   },
   "devDependencies": {
+    "@types/aos": "^3.0.7",
     "@vitejs/plugin-vue": "^5.1.2",
     "@vue/compiler-sfc": "^3.4.38",
     "autoprefixer": "^10.4.21",
@@ -26,6 +27,7 @@
   "dependencies": {
     "aos": "^2.3.4",
     "nodemailer": "^7.0.11",
+    "vue-i18n": "^11.2.2",
     "vue3-carousel": "^0.16.0"
   }
 }

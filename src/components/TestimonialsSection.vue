@@ -1,6 +1,6 @@
 <template >
     <section class="text-white mt-20 scroll-mt-28" id="testimonials" data-aos="zoom-in">
-        <h2 class="text-4xl font-bold text-white text-left mb-4 px-4 xl:pl-16">Testimonials</h2>
+        <h2 class="text-4xl font-bold text-white text-left mb-4 px-4 xl:pl-16">{{ $t('testimonials.title') }}</h2>
         <div class="px-4 xl:px-16">
             <Carousel v-bind="settings" :breakpoints="breakpoints" >
                 <Slide v-for="element in testimonials" :key="element.id">

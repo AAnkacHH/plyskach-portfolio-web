@@ -7,15 +7,15 @@
     <div class="relative z-10 h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center">
         <div class="max-w-3xl" data-aos="fade-up">
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight uppercase tracking-wide mb-6">
-                Stavíme vaše sny <br/>
-                s důvěrou
+                {{ $t('hero.title_line1') }} <br/>
+                {{ $t('hero.title_line2') }}
             </h1>
             
             <button 
                 @click="scrollToSection('#contact')"
                 class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-8 rounded-sm shadow-lg transition-transform transform hover:-translate-y-0.5"
             >
-                Objednat konzultaci
+                {{ $t('hero.cta_btn') }}
             </button>
         </div>
     </div>
