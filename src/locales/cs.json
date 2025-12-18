@@ -25,51 +25,71 @@
         "title": "Naše služby",
         "subtitle": "Komplexní stavební řešení pro váš domov a firmu.",
         "cta_btn": "Mám zájem o nezávaznou poptávku",
-        "rough_construction": {
-            "title": "Hrubá stavba",
-            "foundations": {
-                "title": "Základy a základové desky",
-                "desc": "Realizace pevných základů pro rodinné domy a komerční objekty."
+        "categories": [
+            {
+                "id": "rough_construction",
+                "title": "Hrubá stavba",
+                "items": [
+                    {
+                        "id": "foundations",
+                        "title": "Základy a základové desky",
+                        "desc": "Realizace pevných základů pro rodinné domy a komerční objekty."
+                    },
+                    {
+                        "id": "walls",
+                        "title": "Zdění a nosné konstrukce",
+                        "desc": "Profesionální vyzdívání z cihel, tvárnic a jiných materiálů."
+                    },
+                    {
+                        "id": "roofs",
+                        "title": "Střechy a krovy",
+                        "desc": "Montáž krovů, pokládka střešních krytin a klempířské práce."
+                    }
+                ]
             },
-            "walls": {
-                "title": "Zdění a nosné konstrukce",
-                "desc": "Profesionální vyzdívání z cihel, tvárnic a jiných materiálů."
+            {
+                "id": "reconstruction",
+                "title": "Rekonstrukce a úpravy",
+                "items": [
+                    {
+                        "id": "apartments",
+                        "title": "Kompletní rekonstrukce bytů",
+                        "desc": "Modernizace bytových jader, elektroinstalace a nové rozvody."
+                    },
+                    {
+                        "id": "bathrooms",
+                        "title": "Rekonstrukce koupelen",
+                        "desc": "Obklady, dlažby, sanita a instalatérské práce na klíč."
+                    },
+                    {
+                        "id": "insulation",
+                        "title": "Zateplení fasád",
+                        "desc": "Energeticky úsporná řešení a renovace vnějších omítek."
+                    }
+                ]
             },
-            "roofs": {
-                "title": "Střechy a krovy",
-                "desc": "Montáž krovů, pokládka střešních krytin a klempířské práce."
+            {
+                "id": "finishing",
+                "title": "Dokončovací práce",
+                "items": [
+                    {
+                        "id": "plaster",
+                        "title": "Omítky a štuky",
+                        "desc": "Ruční i strojní omítání vnitřních a vnějších stěn."
+                    },
+                    {
+                        "id": "painting",
+                        "title": "Malířské a natěračské práce",
+                        "desc": "Kvalitní výmalba interiérů a nátěry fasád."
+                    },
+                    {
+                        "id": "floors",
+                        "title": "Pokládka podlah",
+                        "desc": "Instalace plovoucích podlah, parket, vinylu a dlažby."
+                    }
+                ]
             }
-        },
-        "reconstruction": {
-            "title": "Rekonstrukce a úpravy",
-            "apartments": {
-                "title": "Kompletní rekonstrukce bytů",
-                "desc": "Modernizace bytových jader, elektroinstalace a nové rozvody."
-            },
-            "bathrooms": {
-                "title": "Rekonstrukce koupelen",
-                "desc": "Obklady, dlažby, sanita a instalatérské práce na klíč."
-            },
-            "insulation": {
-                "title": "Zateplení fasád",
-                "desc": "Energeticky úsporná řešení a renovace vnějších omítek."
-            }
-        },
-        "finishing": {
-            "title": "Dokončovací práce",
-            "plaster": {
-                "title": "Omítky a štuky",
-                "desc": "Ruční i strojní omítání vnitřních a vnějších stěn."
-            },
-            "painting": {
-                "title": "Malířské a natěračské práce",
-                "desc": "Kvalitní výmalba interiérů a nátěry fasád."
-            },
-            "floors": {
-                "title": "Pokládka podlah",
-                "desc": "Instalace plovoucích podlah, parket, vinylu a dlažby."
-            }
-        }
+        ]
     },
     "about": {
         "title": "O NÁS",
