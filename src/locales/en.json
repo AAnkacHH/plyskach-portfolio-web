@@ -1,0 +1,209 @@
+{
+    "general": {
+        "welcome": "Welcome",
+        "home": "Home",
+        "about": "About",
+        "services": "Services",
+        "portfolio": "Portfolio",
+        "testimonials": "Testimonials",
+        "contact": "Contact",
+        "brand": "Michal Builder"
+    },
+    "nav": {
+        "about": "About Us",
+        "services": "Services",
+        "references": "References",
+        "contact": "Contact",
+        "quote_btn": "Get a Quote"
+    },
+    "hero": {
+        "title_line1": "Building Your Dreams",
+        "title_line2": "With Confidence",
+        "cta_btn": "Book a Consultation"
+    },
+    "services": {
+        "title": "Our Services",
+        "subtitle": "Comprehensive construction solutions for your home and business.",
+        "cta_btn": "Request a Quote",
+        "categories": [
+            {
+                "id": "rough_construction",
+                "title": "Rough Construction",
+                "items": [
+                    {
+                        "id": "foundations",
+                        "title": "Foundations & Slabs",
+                        "desc": "Solid foundations for family houses and commercial buildings."
+                    },
+                    {
+                        "id": "walls",
+                        "title": "Masonry & Load-bearing Structures",
+                        "desc": "Professional bricklaying and structural work."
+                    },
+                    {
+                        "id": "roofs",
+                        "title": "Roofs & Trusses",
+                        "desc": "Roof truss installation, roofing, and tinsmith work."
+                    }
+                ]
+            },
+            {
+                "id": "reconstruction",
+                "title": "Reconstruction & Renovations",
+                "items": [
+                    {
+                        "id": "apartments",
+                        "title": "Complete Apartment Renovations",
+                        "desc": "Modernization of cores, wiring, and new installations."
+                    },
+                    {
+                        "id": "bathrooms",
+                        "title": "Bathroom Renovations",
+                        "desc": "Tiling, paving, and plumbing work."
+                    },
+                    {
+                        "id": "insulation",
+                        "title": "Facade Insulation",
+                        "desc": "Energy-saving solutions and exterior plaster renovation."
+                    }
+                ]
+            },
+            {
+                "id": "finishing",
+                "title": "Finishing Works",
+                "items": [
+                    {
+                        "id": "plaster",
+                        "title": "Plaster & Stucco",
+                        "desc": "Manual and machine plastering of internal and external walls."
+                    },
+                    {
+                        "id": "painting",
+                        "title": "Painting & Decorating",
+                        "desc": "Quality interior painting and facade coatings."
+                    },
+                    {
+                        "id": "floors",
+                        "title": "Flooring Installation",
+                        "desc": "Installation of floating floors, parquet, vinyl, and tiles."
+                    }
+                ]
+            }
+        ]
+    },
+    "about": {
+        "title": "ABOUT US",
+        "subtitle_line1": "Professional construction services",
+        "subtitle_line2": "with an emphasis on quality and reliability.",
+        "person_name": "Mykhaylo Plyskach",
+        "person_role": "Civil Engineer",
+        "bio_p1": "With over 20 years of experience in the industry, we build homes that last. My mission is to turn clients' visions into reality, focused on precision, innovation, and sustainability.",
+        "bio_p2": "We specialize in complete family house construction, renovations, and commercial projects.",
+        "contact_btn": "Contact Us",
+        "values_title": "OUR VALUES AND PHILOSOPHY",
+        "values": {
+            "quality": {
+                "title": "Quality",
+                "desc": "We use only premium materials and modern technologies."
+            },
+            "transparency": {
+                "title": "Transparency",
+                "desc": "Clear communication and adherence to budget and deadlines."
+            },
+            "reliability": {
+                "title": "Reliability",
+                "desc": "We are a partner you can rely on from design to handover."
+            }
+        }
+    },
+    "contact": {
+        "title": "Connect With Us",
+        "subtitle": "Contact us for a non-binding consultation or quote. We are here to realize your construction plans.",
+        "info": {
+            "phone": "+420 123 456 789",
+            "email": "info@profistavitel.cz",
+            "address": "Dělnická 123, 170 00 Praha 7",
+            "hours": "Mon-Fri: 8:00 - 17:00"
+        },
+        "form": {
+            "title": "Non-binding Inquiry",
+            "error_email_down": "Email sending is temporarily unavailable, please try again later.",
+            "name_label": "Your Name *",
+            "name_placeholder": "Your Name",
+            "email_label": "Email Address *",
+            "email_placeholder": "Email Address",
+            "phone_label": "Phone Number *",
+            "phone_placeholder": "Phone Number",
+            "service_label": "Service Type *",
+            "service_placeholder": "Select from options...",
+            "service_options": {
+                "rough": "Rough Construction",
+                "reconstruction": "Reconstruction"
+            },
+            "message_label": "Project Description *",
+            "message_placeholder": "Project Description",
+            "upload_default": "⬆ Upload Files (plans, photos)",
+            "upload_add": "Add Files",
+            "submit_btn": "Send Inquiry",
+            "submitting_btn": "Sending...",
+            "success_msg": "Message sent successfully!",
+            "error_msg": "Error sending message. Please try again."
+        },
+        "validation": {
+            "name_required": "Name is required.",
+            "email_required": "Email is required.",
+            "email_invalid": "Please enter a valid email address.",
+            "phone_required": "Phone number is required.",
+            "phone_invalid": "Enter a valid phone number.",
+            "service_required": "Please select a service type.",
+            "message_required": "Project description is required.",
+            "file_size_error": "Total file size must not exceed 4 MB."
+        }
+    },
+    "testimonials": {
+        "title": "What Our Clients Say",
+        "items": [
+            {
+                "id": 1,
+                "fullName": "Petr Novák",
+                "role": "Home Owner",
+                "comment": "We were extremely satisfied with Mr. Plyskach's work. The rough construction went quickly and exactly according to plan. I appreciate the professional approach and adherence to deadlines."
+            },
+            {
+                "id": 2,
+                "fullName": "Jana Dvořáková",
+                "role": "Apartment Renovation",
+                "comment": "We needed a complete renovation of the apartment core and kitchen. The result exceeded our expectations. Great communication and attention to detail."
+            },
+            {
+                "id": 3,
+                "fullName": "Martin Svoboda",
+                "role": "Investment Project",
+                "comment": "Cooperation on the construction of a smaller commercial building was seamless. Transparent budget and reliability are reasons why I will use the services again."
+            }
+        ]
+    },
+    "footer": {
+        "contact_title": "CONTACT",
+        "services_title": "OUR SERVICES",
+        "follow_us_title": "FOLLOW US",
+        "follow_us_desc": "Follow our latest projects on social media.",
+        "copyright": "© 2025 Mykhaylo Plyskach. All rights reserved.",
+        "design_credit": "Design & Development: Ing. Andrii Plyskach."
+    },
+    "portfolio": {
+        "title": "Our Portfolio",
+        "subtitle": "View our completed construction projects and get inspired.",
+        "categories": {
+            "all": "All",
+            "new_buildings": "New Buildings",
+            "reconstruction": "Reconstruction",
+            "bathrooms": "Bathrooms",
+            "interiors": "Interiors",
+            "exteriors": "Exteriors"
+        }
+    },
+    "file_preview": {
+        "remove_file_title": "Remove File"
+    }
+}

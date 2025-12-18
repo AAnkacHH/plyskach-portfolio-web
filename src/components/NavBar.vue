@@ -23,12 +23,44 @@
             >
                 {{ item.name }}
             </a>
+            
+            <!-- Language Switcher (Desktop) -->
+            <div class="relative ml-4">
+                <button @click="isLangOpen = !isLangOpen" class="flex items-center gap-2 text-gray-700 hover:text-blue-600 font-medium focus:outline-none">
+                    <span class="text-xl">{{ currentFlag }}</span> 
+                     <!-- Language Code/Name (Hidden on small screens if needed, but requested to show on left) -->
+                    <span>{{ currentLangLabel }}</span>
+                    <svg class="w-4 h-4 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                    
+                <!-- Dropdown -->
+                <div v-if="isLangOpen" class="absolute right-0 mt-2 w-32 bg-white border border-gray-100 rounded-md shadow-lg py-1 z-50">
+                    <button 
+                        @click="switchLanguage('cs')" 
+                        class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 flex items-center gap-2"
+                    >
+                         <span class="text-lg">🇨🇿</span> Čeština
+                    </button>
+                    <button 
+                        @click="switchLanguage('en')" 
+                        class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 flex items-center gap-2"
+                    >
+                         <span class="text-lg">🇬🇧</span> English
+                    </button>
+                     <button 
+                        @click="switchLanguage('uk')" 
+                        class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 flex items-center gap-2"
+                    >
+                         <span class="text-lg">🇺🇦</span> Українська
+                    </button>
+                </div>
+            </div>
         </nav>
 
         <!-- CTA Button -->
         <div class="hidden md:flex items-center">
           <a href="#contact" 
-             class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 px-6 rounded-md transition-colors shadow-sm"
+             class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 px-6 rounded-md transition-colors shadow-sm ml-6"
              @click.prevent="scrollToSection('#contact')"
           >
             {{ t('nav.quote_btn') }}
@@ -36,7 +68,12 @@
         </div>
 
         <!-- Mobile Menu Button -->
-        <div class="md:hidden flex items-center">
+        <div class="md:hidden flex items-center gap-4">
+            <!-- Language Switcher (Mobile) -->
+             <button @click="toggleLangMobile" class="text-xl focus:outline-none">
+                  {{ currentFlag }}
+             </button>
+
           <button @click="isMenuOpen = !isMenuOpen" class="text-gray-700 hover:text-blue-600 focus:outline-none">
             <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path v-if="!isMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -70,12 +107,61 @@
 </template>
 
 <script setup>
-import { computed } from 'vue';
+import { computed, ref, onMounted } from 'vue';
 import { useScrollToSection } from '../lib/scrollToSection.ts';
 import { useI18n } from 'vue-i18n';
 
 const { scrollToSection, isMenuOpen } = useScrollToSection();
-const { t } = useI18n();
+const { t, locale } = useI18n();
+
+const isLangOpen = ref(false);
+
+const currentFlag = computed(() => {
+    switch(locale.value) {
+        case 'cs': return '🇨🇿';
+        case 'en': return '🇬🇧';
+        case 'uk': return '🇺🇦';
+        default: return '🇨🇿';
+    }
+});
+
+const currentLangLabel = computed(() => {
+    switch(locale.value) {
+        case 'cs': return 'CZ';
+        case 'en': return 'EN';
+        case 'uk': return 'UA';
+        default: return 'CZ';
+    }
+});
+
+const switchLanguage = (lang) => {
+    locale.value = lang;
+    localStorage.setItem('user-locale', lang);
+    isLangOpen.value = false;
+};
+
+// Simple toggle for mobile if we want to cycle or just show flag
+const toggleLangMobile = () => {
+    // Cycle CS -> EN -> UK -> CS
+    if (locale.value === 'cs') {
+        switchLanguage('en');
+    } else if (locale.value === 'en') {
+        switchLanguage('uk');
+    } else {
+        switchLanguage('cs');
+    }
+}
+
+// Close dropdown when clicking outside
+onMounted(() => {
+    document.addEventListener('click', (e) => {
+        const target = e.target;
+        if (!target.closest('.relative')) {
+            isLangOpen.value = false;
+        }
+    });
+});
+
 
 // Separate logic for mobile to ensure menu closes
 const handleMobileClick = (href) => {
