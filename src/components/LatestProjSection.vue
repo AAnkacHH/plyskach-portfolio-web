@@ -4,10 +4,8 @@
         <div class="relative w-full h-80 flex items-center justify-center text-center text-white">
             <!-- Background Image Removed to show Global Fixed Background -->
             <div class="relative z-10 px-4">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">Naše portfolio</h2>
-                <p class="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto">
-                    Prohlédněte si naše dokončené stavební projekty a nechte se inspirovat.
-                </p>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">{{ t('portfolio.title') }}</h2>
+                <p class="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto">{{ t('portfolio.subtitle') }}</p>
             </div>
         </div>
 
@@ -17,16 +15,16 @@
                 <div class="flex flex-wrap justify-center gap-4 mb-12">
                     <button 
                         v-for="category in categories" 
-                        :key="category"
-                        @click="selectedCategory = category"
+                        :key="category.value"
+                        @click="selectedCategory = category.value"
                         :class="[
                             'px-6 py-2 rounded-sm text-sm font-bold transition-all duration-200',
-                            selectedCategory === category 
+                            selectedCategory === category.value 
                                 ? 'bg-[#4b4845] text-white' 
                                 : 'bg-transparent text-[#4b4845] hover:bg-gray-100'
                         ]"
                     >
-                        {{ category }}
+                        {{ category.label }}
                     </button>
                 </div>
 
@@ -67,14 +65,25 @@
 
 <script setup>
 import { ref, computed } from 'vue';
+import { useI18n } from 'vue-i18n';
 import projectKitchen from '../assets/project_kitchen.png';
 import projectHouse from '../assets/project_house.png';
 import projectBathroom from '../assets/project_bathroom.png';
 import projectLoft from '../assets/project_loft.png';
 import projectOffice from '../assets/project_office.png';
 
+const { t } = useI18n();
+
 // Categories matching the screenshot
-const categories = ['Vše', 'Novostavby', 'Rekonstrukce', 'Koupelny', 'Interiéry', 'Exteriéry'];
+const categories = computed(() => [
+    { label: t('portfolio.categories.all'), value: 'Vše' },
+    { label: t('portfolio.categories.new_buildings'), value: 'Novostavby' },
+    { label: t('portfolio.categories.reconstruction'), value: 'Rekonstrukce' },
+    { label: t('portfolio.categories.bathrooms'), value: 'Koupelny' },
+    { label: t('portfolio.categories.interiors'), value: 'Interiéry' },
+    { label: t('portfolio.categories.exteriors'), value: 'Exteriéry' }
+]);
+
 const selectedCategory = ref('Vše');
 
 const Projects = ref([

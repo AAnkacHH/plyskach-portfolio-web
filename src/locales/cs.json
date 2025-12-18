@@ -161,7 +161,27 @@
         }
     },
     "testimonials": {
-        "title": "Reference"
+        "title": "Co o nás říkají klienti",
+        "items": [
+            {
+                "id": 1,
+                "fullName": "Petr Novák",
+                "role": "Majitel rodinného domu",
+                "comment": "S prací pana Plyskache jsme byli maximálně spokojeni. Hrubá stavba proběhla rychle a přesně podle plánu. Oceňuji profesionální přístup a dodržování termínů."
+            },
+            {
+                "id": 2,
+                "fullName": "Jana Dvořáková",
+                "role": "Rekonstrukce bytu",
+                "comment": "Potřebovali jsme kompletní rekonstrukci bytového jádra a kuchyně. Výsledek předčil naše očekávání. Skvělá komunikace a smysl pro detail."
+            },
+            {
+                "id": 3,
+                "fullName": "Martin Svoboda",
+                "role": "Investiční projekt",
+                "comment": "Spolupráce na výstavbě menšího komerčního objektu byla bezproblémová. Transparentní rozpočet a spolehlivost jsou důvody, proč služeb využiji znovu."
+            }
+        ]
     },
     "footer": {
         "contact_title": "KONTAKT",
