@@ -36,22 +36,13 @@
                 <!-- Dropdown -->
                 <div v-if="isLangOpen" class="absolute right-0 mt-2 w-32 bg-white border border-gray-100 rounded-md shadow-lg py-1 z-50">
                     <button 
-                        @click="switchLanguage('cs')" 
+                        v-for="lang in languages"
+                        :key="lang.code"
+                        @click="switchLanguage(lang.code)" 
                         class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 flex items-center gap-2"
+                        :class="{'bg-gray-50 font-medium text-blue-600': locale === lang.code}"
                     >
-                         <span class="text-lg">🇨🇿</span> Čeština
-                    </button>
-                    <button 
-                        @click="switchLanguage('en')" 
-                        class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 flex items-center gap-2"
-                    >
-                         <span class="text-lg">🇬🇧</span> English
-                    </button>
-                     <button 
-                        @click="switchLanguage('uk')" 
-                        class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 flex items-center gap-2"
-                    >
-                         <span class="text-lg">🇺🇦</span> Українська
+                         <span class="text-lg">{{ lang.flag }}</span> {{ lang.label }}
                     </button>
                 </div>
             </div>
@@ -116,23 +107,19 @@ const { t, locale } = useI18n();
 
 const isLangOpen = ref(false);
 
-const currentFlag = computed(() => {
-    switch(locale.value) {
-        case 'cs': return '🇨🇿';
-        case 'en': return '🇬🇧';
-        case 'uk': return '🇺🇦';
-        default: return '🇨🇿';
-    }
+const languages = [
+    { code: 'cs', flag: '🇨🇿', label: 'Čeština', short: 'CZ' },
+    { code: 'en', flag: '🇬🇧', label: 'English', short: 'EN' },
+    { code: 'uk', flag: '🇺🇦', label: 'Українська', short: 'UA' }
+];
+
+const currentLangObject = computed(() => {
+    return languages.find(l => l.code === locale.value) || languages[0];
 });
 
-const currentLangLabel = computed(() => {
-    switch(locale.value) {
-        case 'cs': return 'CZ';
-        case 'en': return 'EN';
-        case 'uk': return 'UA';
-        default: return 'CZ';
-    }
-});
+const currentFlag = computed(() => currentLangObject.value.flag);
+const currentLangLabel = computed(() => currentLangObject.value.short);
+
 
 const switchLanguage = (lang) => {
     locale.value = lang;
@@ -142,14 +129,9 @@ const switchLanguage = (lang) => {
 
 // Simple toggle for mobile if we want to cycle or just show flag
 const toggleLangMobile = () => {
-    // Cycle CS -> EN -> UK -> CS
-    if (locale.value === 'cs') {
-        switchLanguage('en');
-    } else if (locale.value === 'en') {
-        switchLanguage('uk');
-    } else {
-        switchLanguage('cs');
-    }
+    const currentIndex = languages.findIndex(l => l.code === locale.value);
+    const nextIndex = (currentIndex + 1) % languages.length;
+    switchLanguage(languages[nextIndex].code);
 }
 
 // Close dropdown when clicking outside

@@ -121,7 +121,7 @@
         "subtitle": "Kontaktujte nás pro nezávaznou konzultaci nebo cenovou nabídku. Jsme tu pro vás, abychom zrealizovali vaše stavební plány.",
         "info": {
             "phone": "+420 123 456 789",
-            "email": "info@profistavitel.cz",
+            "email": "info{'@'}profistavitel.cz",
             "address": "Dělnická 123, 170 00 Praha 7",
             "hours": "Po-Pá: 8:00 - 17:00"
         },
