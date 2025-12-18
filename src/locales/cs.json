@@ -25,68 +25,51 @@
         "title": "Naše služby",
         "subtitle": "Komplexní stavební řešení pro váš domov a firmu.",
         "cta_btn": "Mám zájem o nezávaznou poptávku",
-        "categories": [
-            {
-                "title": "Hrubá stavba",
-                "items": [
-                    {
-                        "title": "Základy a základové desky",
-                        "desc": "Realizace pevných základů pro rodinné domy a komerční objekty.",
-                        "icon": "foundations"
-                    },
-                    {
-                        "title": "Zdění a nosné konstrukce",
-                        "desc": "Profesionální vyzdívání z cihel, tvárnic a jiných materiálů.",
-                        "icon": "walls"
-                    },
-                    {
-                        "title": "Střechy a krovy",
-                        "desc": "Montáž krovů, pokládka střešních krytin a klempířské práce.",
-                        "icon": "roofs"
-                    }
-                ]
+        "rough_construction": {
+            "title": "Hrubá stavba",
+            "foundations": {
+                "title": "Základy a základové desky",
+                "desc": "Realizace pevných základů pro rodinné domy a komerční objekty."
             },
-            {
-                "title": "Rekonstrukce a úpravy",
-                "items": [
-                    {
-                        "title": "Kompletní rekonstrukce bytů",
-                        "desc": "Modernizace bytových jader, elektroinstalace a nové rozvody.",
-                        "icon": "apartments"
-                    },
-                    {
-                        "title": "Rekonstrukce koupelen",
-                        "desc": "Obklady, dlažby, sanita a instalatérské práce na klíč.",
-                        "icon": "bathrooms"
-                    },
-                    {
-                        "title": "Zateplení fasád",
-                        "desc": "Energeticky úsporná řešení a renovace vnějších omítek.",
-                        "icon": "insulation"
-                    }
-                ]
+            "walls": {
+                "title": "Zdění a nosné konstrukce",
+                "desc": "Profesionální vyzdívání z cihel, tvárnic a jiných materiálů."
             },
-            {
-                "title": "Dokončovací práce",
-                "items": [
-                    {
-                        "title": "Omítky a štuky",
-                        "desc": "Ruční i strojní omítání vnitřních a vnějších stěn.",
-                        "icon": "plaster"
-                    },
-                    {
-                        "title": "Malířské a natěračské práce",
-                        "desc": "Kvalitní výmalba interiérů a nátěry fasád.",
-                        "icon": "painting"
-                    },
-                    {
-                        "title": "Pokládka podlah",
-                        "desc": "Instalace plovoucích podlah, parket, vinylu a dlažby.",
-                        "icon": "floors"
-                    }
-                ]
+            "roofs": {
+                "title": "Střechy a krovy",
+                "desc": "Montáž krovů, pokládka střešních krytin a klempířské práce."
             }
-        ]
+        },
+        "reconstruction": {
+            "title": "Rekonstrukce a úpravy",
+            "apartments": {
+                "title": "Kompletní rekonstrukce bytů",
+                "desc": "Modernizace bytových jader, elektroinstalace a nové rozvody."
+            },
+            "bathrooms": {
+                "title": "Rekonstrukce koupelen",
+                "desc": "Obklady, dlažby, sanita a instalatérské práce na klíč."
+            },
+            "insulation": {
+                "title": "Zateplení fasád",
+                "desc": "Energeticky úsporná řešení a renovace vnějších omítek."
+            }
+        },
+        "finishing": {
+            "title": "Dokončovací práce",
+            "plaster": {
+                "title": "Omítky a štuky",
+                "desc": "Ruční i strojní omítání vnitřních a vnějších stěn."
+            },
+            "painting": {
+                "title": "Malířské a natěračské práce",
+                "desc": "Kvalitní výmalba interiérů a nátěry fasád."
+            },
+            "floors": {
+                "title": "Pokládka podlah",
+                "desc": "Instalace plovoucích podlah, parket, vinylu a dlažby."
+            }
+        }
     },
     "about": {
         "title": "O NÁS",
@@ -118,7 +101,7 @@
         "subtitle": "Kontaktujte nás pro nezávaznou konzultaci nebo cenovou nabídku. Jsme tu pro vás, abychom zrealizovali vaše stavební plány.",
         "info": {
             "phone": "+420 123 456 789",
-            "email": "info{'@'}profistavitel.cz",
+            "email": "info@profistavitel.cz",
             "address": "Dělnická 123, 170 00 Praha 7",
             "hours": "Po-Pá: 8:00 - 17:00"
         },
