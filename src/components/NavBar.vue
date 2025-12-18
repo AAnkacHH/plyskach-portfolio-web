@@ -61,9 +61,25 @@
         <!-- Mobile Menu Button -->
         <div class="md:hidden flex items-center gap-4">
             <!-- Language Switcher (Mobile) -->
-             <button @click="toggleLangMobile" class="text-xl focus:outline-none">
-                  {{ currentFlag }}
-             </button>
+            <div class="relative">
+                <button @click="isMobileLangOpen = !isMobileLangOpen" class="text-xl focus:outline-none flex items-center gap-1">
+                    {{ currentFlag }}
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                
+                <!-- Mobile Dropdown -->
+                <div v-if="isMobileLangOpen" class="absolute right-0 mt-2 w-32 bg-white border border-gray-100 rounded-md shadow-lg py-1 z-50">
+                    <button 
+                        v-for="lang in languages"
+                        :key="lang.code"
+                        @click="switchLanguageMobile(lang.code)" 
+                        class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 flex items-center gap-2"
+                        :class="{'bg-gray-50 font-medium text-blue-600': locale === lang.code}"
+                    >
+                        <span class="text-lg">{{ lang.flag }}</span> {{ lang.label }}
+                    </button>
+                </div>
+            </div>
 
           <button @click="isMenuOpen = !isMenuOpen" class="text-gray-700 hover:text-blue-600 focus:outline-none">
             <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -106,6 +122,7 @@ const { scrollToSection, isMenuOpen } = useScrollToSection();
 const { t, locale } = useI18n();
 
 const isLangOpen = ref(false);
+const isMobileLangOpen = ref(false);
 
 const languages = [
     { code: 'cs', flag: '🇨🇿', label: 'Čeština', short: 'CZ' },
@@ -127,12 +144,11 @@ const switchLanguage = (lang) => {
     isLangOpen.value = false;
 };
 
-// Simple toggle for mobile if we want to cycle or just show flag
-const toggleLangMobile = () => {
-    const currentIndex = languages.findIndex(l => l.code === locale.value);
-    const nextIndex = (currentIndex + 1) % languages.length;
-    switchLanguage(languages[nextIndex].code);
-}
+const switchLanguageMobile = (lang) => {
+    locale.value = lang;
+    localStorage.setItem('user-locale', lang);
+    isMobileLangOpen.value = false;
+};
 
 // Close dropdown when clicking outside
 onMounted(() => {
@@ -140,6 +156,7 @@ onMounted(() => {
         const target = e.target;
         if (!target.closest('.relative')) {
             isLangOpen.value = false;
+            isMobileLangOpen.value = false;
         }
     });
 });
