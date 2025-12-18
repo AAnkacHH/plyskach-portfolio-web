@@ -3,8 +3,8 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Header -->
       <div class="text-center mb-16" data-aos="fade-up">
-        <h2 class="text-4xl font-bold text-gray-900 mb-4">{{ $t('services.title') }}</h2>
-        <p class="text-gray-600 text-lg">{{ $t('services.subtitle') }}</p>
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">Naše služby</h2>
+        <p class="text-gray-600 text-lg">Komplexní stavební řešení pro váš domov a firmu.</p>
       </div>
 
       <!-- Services Grid -->
@@ -12,7 +12,7 @@
         
         <!-- Column 1: Hrubá stavba -->
         <div class="space-y-8" data-aos="fade-up" data-aos-delay="0">
-          <h3 class="text-2xl font-bold text-gray-900 mb-6 border-b-2 border-transparent pb-2">{{ $t('services.rough_construction.title') }}</h3>
+          <h3 class="text-2xl font-bold text-gray-900 mb-6 border-b-2 border-transparent pb-2">Hrubá stavba</h3>
           
           <div class="flex gap-4 items-start">
              <div class="flex-shrink-0 w-10 h-10 text-blue-600">
@@ -22,8 +22,8 @@
                </svg>
              </div>
              <div>
-               <h4 class="text-lg font-bold text-gray-900">{{ $t('services.rough_construction.foundations.title') }}</h4>
-               <p class="text-gray-600 text-sm mt-1">{{ $t('services.rough_construction.foundations.desc') }}</p>
+               <h4 class="text-lg font-bold text-gray-900">Základy a základové desky</h4>
+               <p class="text-gray-600 text-sm mt-1">Realizace pevných základů pro rodinné domy a komerční objekty.</p>
              </div>
           </div>
 
@@ -35,8 +35,8 @@
                 </svg>
              </div>
              <div>
-               <h4 class="text-lg font-bold text-gray-900">{{ $t('services.rough_construction.walls.title') }}</h4>
-               <p class="text-gray-600 text-sm mt-1">{{ $t('services.rough_construction.walls.desc') }}</p>
+               <h4 class="text-lg font-bold text-gray-900">Zdění a nosné konstrukce</h4>
+               <p class="text-gray-600 text-sm mt-1">Profesionální vyzdívání z cihel, tvárnic a jiných materiálů.</p>
              </div>
           </div>
 
@@ -48,15 +48,15 @@
                </svg>
              </div>
              <div>
-               <h4 class="text-lg font-bold text-gray-900">{{ $t('services.rough_construction.roofs.title') }}</h4>
-               <p class="text-gray-600 text-sm mt-1">{{ $t('services.rough_construction.roofs.desc') }}</p>
+               <h4 class="text-lg font-bold text-gray-900">Střechy a krovy</h4>
+               <p class="text-gray-600 text-sm mt-1">Montáž krovů, pokládka střešních krytin a klempířské práce.</p>
              </div>
           </div>
         </div>
 
         <!-- Column 2: Rekonstrukce a úpravy -->
         <div class="space-y-8" data-aos="fade-up" data-aos-delay="150">
-          <h3 class="text-2xl font-bold text-gray-900 mb-6 border-b-2 border-transparent pb-2">{{ $t('services.reconstruction.title') }}</h3>
+          <h3 class="text-2xl font-bold text-gray-900 mb-6 border-b-2 border-transparent pb-2">Rekonstrukce a úpravy</h3>
           
           <div class="flex gap-4 items-start">
              <div class="flex-shrink-0 w-10 h-10 text-blue-600">
@@ -66,8 +66,8 @@
                </svg>
              </div>
              <div>
-               <h4 class="text-lg font-bold text-gray-900">{{ $t('services.reconstruction.apartments.title') }}</h4>
-               <p class="text-gray-600 text-sm mt-1">{{ $t('services.reconstruction.apartments.desc') }}</p>
+               <h4 class="text-lg font-bold text-gray-900">Kompletní rekonstrukce bytů</h4>
+               <p class="text-gray-600 text-sm mt-1">Modernizace bytových jader, elektroinstalace a nové rozvody.</p>
              </div>
           </div>
 
@@ -79,8 +79,8 @@
                </svg>
              </div>
              <div>
-               <h4 class="text-lg font-bold text-gray-900">{{ $t('services.reconstruction.bathrooms.title') }}</h4>
-               <p class="text-gray-600 text-sm mt-1">{{ $t('services.reconstruction.bathrooms.desc') }}</p>
+               <h4 class="text-lg font-bold text-gray-900">Rekonstrukce koupelen</h4>
+               <p class="text-gray-600 text-sm mt-1">Obklady, dlažby, sanita a instalatérské práce na klíč.</p>
              </div>
           </div>
 
@@ -92,15 +92,15 @@
                </svg>
              </div>
              <div>
-               <h4 class="text-lg font-bold text-gray-900">{{ $t('services.reconstruction.insulation.title') }}</h4>
-               <p class="text-gray-600 text-sm mt-1">{{ $t('services.reconstruction.insulation.desc') }}</p>
+               <h4 class="text-lg font-bold text-gray-900">Zateplení fasád</h4>
+               <p class="text-gray-600 text-sm mt-1">Energeticky úsporná řešení a renovace vnějších omítek.</p>
              </div>
           </div>
         </div>
 
         <!-- Column 3: Dokončovací práce -->
         <div class="space-y-8" data-aos="fade-up" data-aos-delay="300">
-          <h3 class="text-2xl font-bold text-gray-900 mb-6 border-b-2 border-transparent pb-2">{{ $t('services.finishing.title') }}</h3>
+          <h3 class="text-2xl font-bold text-gray-900 mb-6 border-b-2 border-transparent pb-2">Dokončovací práce</h3>
           
           <div class="flex gap-4 items-start">
              <div class="flex-shrink-0 w-10 h-10 text-blue-600">
@@ -110,8 +110,8 @@
                </svg>
              </div>
              <div>
-               <h4 class="text-lg font-bold text-gray-900">{{ $t('services.finishing.plaster.title') }}</h4>
-               <p class="text-gray-600 text-sm mt-1">{{ $t('services.finishing.plaster.desc') }}</p>
+               <h4 class="text-lg font-bold text-gray-900">Omítky a štuky</h4>
+               <p class="text-gray-600 text-sm mt-1">Ruční i strojní omítání vnitřních a vnějších stěn.</p>
              </div>
           </div>
 
@@ -123,8 +123,8 @@
                </svg>
              </div>
              <div>
-               <h4 class="text-lg font-bold text-gray-900">{{ $t('services.finishing.painting.title') }}</h4>
-               <p class="text-gray-600 text-sm mt-1">{{ $t('services.finishing.painting.desc') }}</p>
+               <h4 class="text-lg font-bold text-gray-900">Malířské a natěračské práce</h4>
+               <p class="text-gray-600 text-sm mt-1">Kvalitní výmalba interiérů a nátěry fasád.</p>
              </div>
           </div>
 
@@ -136,8 +136,8 @@
                </svg>
              </div>
              <div>
-               <h4 class="text-lg font-bold text-gray-900">{{ $t('services.finishing.floors.title') }}</h4>
-               <p class="text-gray-600 text-sm mt-1">{{ $t('services.finishing.floors.desc') }}</p>
+               <h4 class="text-lg font-bold text-gray-900">Pokládka podlah</h4>
+               <p class="text-gray-600 text-sm mt-1">Instalace plovoucích podlah, parket, vinylu a dlažby.</p>
              </div>
           </div>
         </div>
@@ -150,7 +150,7 @@
            @click="scrollToSection('#contact')"
            class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded-md transition-colors shadow-sm"
         >
-          {{ $t('services.cta_btn') }}
+          Mám zájem o nezávaznou poptávku
         </button>
       </div>
     </div>

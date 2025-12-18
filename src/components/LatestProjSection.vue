@@ -4,9 +4,9 @@
         <div class="relative w-full h-80 flex items-center justify-center text-center text-white">
             <!-- Background Image Removed to show Global Fixed Background -->
             <div class="relative z-10 px-4">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">{{ $t('portfolio.title') }}</h2>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Naše portfolio</h2>
                 <p class="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto">
-                    {{ $t('portfolio.subtitle') }}
+                    Prohlédněte si naše dokončené stavební projekty a nechte se inspirovat.
                 </p>
             </div>
         </div>
@@ -16,17 +16,17 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex flex-wrap justify-center gap-4 mb-12">
                     <button 
-                        v-for="categoryKey in categories" 
-                        :key="categoryKey"
-                        @click="selectedCategory = categoryKey"
+                        v-for="category in categories" 
+                        :key="category"
+                        @click="selectedCategory = category"
                         :class="[
                             'px-6 py-2 rounded-sm text-sm font-bold transition-all duration-200',
-                            selectedCategory === categoryKey 
+                            selectedCategory === category 
                                 ? 'bg-[#4b4845] text-white' 
                                 : 'bg-transparent text-[#4b4845] hover:bg-gray-100'
                         ]"
                     >
-                        {{ $t('portfolio.categories.' + categoryKey) }}
+                        {{ category }}
                     </button>
                 </div>
 
@@ -73,49 +73,49 @@ import projectBathroom from '../assets/project_bathroom.png';
 import projectLoft from '../assets/project_loft.png';
 import projectOffice from '../assets/project_office.png';
 
-// Categories keys
-const categories = ['all', 'new_buildings', 'reconstruction', 'bathrooms', 'interiors', 'exteriors'];
-const selectedCategory = ref('all');
+// Categories matching the screenshot
+const categories = ['Vše', 'Novostavby', 'Rekonstrukce', 'Koupelny', 'Interiéry', 'Exteriéry'];
+const selectedCategory = ref('Vše');
 
 const Projects = ref([
     {
         id: 1,
-        category: 'reconstruction',
+        category: 'Rekonstrukce',
         image: projectKitchen,
         title: 'Rekonstrukce kuchyně v Praze',
         location: 'Praha'
     },
     {
         id: 2,
-        category: 'new_buildings',
+        category: 'Novostavby',
         image: projectHouse,
         title: 'Novostavba rodinného domu',
         location: 'Brno'
     },
     {
         id: 3,
-        category: 'bathrooms',
+        category: 'Koupelny',
         image: projectBathroom,
         title: 'Designová koupelna',
         location: 'Plzeň'
     },
     {
         id: 4,
-        category: 'interiors',
+        category: 'Interiéry',
         image: projectLoft,
         title: 'Půdní vestavba',
         location: 'Olomouc'
     },
     {
         id: 5,
-        category: 'reconstruction',
+        category: 'Rekonstrukce',
         image: projectOffice,
         title: 'Rekonstrukce kanceláří',
         location: 'Ostrava'
     },
     {
         id: 6,
-        category: 'exteriors',
+        category: 'Exteriéry',
         image: projectHouse,
         title: 'Terasa a pergolové přístřešky',
         location: 'Liberec'
@@ -123,7 +123,7 @@ const Projects = ref([
 ]);
 
 const filteredProjects = computed(() => {
-    if (selectedCategory.value === 'all') {
+    if (selectedCategory.value === 'Vše') {
         return Projects.value;
     }
     return Projects.value.filter(project => project.category === selectedCategory.value);
