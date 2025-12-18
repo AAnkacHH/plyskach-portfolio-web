@@ -8,11 +8,22 @@ export function useScrollToSection() {
     const scrollToSection = (href: string): void => {
         isMenuOpen.value = false;
 
-        // Отримуємо елемент за селектором
-        const section = document.querySelector<HTMLElement>(href);
-        if (section) {
-            section.scrollIntoView({ behavior: 'smooth' });
-        }
+        // Даємо час на закриття меню перед скролінгом (важливо для мобільних)
+        setTimeout(() => {
+            // Отримуємо елемент за селектором
+            const section = document.querySelector<HTMLElement>(href);
+            if (section) {
+                // Offset для sticky header (80px)
+                const headerOffset = 80;
+                const elementPosition = section.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }, 100);
     };
 
     return {
