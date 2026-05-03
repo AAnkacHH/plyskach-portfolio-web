@@ -1,26 +1,31 @@
 <template>
-  <div class="fixed-bg min-h-screen">
-    <!-- Wrap components in Suspense to handle loading -->
-    <Suspense>
-      <template #default>
-        <!-- Wrap all components inside a single root element -->
-        <div>
-          <NavBar />
-          <HeroSection />
-          <ServicesSection />
-          <LatestProjSection />
-          <ContactSection />
-          <AboutSection />
-          <Footer />
-          <BackToTop />
-        </div>
-      </template>
-      <template #fallback>
-        <div class="flex justify-center items-center min-h-screen">
-          <loadingSpinner />
-        </div>
-      </template>
-    </Suspense>
+  <div class="app-shell min-h-screen">
+    <!-- Hero photo lives on its own fixed compositing layer.
+         Avoids the jank/flicker from `background-attachment: fixed`
+         (which causes the browser to repaint the bg every scroll frame). -->
+    <div class="fixed-hero-bg" aria-hidden="true"></div>
+
+    <div class="content-stack">
+      <Suspense>
+        <template #default>
+          <div>
+            <NavBar />
+            <HeroSection />
+            <ServicesSection />
+            <LatestProjSection />
+            <ContactSection />
+            <AboutSection />
+            <Footer />
+            <BackToTop />
+          </div>
+        </template>
+        <template #fallback>
+          <div class="flex justify-center items-center min-h-screen">
+            <loadingSpinner />
+          </div>
+        </template>
+      </Suspense>
+    </div>
   </div>
 </template>
 
@@ -55,7 +60,24 @@ export default {
   scrollbar-color: #0f1219 #f1f1f1;
 }
 
-.fixed-bg {
+/* Stacking context: bg behind, content above */
+.app-shell {
+  position: relative;
+  background-color: #0f1219;
+  isolation: isolate;
+}
+
+.content-stack {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hero photo on its own fixed compositing layer — GPU-promoted via
+   translateZ + will-change so scrolling never repaints it. */
+.fixed-hero-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
   background-color: #0f1219;
   background-image:
     linear-gradient(
@@ -67,14 +89,17 @@ export default {
     url('/hero2.png');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
   background-repeat: no-repeat;
+  /* Promote to its own GPU layer */
+  transform: translateZ(0);
+  will-change: transform;
+  /* Avoid sub-pixel hairlines on high-DPI displays */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
-/* Mobile: parallax fixed-attachment causes jitter on iOS */
 @media (max-width: 768px) {
-  .fixed-bg {
-    background-attachment: scroll;
+  .fixed-hero-bg {
     background-position: 35% center;
     background-image:
       linear-gradient(

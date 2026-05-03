@@ -18,20 +18,31 @@
 
     const isVisible = ref(false);
 
+    // rAF-throttled scroll handler — fires at most once per frame (60fps),
+    // not on every pixel-scroll event. Combined with `passive: true`, this
+    // unblocks the main thread so scrolling stays buttery.
+    let rafId = null;
     const handleScroll = () => {
-        isVisible.value = window.scrollY > 300;
+        if (rafId !== null) return;
+        rafId = requestAnimationFrame(() => {
+            isVisible.value = window.scrollY > 300;
+            rafId = null;
+        });
     };
 
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
+    const listenerOpts = { passive: true };
+
     onMounted(() => {
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll, listenerOpts);
     });
 
     onUnmounted(() => {
-        window.removeEventListener('scroll', handleScroll);
+        window.removeEventListener('scroll', handleScroll, listenerOpts);
+        if (rafId !== null) cancelAnimationFrame(rafId);
     });
 </script>
 
