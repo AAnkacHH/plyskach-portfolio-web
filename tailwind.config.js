@@ -6,9 +6,14 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
+        display: ['Oswald', 'Inter', 'system-ui', 'sans-serif'],
+        handwritten: ['Caveat', 'Comic Sans MS', 'cursive']
+      },
       colors: {
-        primary: '#f59e0b',
-        secondary: '#ec4899'
+        primary: '#f57d1f',
+        secondary: '#1e2a4a'
       },
       animation: {
         'gradient-text': 'gradient-text 8s ease infinite',

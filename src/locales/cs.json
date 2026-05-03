@@ -4,150 +4,159 @@
         "home": "Domů",
         "about": "O mně",
         "services": "Služby",
-        "portfolio": "Portfolio",
+        "portfolio": "Galerie",
         "testimonials": "Reference",
         "contact": "Kontakt",
-        "brand": "Michal Stavitel"
+        "brand": "Mykhaylo Plyskach"
     },
     "nav": {
-        "about": "O nás",
+        "about": "O mně",
         "services": "Služby",
-        "references": "Reference",
+        "references": "Galerie",
         "contact": "Kontakt",
-        "quote_btn": "Požádat o cenovou nabídku"
+        "quote_btn": "Nezávazná poptávka"
     },
     "hero": {
-        "title_line1": "Stavíme vaše sny",
-        "title_line2": "s důvěrou",
-        "cta_btn": "Objednat konzultaci"
+        "title_line1": "Zednictví, obklady a fasády",
+        "title_line2": "Praha a Středočeský kraj",
+        "subtitle": "25 let zkušeností ve stavebnictví. Kvalitní práce na slovo.",
+        "cta_btn": "Nezávazná poptávka",
+        "cta_phone": "777 444 973"
+    },
+    "trust_badge": {
+        "label": "99% spokojenost zákazníků",
+        "source": "ověřeno na Poptávej.cz"
     },
     "services": {
-        "title": "Naše služby",
-        "subtitle": "Komplexní stavební řešení pro váš domov a firmu.",
+        "title": "Co dělám",
+        "subtitle": "Zednické řemeslo a navazující práce v bytech, domech a na fasádách.",
         "cta_btn": "Mám zájem o nezávaznou poptávku",
         "categories": [
             {
-                "id": "rough_construction",
-                "title": "Hrubá stavba",
+                "id": "masonry",
+                "title": "Zednictví",
                 "items": [
-                    {
-                        "id": "foundations",
-                        "title": "Základy a základové desky",
-                        "desc": "Realizace pevných základů pro rodinné domy a komerční objekty."
-                    },
                     {
                         "id": "walls",
-                        "title": "Zdění a nosné konstrukce",
-                        "desc": "Profesionální vyzdívání z cihel, tvárnic a jiných materiálů."
+                        "title": "Zdění z cihel a tvárnic",
+                        "desc": "Vyzdívání obvodových i nosných stěn z různých materiálů."
                     },
                     {
-                        "id": "roofs",
-                        "title": "Střechy a krovy",
-                        "desc": "Montáž krovů, pokládka střešních krytin a klempířské práce."
+                        "id": "partitions",
+                        "title": "Příčky a otvory",
+                        "desc": "Sádrokartonové i zděné příčky, prostupy a stavební otvory."
+                    },
+                    {
+                        "id": "demolition",
+                        "title": "Bourací práce",
+                        "desc": "Bourání příček, jader a starých konstrukcí včetně úklidu suti."
                     }
                 ]
             },
             {
-                "id": "reconstruction",
-                "title": "Rekonstrukce a úpravy",
+                "id": "tiles",
+                "title": "Obklady a dlažba",
                 "items": [
-                    {
-                        "id": "apartments",
-                        "title": "Kompletní rekonstrukce bytů",
-                        "desc": "Modernizace bytových jader, elektroinstalace a nové rozvody."
-                    },
                     {
                         "id": "bathrooms",
-                        "title": "Rekonstrukce koupelen",
-                        "desc": "Obklady, dlažby, sanita a instalatérské práce na klíč."
+                        "title": "Koupelny a kuchyně",
+                        "desc": "Kompletní obkládání včetně přípravy podkladu a spárování."
                     },
                     {
-                        "id": "insulation",
-                        "title": "Zateplení fasád",
-                        "desc": "Energeticky úsporná řešení a renovace vnějších omítek."
+                        "id": "stairs",
+                        "title": "Schody, terasy, vstupy",
+                        "desc": "Mrazuvzdorné venkovní obklady a pokládka dlažby."
+                    },
+                    {
+                        "id": "large_format",
+                        "title": "Velkoformátové obklady",
+                        "desc": "Pokládka velkoformátové dlažby a obkladů s minimální spárou."
                     }
                 ]
             },
             {
-                "id": "finishing",
-                "title": "Dokončovací práce",
+                "id": "facades",
+                "title": "Fasády a dokončovací práce",
                 "items": [
                     {
+                        "id": "insulation",
+                        "title": "Zateplení fasád (ETICS)",
+                        "desc": "Kompletní zateplovací systémy včetně lepení, kotvení a finální omítky."
+                    },
+                    {
                         "id": "plaster",
-                        "title": "Omítky a štuky",
-                        "desc": "Ruční i strojní omítání vnitřních a vnějších stěn."
+                        "title": "Fasádní a vnitřní omítky",
+                        "desc": "Ruční i strojní omítání, štuky a dekorativní povrchy."
                     },
                     {
-                        "id": "painting",
-                        "title": "Malířské a natěračské práce",
-                        "desc": "Kvalitní výmalba interiérů a nátěry fasád."
-                    },
-                    {
-                        "id": "floors",
-                        "title": "Pokládka podlah",
-                        "desc": "Instalace plovoucích podlah, parket, vinylu a dlažby."
+                        "id": "renovations",
+                        "title": "Drobné rekonstrukce",
+                        "desc": "Rekonstrukce bytových jader, koupelen a navazující práce na klíč."
                     }
                 ]
             }
         ]
     },
     "about": {
-        "title": "O NÁS",
-        "subtitle_line1": "Profesionální stavební služby",
-        "subtitle_line2": "s důrazem na kvalitu a spolehlivost.",
+        "title": "O mně",
+        "subtitle_line1": "Zedník s 25 lety praxe ve stavebnictví.",
+        "subtitle_line2": "Praha a Středočeský kraj.",
         "person_name": "Mykhaylo Plyskach",
-        "person_role": "Stavební inženýr",
-        "bio_p1": "S více než 20 lety zkušeností v oboru stavíme domy, které vydrží. Mým posláním je přeměňovat vize klientů v realitu, s důrazem na preciznost, inovace a trvalou udržitelnost.",
-        "bio_p2": "Specializujeme se na kompletní realizace rodinných domů, rekonstrukce a komerční projekty.",
+        "person_role": "Zedník · OSVČ",
+        "bio_p1": "Ve stavebnictví pracuji 25 let. Specializuji se na zednické práce — zdění, příčky, bourání — a navazující obory: obklady a dlažbu, fasády se zateplením a omítky.",
+        "bio_p2": "Pracuji s několika ověřenými spolupracovníky. Každou zakázku vedu od první prohlídky až po předání. Co domluvíme, to udělám — bez subdodavatelů a zmatků v komunikaci.",
         "contact_btn": "Kontaktovat",
-        "values_title": "NAŠE HODNOTY A FILOZOFIE",
+        "values_title": "JAK PRACUJI",
         "values": {
-            "quality": {
-                "title": "Kvalita",
-                "desc": "Používáme pouze prvotřídní materiály a moderní technologie."
+            "step1": {
+                "title": "Prohlídka a nabídka",
+                "desc": "Přijdu se podívat, zaměřím a do pár dní pošlu cenovou nabídku. Bezplatně a bez závazku."
             },
-            "transparency": {
-                "title": "Transparentnost",
-                "desc": "Jasná komunikace a dodržování rozpočtu a termínů."
+            "step2": {
+                "title": "Domluvíme termín",
+                "desc": "Neberu víc zakázek, než stíhám. Termín, který slíbím, dodržím."
             },
-            "reliability": {
-                "title": "Spolehlivost",
-                "desc": "Jsme partnerem, na kterého se můžete spolehnout od návrhu po předání."
+            "step3": {
+                "title": "Poctivá práce",
+                "desc": "Dělám tak, jako bych to dělal u sebe doma. Po sobě uklidím."
             }
         }
     },
     "contact": {
-        "title": "Spojte se s námi",
-        "subtitle": "Kontaktujte nás pro nezávaznou konzultaci nebo cenovou nabídku. Jsme tu pro vás, abychom zrealizovali vaše stavební plány.",
+        "title": "Spojme se",
+        "subtitle": "Napište nebo zavolejte. Domluvíme nezávaznou prohlídku a do pár dní pošlu cenovou nabídku.",
         "info": {
-            "phone": "+420 123 456 789",
-            "email": "info{'@'}profistavitel.cz",
-            "address": "Dělnická 123, 170 00 Praha 7",
-            "hours": "Po-Pá: 8:00 - 17:00"
+            "phone": "+420 777 444 973",
+            "email": "maria.andrej{'@'}centrum.cz",
+            "address": "Na líše 1231/11, 141 00 Praha 4 - Michle",
+            "hours": "Po-Pá: 8:00 - 18:00, So po domluvě"
         },
         "form": {
-            "title": "Nezávazná poptávka a konzultace",
-            "error_email_down": "Odesílání emailů dočasně nefunguje, zkuste to prosím později.",
+            "title": "Nezávazná poptávka",
+            "error_email_down": "Odesílání e-mailů dočasně nefunguje, zkuste to prosím později nebo zavolejte na 777 444 973.",
             "name_label": "Vaše jméno a příjmení *",
             "name_placeholder": "Vaše jméno a příjmení",
             "email_label": "E-mailová adresa *",
             "email_placeholder": "E-mailová adresa",
             "phone_label": "Telefonní číslo *",
             "phone_placeholder": "Telefonní číslo",
-            "service_label": "Typ služby *",
+            "service_label": "Typ práce *",
             "service_placeholder": "Vyberte z nabídky...",
             "service_options": {
-                "rough": "Hrubá stavba",
-                "reconstruction": "Rekonstrukce"
+                "masonry": "Zednické práce",
+                "tiles": "Obklady a dlažba",
+                "facades": "Fasády a zateplení",
+                "bathroom_reno": "Rekonstrukce koupelny",
+                "other": "Něco jiného / nevím"
             },
-            "message_label": "Popis vašeho projektu *",
-            "message_placeholder": "Popis vašeho projektu",
+            "message_label": "Popis práce *",
+            "message_placeholder": "Co potřebujete udělat? Kde? Kdy by vám to vyhovovalo?",
             "upload_default": "⬆ Nahrát soubory (plány, fotky)",
             "upload_add": "Přidat soubory",
             "submit_btn": "Odeslat poptávku",
             "submitting_btn": "Odesílání...",
-            "success_msg": "Zpráva byla úspěšně odeslána!",
-            "error_msg": "Chyba při odesílání. Zkuste to prosím znovu."
+            "success_msg": "Zpráva byla odeslána. Ozvu se obvykle do 24 hodin.",
+            "error_msg": "Chyba při odesílání. Zkuste to prosím znovu nebo zavolejte."
         },
         "validation": {
             "name_required": "Jméno je povinné.",
@@ -155,53 +164,30 @@
             "email_invalid": "Prosím zadejte platnou e-mailovou adresu.",
             "phone_required": "Telefonní číslo je povinné.",
             "phone_invalid": "Zadejte platné telefonní číslo.",
-            "service_required": "Vyberte prosím typ služby.",
-            "message_required": "Popis projektu je povinný.",
+            "service_required": "Vyberte prosím typ práce.",
+            "message_required": "Popis práce je povinný.",
             "file_size_error": "Celková velikost souborů nesmí přesáhnout 4 MB."
         }
     },
     "testimonials": {
-        "title": "Co o nás říkají klienti",
-        "items": [
-            {
-                "id": 1,
-                "fullName": "Petr Novák",
-                "role": "Majitel rodinného domu",
-                "comment": "S prací pana Plyskache jsme byli maximálně spokojeni. Hrubá stavba proběhla rychle a přesně podle plánu. Oceňuji profesionální přístup a dodržování termínů."
-            },
-            {
-                "id": 2,
-                "fullName": "Jana Dvořáková",
-                "role": "Rekonstrukce bytu",
-                "comment": "Potřebovali jsme kompletní rekonstrukci bytového jádra a kuchyně. Výsledek předčil naše očekávání. Skvělá komunikace a smysl pro detail."
-            },
-            {
-                "id": 3,
-                "fullName": "Martin Svoboda",
-                "role": "Investiční projekt",
-                "comment": "Spolupráce na výstavbě menšího komerčního objektu byla bezproblémová. Transparentní rozpočet a spolehlivost jsou důvody, proč služeb využiji znovu."
-            }
-        ]
+        "title": "Reference",
+        "items": []
     },
     "footer": {
         "contact_title": "KONTAKT",
-        "services_title": "NAŠE SLUŽBY",
-        "follow_us_title": "SLEDUJTE NÁS",
-        "follow_us_desc": "Sledujte naše nejnovější realizace na sociálních sítích.",
+        "services_title": "MOJE SLUŽBY",
+        "trust_title": "OVĚŘENÝ ŽIVNOSTNÍK",
+        "trust_desc": "99% spokojenost zákazníků na Poptávej.cz.",
+        "trust_link": "Profil na Firemniprofil.cz →",
+        "ico": "IČO: 26369524",
         "copyright": "© 2025 Mykhaylo Plyskach. Všechna práva vyhrazena.",
-        "design_credit": "Design & Vývoj: Ing. Andrii Plyskach."
+        "design_credit_prefix": "Design & Vývoj: Ing. Andrii Plyskach ·",
+        "design_credit_link_text": "ankach.com",
+        "design_credit_link_url": "https://ankach.com"
     },
     "portfolio": {
-        "title": "Naše portfolio",
-        "subtitle": "Prohlédněte si naše dokončené stavební projekty a nechte se inspirovat.",
-        "categories": {
-            "all": "Vše",
-            "new_buildings": "Novostavby",
-            "reconstruction": "Rekonstrukce",
-            "bathrooms": "Koupelny",
-            "interiors": "Interiéry",
-            "exteriors": "Exteriéry"
-        }
+        "title": "Galerie prací",
+        "subtitle": "Ukázky z mých realizací. Fotodokumentaci sbírám průběžně — další pošlu na vyžádání."
     },
     "file_preview": {
         "remove_file_title": "Odstranit soubor"

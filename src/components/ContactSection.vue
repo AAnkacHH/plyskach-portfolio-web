@@ -13,21 +13,21 @@
           </div>
 
           <div class="space-y-6">
-             <div class="flex items-center gap-4">
-               <div class="bg-[#1e2a4a] p-3 rounded-full text-white">
+             <a :href="`tel:${t('contact.info.phone').replace(/\s/g, '')}`" class="flex items-center gap-4 group">
+               <div class="bg-[#1e2a4a] p-3 rounded-full text-white group-hover:bg-[#f57d1f] transition-colors">
                  <!-- Icon: Phone -->
                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
                </div>
-               <span class="text-xl font-medium text-gray-800">{{ t('contact.info.phone') }}</span>
-             </div>
+               <span class="text-xl font-medium text-gray-800 group-hover:text-[#f57d1f] transition-colors">{{ t('contact.info.phone') }}</span>
+             </a>
 
-             <div class="flex items-center gap-4">
-               <div class="bg-[#1e2a4a] p-3 rounded-full text-white">
+             <a :href="`mailto:${t('contact.info.email')}`" class="flex items-center gap-4 group">
+               <div class="bg-[#1e2a4a] p-3 rounded-full text-white group-hover:bg-[#f57d1f] transition-colors">
                  <!-- Icon: Mail -->
                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
                </div>
-               <span class="text-xl font-medium text-gray-800">{{ t('contact.info.email') }}</span>
-             </div>
+               <span class="text-xl font-medium text-gray-800 group-hover:text-[#f57d1f] transition-colors">{{ t('contact.info.email') }}</span>
+             </a>
 
              <div class="flex items-center gap-4">
                <div class="bg-[#1e2a4a] p-3 rounded-full text-white">
@@ -46,21 +46,6 @@
              </div>
           </div>
 
-          <!-- Social Icons -->
-          <div class="flex gap-4 mt-8">
-            <a href="#" class="w-12 h-12 flex items-center justify-center rounded-full bg-blue-600 text-white hover:bg-blue-700 transition">
-               <!-- FB Icon (simplified) -->
-               <span class="font-bold text-xl">f</span>
-            </a>
-            <a href="#" class="w-12 h-12 flex items-center justify-center rounded-full bg-blue-500 text-white hover:bg-blue-600 transition">
-               <!-- LinkedIn Icon (simplified) -->
-               <span class="font-bold text-xl">in</span>
-            </a>
-             <a href="#" class="w-12 h-12 flex items-center justify-center rounded-full bg-pink-600 text-white hover:bg-pink-700 transition">
-               <!-- Insta Icon (simplified) -->
-               <span class="font-bold text-xl">IG</span>
-            </a>
-          </div>
         </div>
 
         <!-- Form Right Column -->
@@ -133,8 +118,8 @@
               </div>
               <div>
                  <label class="block text-sm font-bold text-gray-700 mb-1">{{ t('contact.form.service_label') }}</label>
-                 <select 
-                   v-model="serviceType" 
+                 <select
+                   v-model="serviceType"
                    @blur="validateService"
                    @change="serviceError = ''"
                    class="w-full rounded-md border-gray-300 shadow-sm p-3 focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-500"
@@ -142,8 +127,11 @@
                    required
                  >
                    <option disabled>{{ t('contact.form.service_placeholder') }}</option>
-                   <option>{{ t('contact.form.service_options.rough') }}</option>
-                   <option>{{ t('contact.form.service_options.reconstruction') }}</option>
+                   <option>{{ t('contact.form.service_options.masonry') }}</option>
+                   <option>{{ t('contact.form.service_options.tiles') }}</option>
+                   <option>{{ t('contact.form.service_options.facades') }}</option>
+                   <option>{{ t('contact.form.service_options.bathroom_reno') }}</option>
+                   <option>{{ t('contact.form.service_options.other') }}</option>
                  </select>
                  <p v-if="serviceError" class="text-red-500 text-sm mt-1">{{ serviceError }}</p>
               </div>

@@ -27,25 +27,40 @@
                      </ul>
                 </div>
 
-                 <!-- Socials (Kept separate or under info) -->
+                 <!-- Trust / Verification block -->
                  <div class="lg:col-span-1">
-                     <h3 class="text-lg font-bold uppercase tracking-wider mb-6">{{ t('footer.follow_us_title') }}</h3>
-                     <p class="text-gray-400 text-sm mb-4">
-                         {{ t('footer.follow_us_desc') }}
+                     <h3 class="text-lg font-bold uppercase tracking-wider mb-6">{{ t('footer.trust_title') }}</h3>
+                     <p class="text-gray-300 text-sm mb-4">
+                         {{ t('footer.trust_desc') }}
                      </p>
-                    <div class="flex gap-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-facebook"></i> F</a>
-                        <a href="#" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-linkedin"></i> In</a>
-                        <a href="#" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-instagram"></i> Ig</a>
-                    </div>
+                    <a
+                        href="https://www.firemniprofil.cz/firma/61893801/mykhaylo-plyskach"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-block text-blue-400 hover:text-white text-sm font-medium transition"
+                    >
+                        {{ t('footer.trust_link') }}
+                    </a>
                 </div>
             </div>
 
             <!-- Copyright Bar -->
-            <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
-                <p>{{ t('footer.copyright') }}</p>
-                <div class="mt-4 md:mt-0">
-                    {{ t('footer.design_credit') }}
+            <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+                <div class="flex flex-col md:flex-row md:items-center gap-1 md:gap-4 text-center md:text-left">
+                    <span>{{ t('footer.copyright') }}</span>
+                    <span class="hidden md:inline">·</span>
+                    <span>{{ t('footer.ico') }}</span>
+                </div>
+                <div class="text-center md:text-right">
+                    <span>{{ t('footer.design_credit_prefix') }}</span>
+                    <a
+                        :href="t('footer.design_credit_link_url')"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-blue-400 hover:text-white transition-colors ml-1"
+                    >
+                        {{ t('footer.design_credit_link_text') }}
+                    </a>
                 </div>
             </div>
         </div>

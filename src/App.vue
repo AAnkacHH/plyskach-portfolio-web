@@ -56,10 +56,34 @@ export default {
 }
 
 .fixed-bg {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./assets/project_house.png');
+  background-color: #0f1219;
+  background-image:
+    linear-gradient(
+      to right,
+      rgba(15, 18, 25, 0.65) 0%,
+      rgba(15, 18, 25, 0.30) 50%,
+      rgba(15, 18, 25, 0.20) 100%
+    ),
+    url('/hero2.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
+}
+
+/* Mobile: parallax fixed-attachment causes jitter on iOS */
+@media (max-width: 768px) {
+  .fixed-bg {
+    background-attachment: scroll;
+    background-position: 35% center;
+    background-image:
+      linear-gradient(
+        to bottom,
+        rgba(15, 18, 25, 0.55) 0%,
+        rgba(15, 18, 25, 0.40) 40%,
+        rgba(15, 18, 25, 0.50) 100%
+      ),
+      url('/hero2.png');
+  }
 }
 </style>
