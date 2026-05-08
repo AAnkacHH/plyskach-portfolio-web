@@ -22,9 +22,9 @@
                     <div class="flex-shrink-0" data-aos="fade-right">
                         <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden shadow-2xl">
                              <!-- Fallback image since we might not have 'Jan Novak'. Using test.png or mobile.jpg as placeholder -->
-                            <img 
-                                src="../assets/builder_profile.png" 
-                                alt="Mykhaylo Plyskach" 
+                            <img
+                                src="/profile.png"
+                                alt="Mykhaylo Plyskach"
                                 class="w-full h-full object-cover"
                             />
                         </div>

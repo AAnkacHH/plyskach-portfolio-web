@@ -187,7 +187,8 @@
     },
     "portfolio": {
         "title": "Work Gallery",
-        "subtitle": "Examples from my projects. I collect photos as I go — happy to send more on request."
+        "subtitle": "Examples from my projects. I collect photos as I go — happy to send more on request.",
+        "note": "More references and photos available on request."
     },
     "file_preview": {
         "remove_file_title": "Remove File"

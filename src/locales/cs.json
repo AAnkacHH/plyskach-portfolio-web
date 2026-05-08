@@ -187,7 +187,8 @@
     },
     "portfolio": {
         "title": "Galerie prací",
-        "subtitle": "Ukázky z mých realizací. Fotodokumentaci sbírám průběžně — další pošlu na vyžádání."
+        "subtitle": "Ukázky z mých realizací. Fotodokumentaci sbírám průběžně — další pošlu na vyžádání.",
+        "note": "Další reference a fotografie zašlu na vyžádání."
     },
     "file_preview": {
         "remove_file_title": "Odstranit soubor"
