@@ -1,17 +1,20 @@
 <template>
     <div class="field">
-        <label class="field-label">
-            <span class="field-label-num">{{ num }}</span>
+        <label :for="fieldId" class="field-label">
+            <span class="field-label-num" aria-hidden="true">{{ num }}</span>
             <span>{{ label }}</span>
         </label>
 
         <!-- textarea -->
         <textarea
             v-if="type === 'textarea'"
+            :id="fieldId"
             :value="modelValue"
             :placeholder="placeholder"
             :rows="rows"
             :class="['field-input', 'field-textarea', { 'field-input--error': error }]"
+            :aria-invalid="!!error || undefined"
+            :aria-describedby="error ? errorId : undefined"
             required
             @input="onInput"
             @blur="$emit('blur')"
@@ -20,8 +23,11 @@
         <!-- select -->
         <div v-else-if="type === 'select'" class="field-select-wrap">
             <select
+                :id="fieldId"
                 :value="modelValue"
                 :class="['field-input', 'field-select', { 'field-input--error': error }]"
+                :aria-invalid="!!error || undefined"
+                :aria-describedby="error ? errorId : undefined"
                 required
                 @change="onChange"
                 @blur="$emit('blur')"
@@ -34,23 +40,36 @@
         <!-- text/email/tel -->
         <input
             v-else
+            :id="fieldId"
             :type="type"
             :value="modelValue"
             :placeholder="placeholder"
             :class="['field-input', { 'field-input--error': error }]"
+            :aria-invalid="!!error || undefined"
+            :aria-describedby="error ? errorId : undefined"
             required
             @input="onInput"
             @blur="$emit('blur')"
         />
 
-        <p v-if="error" class="field-error-msg">{{ error }}</p>
+        <p
+            v-if="error"
+            :id="errorId"
+            class="field-error-msg"
+            role="alert"
+            aria-live="polite"
+        >{{ error }}</p>
     </div>
 </template>
 
 <script setup lang="ts">
+import { computed, getCurrentInstance } from 'vue';
+
 type FieldType = 'text' | 'email' | 'tel' | 'textarea' | 'select';
 
-withDefaults(
+const uid = getCurrentInstance()?.uid ?? 0;
+
+const props = withDefaults(
     defineProps<{
         num: string;
         label: string;
@@ -67,6 +86,9 @@ const emit = defineEmits<{
     'update:modelValue': [value: string];
     blur: [];
 }>();
+
+const fieldId = computed(() => `field-${props.num.toLowerCase().replace(/[^a-z0-9]/g, '-')}-${uid}`);
+const errorId = computed(() => `${fieldId.value}-error`);
 
 const onInput = (e: Event) => {
     emit('update:modelValue', (e.target as HTMLInputElement | HTMLTextAreaElement).value);

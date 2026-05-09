@@ -2,6 +2,7 @@
     <!-- Variant: link (clickable row, opens href) -->
     <a
         v-if="variant === 'link'"
+        v-bind="$attrs"
         :href="href"
         :target="external ? '_blank' : undefined"
         :rel="external ? 'noopener noreferrer' : undefined"
@@ -18,6 +19,7 @@
     <!-- Variant: address (value + inline action buttons via slot) -->
     <div
         v-else-if="variant === 'address'"
+        v-bind="$attrs"
         class="register-row register-row--address"
     >
         <span class="register-row-num">{{ num }}</span>
@@ -31,7 +33,7 @@
     </div>
 
     <!-- Variant: static (no interaction) -->
-    <div v-else class="register-row register-row--static">
+    <div v-else v-bind="$attrs" class="register-row register-row--static">
         <span class="register-row-num">{{ num }}</span>
         <div class="register-row-body">
             <span class="register-row-label">{{ label }}</span>
@@ -42,6 +44,11 @@
 </template>
 
 <script setup lang="ts">
+// Multi-root <template> — opt out of automatic root-level $attrs inheritance
+// so we can place v-bind="$attrs" on each branch explicitly. Without this Vue
+// would warn that fallthrough attrs on a fragment have no single root.
+defineOptions({ inheritAttrs: false });
+
 withDefaults(
     defineProps<{
         num: string;

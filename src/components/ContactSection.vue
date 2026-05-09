@@ -10,7 +10,7 @@
             <EditorialRule
                 class="relative z-10"
                 position="top"
-                :tag-l="`Nº 04 / ${getSectionTag()}`"
+                :tag-l="`Nº 04 / ${t('nav.contact')}`"
                 tag-r="PRAHA · MICHLE"
                 tag-r-variant="orange"
             />
@@ -30,6 +30,8 @@
                                 :value="t('contact.info.phone')"
                                 variant="link"
                                 :href="`tel:${t('contact.info.phone').replace(/\s/g, '')}`"
+                                data-aos="fade-up"
+                                data-aos-delay="0"
                             />
                             <ContactRegisterRow
                                 num="02"
@@ -37,12 +39,16 @@
                                 :value="t('contact.info.email')"
                                 variant="link"
                                 :href="`mailto:${t('contact.info.email')}`"
+                                data-aos="fade-up"
+                                data-aos-delay="80"
                             />
                             <ContactRegisterRow
                                 num="03"
                                 :label="t('contact.labels.address')"
                                 :value="t('contact.info.address')"
                                 variant="address"
+                                data-aos="fade-up"
+                                data-aos-delay="160"
                             >
                                 <template #actions>
                                     <button
@@ -71,6 +77,8 @@
                                 :label="t('contact.labels.hours')"
                                 :value="t('contact.info.hours')"
                                 variant="static"
+                                data-aos="fade-up"
+                                data-aos-delay="240"
                             />
                         </ol>
                     </div>
@@ -213,7 +221,7 @@ import ContactRegisterRow from './contact/ContactRegisterRow.vue';
 import InquiryFormField from './contact/InquiryFormField.vue';
 import MapModal from './contact/MapModal.vue';
 
-const { t, locale } = useI18n();
+const { t } = useI18n();
 
 // ─── Map: shown as a modal; iframe only loads when user opens it ───
 const showMap = ref(false);
@@ -226,11 +234,6 @@ const MAP_LNG = 14.46622;
 const MAP_COORDS_LABEL = `${MAP_LAT.toFixed(4)}° N · ${MAP_LNG.toFixed(4)}° E`;
 const mapEmbedUrl = `https://www.google.com/maps?q=${MAP_LAT},${MAP_LNG}&z=17&output=embed`;
 const googleMapsLink = `https://www.google.com/maps/search/?api=1&query=${MAP_LAT},${MAP_LNG}`;
-
-const getSectionTag = () => {
-    const tags = { cs: 'Kontakt', en: 'Contact', uk: 'Контакт' };
-    return tags[locale.value] || tags.cs;
-};
 
 // We assume the API endpoint /api/send-email exists.
 const hasEmailToken = true;
@@ -250,8 +253,9 @@ const serviceError = ref('');
 
 const files = ref([]);
 const fileError = ref('');
-// Vercel Serverless Payload limit is 4.5MB. Safe limit: 4MB.
-const MAX_TOTAL_SIZE = 4 * 1024 * 1024;
+// Vercel Serverless Payload limit is 4.5MB. Files are sent base64-encoded
+// (~33% wire-size inflation), so a 3MB raw cap stays under the limit.
+const MAX_TOTAL_SIZE = 3 * 1024 * 1024;
 
 const removeFile = (index) => {
     files.value.splice(index, 1);

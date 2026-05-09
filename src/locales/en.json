@@ -186,7 +186,7 @@
             "phone_invalid": "Enter a valid phone number.",
             "service_required": "Please select a type of work.",
             "message_required": "Description of work is required.",
-            "file_size_error": "Total file size must not exceed 4 MB. Selected: {size} MB."
+            "file_size_error": "Total file size must not exceed 3 MB. Selected: {size} MB."
         }
     },
     "testimonials": {

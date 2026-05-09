@@ -186,7 +186,7 @@
             "phone_invalid": "Zadejte platné telefonní číslo.",
             "service_required": "Vyberte prosím typ práce.",
             "message_required": "Popis práce je povinný.",
-            "file_size_error": "Celková velikost souborů nesmí přesáhnout 4 MB. Vybráno: {size} MB."
+            "file_size_error": "Celková velikost souborů nesmí přesáhnout 3 MB. Vybráno: {size} MB."
         }
     },
     "testimonials": {
