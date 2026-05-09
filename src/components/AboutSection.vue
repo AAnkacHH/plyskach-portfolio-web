@@ -13,10 +13,11 @@
         </div>
 
         <!-- Main Content Area (Full Width) -->
-        <div class="w-full bg-white/90 backdrop-blur-sm">
-            
+        <div class="about-paper relative w-full">
+            <div class="grain absolute inset-0 pointer-events-none"></div>
+
             <!-- Profile Section -->
-            <div class="container mx-auto px-6 md:px-12 lg:px-20 py-20">
+            <div class="relative container mx-auto px-6 md:px-12 lg:px-20 py-20">
                 <div class="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
                     <!-- Profile Image -->
                     <div class="flex-shrink-0" data-aos="fade-right">
@@ -39,11 +40,14 @@
                         <p class="text-gray-700 text-lg leading-relaxed mb-6 font-medium">
                             {{ t('about.bio_p1') }}
                         </p>
-                        <p class="text-gray-600 mb-8">
+                        <p class="text-gray-600 mb-6">
                             {{ t('about.bio_p2') }}
                         </p>
-                        
-                        <button 
+                        <p class="text-gray-600 mb-8">
+                            {{ t('about.bio_p3') }}
+                        </p>
+
+                        <button
                              @click="scrollToSection('#contact')"
                             class="bg-blue-700 hover:bg-blue-800 text-white font-semibold py-3 px-8 rounded-sm shadow-md transition-all"
                         >
@@ -52,56 +56,75 @@
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Values / Philosophy Section -->
-            <div class="py-20 border-t border-gray-200">
-                 <div class="container mx-auto px-6 md:px-12 lg:px-20 text-center">
-                     <h2 class="text-3xl font-bold text-gray-800 uppercase tracking-widest mb-16">{{ t('about.values_title') }}</h2>
-                     
-                     <div class="grid md:grid-cols-3 gap-12">
-                         <!-- Step 1: Site Visit & Quote -->
-                         <div class="flex flex-col items-center relative" data-aos="fade-up" data-aos-delay="0">
-                             <div class="w-16 h-16 mb-6 rounded-full bg-[#f57d1f] text-white flex items-center justify-center text-2xl font-bold">
-                                 1
-                             </div>
-                             <h3 class="text-xl font-bold text-gray-900 mb-2">{{ t('about.values.step1.title') }}</h3>
-                             <p class="text-gray-600 max-w-xs mx-auto">
-                                 {{ t('about.values.step1.desc') }}
-                             </p>
-                         </div>
+        <!-- Certificates Title Strip (shows global fixed background) -->
+        <div class="relative w-full h-72 md:h-80 flex items-center justify-center text-center text-white px-4">
+            <div class="relative z-10 max-w-3xl" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold uppercase tracking-widest mb-4">{{ t('about.certs_title') }}</h2>
+                <p class="text-base md:text-lg text-gray-200 leading-relaxed">{{ t('about.certs_subtitle') }}</p>
+            </div>
+        </div>
 
-                         <!-- Step 2: Date Agreement -->
-                         <div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="150">
-                             <div class="w-16 h-16 mb-6 rounded-full bg-[#f57d1f] text-white flex items-center justify-center text-2xl font-bold">
-                                 2
-                             </div>
-                             <h3 class="text-xl font-bold text-gray-900 mb-2">{{ t('about.values.step2.title') }}</h3>
-                             <p class="text-gray-600 max-w-xs mx-auto">
-                                 {{ t('about.values.step2.desc') }}
-                             </p>
-                         </div>
+        <!-- Certificate Cards (paper) -->
+        <div class="about-paper relative w-full py-16">
+            <div class="grain absolute inset-0 pointer-events-none"></div>
+            <div class="relative container mx-auto px-6 md:px-12 lg:px-20">
+                <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <div
+                        v-for="(cert, i) in certs"
+                        :key="i"
+                        class="bg-white border border-gray-200 p-8 flex flex-col items-center text-center hover:border-[#f57d1f] transition-colors duration-300"
+                        data-aos="fade-up"
+                        :data-aos-delay="i * 150"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                            class="w-12 h-12 text-[#f57d1f] mb-6"
+                        >
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                        </svg>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 leading-tight">{{ cert.title }}</h3>
+                        <p class="text-sm text-gray-600 mb-3">{{ cert.issuer }}</p>
+                        <p class="text-xs text-gray-500 uppercase tracking-widest">{{ cert.year }}</p>
+                    </div>
+                </div>
 
-                         <!-- Step 3: Honest Work -->
-                         <div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="300">
-                             <div class="w-16 h-16 mb-6 rounded-full bg-[#f57d1f] text-white flex items-center justify-center text-2xl font-bold">
-                                 3
-                             </div>
-                             <h3 class="text-xl font-bold text-gray-900 mb-2">{{ t('about.values.step3.title') }}</h3>
-                             <p class="text-gray-600 max-w-xs mx-auto">
-                                 {{ t('about.values.step3.desc') }}
-                             </p>
-                         </div>
-                     </div>
-                 </div>
+                <p class="text-center text-sm text-gray-600 mt-12 italic">{{ t('about.certs_footer') }}</p>
             </div>
         </div>
     </section>
 </template>
 
 <script setup>
+import { computed } from 'vue';
 import { useScrollToSection } from '../lib/scrollToSection.ts';
 import { useI18n } from 'vue-i18n';
 
 const { scrollToSection } = useScrollToSection();
-const { t } = useI18n();
+const { t, tm, rt } = useI18n();
+
+const certs = computed(() =>
+    tm('about.certs.items').map((c) => ({
+        title: rt(c.title),
+        issuer: rt(c.issuer),
+        year: rt(c.year)
+    }))
+);
 </script>
+
+<style scoped>
+.about-paper {
+    background: #faf6ee;
+}
+
+.grain {
+    background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' seed='3'/%3E%3CfeColorMatrix values='0 0 0 0 0.15 0 0 0 0 0.12 0 0 0 0 0.08 0 0 0 0.7 0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23g)' opacity='0.5'/%3E%3C/svg%3E");
+    opacity: 0.18;
+    mix-blend-mode: multiply;
+}
+</style>

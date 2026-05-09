@@ -99,32 +99,53 @@
     },
     "about": {
         "title": "About Me",
-        "subtitle_line1": "Mason with 25 years of construction experience.",
+        "subtitle_line1": "Mason in construction since 2004.",
         "subtitle_line2": "Prague and Central Bohemia.",
         "person_name": "Mykhaylo Plyskach",
         "person_role": "Mason · Sole Trader",
-        "bio_p1": "I've been working in construction for 25 years. I specialize in masonry — bricklaying, partitions, demolition — and related work: tiling, facades with insulation, and plastering.",
-        "bio_p2": "I work with a few trusted partners. I personally lead every job from the first site visit to handover. What we agree on is what gets done — no subcontractors, no communication mix-ups.",
+        "bio_p1": "I've been in construction for over twenty years — running my own trade as a self-employed mason (OSVČ) since 2004, with earlier years spent working on building sites as an employee. I started out in Brno and since 2015 I've been based in Prague, where I've built up a steady client base. I lead every job personally, from the first site visit to handover.",
+        "bio_p2": "I specialise in masonry — bricklaying, partitions, demolition — together with related trades: tiling, façades with insulation, plaster and decorative finishes (stěrky), for which I also hold dedicated training. I communicate with clients in Czech and Ukrainian.",
+        "bio_p3": "I work with a small group of trusted colleagues and never take on more jobs than I can handle. What we agree on is what gets done.",
         "contact_btn": "Contact Me",
-        "values_title": "HOW I WORK",
-        "values": {
-            "step1": {
-                "title": "Site Visit & Quote",
-                "desc": "I come to take a look, measure, and send you a quote within a few days. Free and non-binding."
-            },
-            "step2": {
-                "title": "We Agree on a Date",
-                "desc": "I don't take on more jobs than I can handle. The date I promise is the date I deliver."
-            },
-            "step3": {
-                "title": "Honest Work",
-                "desc": "I work as if I were doing it in my own home. I clean up after myself."
-            }
+        "certs_title": "CERTIFICATES & TRAINING",
+        "certs_subtitle": "I regularly attend training courses run by manufacturers of construction chemicals. Scans of full certificates available on request.",
+        "certs_footer": "Additional credentials and full portfolio available on request.",
+        "certs": {
+            "items": [
+                {
+                    "title": "Decorative plaster (stěrky) application",
+                    "issuer": "Baumit Czech Republic",
+                    "year": "2023"
+                },
+                {
+                    "title": "ETICS — façade insulation systems",
+                    "issuer": "Cemix",
+                    "year": "2020"
+                },
+                {
+                    "title": "Tile and large-format installation",
+                    "issuer": "Mapei",
+                    "year": "2019"
+                }
+            ]
         }
     },
     "contact": {
         "title": "Let's Talk",
         "subtitle": "Send a message or call. We'll arrange a non-binding site visit and within a few days I'll send you a quote.",
+        "contact_eyebrow": "Contact details",
+        "headline_tail": "Write or call.",
+        "form_hint": "Fill in the form and I'll usually get back to you within 24 hours.",
+        "location_title": "Where to find me",
+        "open_in_maps": "Open in Google Maps",
+        "show_map": "Show map",
+        "hide_map": "Hide map",
+        "labels": {
+            "phone": "Phone",
+            "email": "Email",
+            "address": "Address",
+            "hours": "Opening hours"
+        },
         "info": {
             "phone": "+420 777 444 973",
             "email": "maria.andrej{'@'}centrum.cz",

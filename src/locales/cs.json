@@ -99,32 +99,53 @@
     },
     "about": {
         "title": "O mně",
-        "subtitle_line1": "Zedník s 25 lety praxe ve stavebnictví.",
+        "subtitle_line1": "Zedník ve stavebnictví od roku 2004.",
         "subtitle_line2": "Praha a Středočeský kraj.",
         "person_name": "Mykhaylo Plyskach",
         "person_role": "Zedník · OSVČ",
-        "bio_p1": "Ve stavebnictví pracuji 25 let. Specializuji se na zednické práce — zdění, příčky, bourání — a navazující obory: obklady a dlažbu, fasády se zateplením a omítky.",
-        "bio_p2": "Pracuji s několika ověřenými spolupracovníky. Každou zakázku vedu od první prohlídky až po předání. Co domluvíme, to udělám — bez subdodavatelů a zmatků v komunikaci.",
+        "bio_p1": "Ve stavebnictví se pohybuji už přes dvacet let — jako OSVČ podnikám od roku 2004, předtím jsem na stavbách pracoval jako zaměstnanec. Začínal jsem v Brně, od roku 2015 působím v Praze, kde jsem si postupně vybudoval stálou klientelu. Každou zakázku vedu sám, od prohlídky po předání.",
+        "bio_p2": "Specializuji se na zednické práce — zdění, příčky, bourání — a navazující obory: obklady a dlažbu, fasády se zateplením, omítky a dekorativní stěrky, na které mám i odborná školení. S klienty se domluvím česky a ukrajinsky.",
+        "bio_p3": "Pracuji s několika ověřenými spolupracovníky a neberu víc zakázek, než stíhám. Co domluvíme, to udělám.",
         "contact_btn": "Kontaktovat",
-        "values_title": "JAK PRACUJI",
-        "values": {
-            "step1": {
-                "title": "Prohlídka a nabídka",
-                "desc": "Přijdu se podívat, zaměřím a do pár dní pošlu cenovou nabídku. Bezplatně a bez závazku."
-            },
-            "step2": {
-                "title": "Domluvíme termín",
-                "desc": "Neberu víc zakázek, než stíhám. Termín, který slíbím, dodržím."
-            },
-            "step3": {
-                "title": "Poctivá práce",
-                "desc": "Dělám tak, jako bych to dělal u sebe doma. Po sobě uklidím."
-            }
+        "certs_title": "CERTIFIKÁTY A ŠKOLENÍ",
+        "certs_subtitle": "Pravidelně se účastním školení u výrobců stavební chemie. Sken kompletních certifikátů zašlu na vyžádání.",
+        "certs_footer": "Další osvědčení a kompletní portfolio na vyžádání.",
+        "certs": {
+            "items": [
+                {
+                    "title": "Aplikace dekorativních stěrek",
+                    "issuer": "Baumit Česko",
+                    "year": "2023"
+                },
+                {
+                    "title": "ETICS — zateplování fasád",
+                    "issuer": "Cemix",
+                    "year": "2020"
+                },
+                {
+                    "title": "Pokládka obkladů a dlažby",
+                    "issuer": "Mapei",
+                    "year": "2019"
+                }
+            ]
         }
     },
     "contact": {
         "title": "Spojme se",
         "subtitle": "Napište nebo zavolejte. Domluvíme nezávaznou prohlídku a do pár dní pošlu cenovou nabídku.",
+        "contact_eyebrow": "Kontaktní údaje",
+        "headline_tail": "Napíšete nebo zavoláte.",
+        "form_hint": "Vyplňte formulář a ozvu se obvykle do 24 hodin.",
+        "location_title": "Kde mě najdete",
+        "open_in_maps": "Otevřít v Google Maps",
+        "show_map": "Zobrazit mapu",
+        "hide_map": "Skrýt mapu",
+        "labels": {
+            "phone": "Telefon",
+            "email": "E-mail",
+            "address": "Adresa",
+            "hours": "Otevírací doba"
+        },
         "info": {
             "phone": "+420 777 444 973",
             "email": "maria.andrej{'@'}centrum.cz",
