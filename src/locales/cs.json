@@ -134,7 +134,6 @@
         "title": "Spojme se",
         "subtitle": "Napište nebo zavolejte. Domluvíme nezávaznou prohlídku a do pár dní pošlu cenovou nabídku.",
         "contact_eyebrow": "Kontaktní údaje",
-        "headline_tail": "Napíšete nebo zavoláte.",
         "form_hint": "Vyplňte formulář a ozvu se obvykle do 24 hodin.",
         "location_title": "Kde mě najdete",
         "open_in_maps": "Otevřít v Google Maps",
@@ -187,7 +186,7 @@
             "phone_invalid": "Zadejte platné telefonní číslo.",
             "service_required": "Vyberte prosím typ práce.",
             "message_required": "Popis práce je povinný.",
-            "file_size_error": "Celková velikost souborů nesmí přesáhnout 4 MB."
+            "file_size_error": "Celková velikost souborů nesmí přesáhnout 4 MB. Vybráno: {size} MB."
         }
     },
     "testimonials": {

@@ -1,5 +1,5 @@
 <template>
-  <section class="services-section relative py-24 md:py-32 scroll-mt-20" id="services">
+  <section class="paper-canvas relative py-24 md:py-32 scroll-mt-20" id="services">
     <!-- Paper-grain noise (very subtle) -->
     <div class="grain absolute inset-0 pointer-events-none"></div>
 
@@ -17,17 +17,12 @@
     </div>
 
     <!-- Editorial top rule with metadata — spans full viewport width -->
-    <div class="spread-rule spread-rule-top" aria-hidden="true">
-      <span class="rule-line"></span>
-      <span class="rule-tag">
-        Práce Nº {{ String(activeIndex + 1).padStart(2, '0') }} / {{ String(categories.length).padStart(2, '0') }}
-      </span>
-      <span class="rule-line rule-line-flex"></span>
-      <span class="rule-tag rule-tag-r">
-        Mykhaylo Plyskach &nbsp;×&nbsp; {{ rt(categories[activeIndex]?.title || '').toUpperCase() }}
-      </span>
-      <span class="rule-line"></span>
-    </div>
+    <EditorialRule
+      position="top"
+      :tag-l="`Práce Nº ${String(activeIndex + 1).padStart(2, '0')} / ${String(categories.length).padStart(2, '0')}`"
+      :tag-r="`Mykhaylo Plyskach × ${rt(categories[activeIndex]?.title || '').toUpperCase()}`"
+      tag-r-variant="orange"
+    />
 
     <!-- Slideshow — slide bleeds full-bleed right, left edge aligns with max-w-7xl -->
     <div
@@ -107,14 +102,11 @@
                   ></div>
 
                   <!-- Contact-sheet stamp (right-bottom) -->
-                  <div class="slide-stamp">
-                    <span class="slide-stamp-num">
-                      Nº {{ String(index + 1).padStart(2, '0') }} / {{ String(categories.length).padStart(2, '0') }}
-                    </span>
-                    <span class="slide-stamp-label">
-                      {{ rt(category.title).toUpperCase() }}
-                    </span>
-                  </div>
+                  <EditorialStamp
+                    class="slide-stamp-position"
+                    :num="`Nº ${String(index + 1).padStart(2, '0')} / ${String(categories.length).padStart(2, '0')}`"
+                    :label="rt(category.title).toUpperCase()"
+                  />
                 </div>
               </div>
             </article>
@@ -147,11 +139,11 @@
     </div>
 
     <!-- Editorial bottom rule -->
-    <div class="spread-rule spread-rule-bottom" aria-hidden="true">
-      <span class="rule-line"></span>
-      <span class="rule-tag rule-tag-mono">{{ getRailMeta() }}</span>
-      <span class="rule-line"></span>
-    </div>
+    <EditorialRule
+      position="bottom"
+      :tag-l="getRailMeta()"
+      tag-l-variant="mono"
+    />
 
     <!-- Tape-measure ruler pagination — constrained to max-w-7xl -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -192,6 +184,8 @@ import { ref, computed, onMounted, onUnmounted } from 'vue';
 import { useScrollToSection } from '../lib/scrollToSection.ts';
 import { useI18n } from 'vue-i18n';
 import projectHouse from '../assets/project_house.png';
+import EditorialRule from './editorial/EditorialRule.vue';
+import EditorialStamp from './editorial/EditorialStamp.vue';
 
 const { scrollToSection } = useScrollToSection();
 const { t, tm, rt, locale } = useI18n();
@@ -279,19 +273,7 @@ const cardImage = (id: string): string => {
 </script>
 
 <style scoped>
-/* ─────────────── Section ─────────────── */
-
-.services-section {
-  background: #faf6ee;
-  position: relative;
-}
-
-/* Subtle paper grain (~1.5% opacity) — adds tactility without softening edges */
-.grain {
-  background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' seed='3'/%3E%3CfeColorMatrix values='0 0 0 0 0.15 0 0 0 0 0.12 0 0 0 0 0.08 0 0 0 0.7 0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23g)' opacity='0.5'/%3E%3C/svg%3E");
-  opacity: 0.18;
-  mix-blend-mode: multiply;
-}
+/* paper-canvas, .grain, .spread-rule*, .rule-* are in src/assets/editorial.css */
 
 .section-eyebrow {
   display: inline-block;
@@ -303,65 +285,6 @@ const cardImage = (id: string): string => {
   font-weight: 500;
 }
 
-/* ─────────────── Editorial spread rules (top + bottom) ─────────────── */
-
-.spread-rule {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 0 1.5rem;
-  position: relative;
-}
-
-.spread-rule-top {
-  margin-bottom: 1.25rem;
-}
-
-.spread-rule-bottom {
-  margin-top: 1.25rem;
-}
-
-.rule-line {
-  flex: 0 0 36px;
-  height: 1px;
-  background: #1a1815;
-  opacity: 0.85;
-}
-
-.rule-line-flex {
-  flex: 1 1 auto;
-}
-
-.rule-tag {
-  font-family: 'Oswald', sans-serif;
-  font-size: 0.68rem;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-  color: #1a1815;
-  font-weight: 500;
-  white-space: nowrap;
-}
-
-.rule-tag-r {
-  color: #f57d1f;
-}
-
-.rule-tag-mono {
-  font-size: 0.62rem;
-  letter-spacing: 0.42em;
-  color: rgba(26, 24, 21, 0.55);
-}
-
-@media (max-width: 768px) {
-  .rule-tag {
-    font-size: 0.58rem;
-    letter-spacing: 0.22em;
-    white-space: normal;
-  }
-  .rule-line {
-    flex: 0 0 16px;
-  }
-}
 
 /* ─────────────── Spread area (slide breaks out right) ─────────────── */
 
@@ -633,35 +556,12 @@ const cardImage = (id: string): string => {
   background-position: center;
 }
 
-/* Contact-sheet stamp at bottom-right */
-.slide-stamp {
+/* EditorialStamp positioning inside the photo panel (component supplies its own visual) */
+.slide-stamp-position {
   position: absolute;
   right: 1.25rem;
   bottom: 1.25rem;
-  background: #0c0a08;
-  padding: 0.65rem 0.95rem 0.7rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  font-family: 'Oswald', sans-serif;
-  letter-spacing: 0.18em;
   z-index: 2;
-  border-left: 2px solid #f57d1f;
-}
-
-.slide-stamp-num {
-  color: #fefdfb;
-  font-size: 0.72rem;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-.slide-stamp-label {
-  color: #f57d1f;
-  font-size: 0.62rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
 }
 
 /* ─────────────── Nav buttons ─────────────── */

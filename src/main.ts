@@ -1,6 +1,7 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 import './assets/tailwind.css';
+import './assets/editorial.css';
 import i18n from './i18n';
 
 const app = createApp(App);

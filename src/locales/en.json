@@ -134,7 +134,6 @@
         "title": "Let's Talk",
         "subtitle": "Send a message or call. We'll arrange a non-binding site visit and within a few days I'll send you a quote.",
         "contact_eyebrow": "Contact details",
-        "headline_tail": "Write or call.",
         "form_hint": "Fill in the form and I'll usually get back to you within 24 hours.",
         "location_title": "Where to find me",
         "open_in_maps": "Open in Google Maps",
@@ -187,7 +186,7 @@
             "phone_invalid": "Enter a valid phone number.",
             "service_required": "Please select a type of work.",
             "message_required": "Description of work is required.",
-            "file_size_error": "Total file size must not exceed 4 MB."
+            "file_size_error": "Total file size must not exceed 4 MB. Selected: {size} MB."
         }
     },
     "testimonials": {
