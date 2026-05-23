@@ -8,6 +8,7 @@
                 aria-modal="true"
                 :aria-label="title"
                 @click.self="close"
+                @keydown="onKeydown"
             >
                 <div class="map-modal-shell" @click.stop>
                     <header class="map-modal-header">
@@ -16,6 +17,7 @@
                             <span class="map-modal-address">{{ address }}</span>
                         </div>
                         <button
+                            ref="closeBtnRef"
                             type="button"
                             class="map-modal-close"
                             @click="close"
@@ -46,6 +48,7 @@
 
                     <footer class="map-modal-footer">
                         <a
+                            ref="ctaRef"
                             class="map-modal-cta"
                             :href="externalLink"
                             target="_blank"
@@ -64,7 +67,7 @@
 </template>
 
 <script setup lang="ts">
-import { toRef } from 'vue';
+import { nextTick, ref, toRef, watch } from 'vue';
 import EditorialStamp from '../editorial/EditorialStamp.vue';
 import { useModalLock } from '../../lib/useModalLock';
 
@@ -87,6 +90,39 @@ const emit = defineEmits<{
 const close = () => emit('update:open', false);
 
 useModalLock(toRef(props, 'open'), close);
+
+const closeBtnRef = ref<HTMLButtonElement | null>(null);
+const ctaRef = ref<HTMLAnchorElement | null>(null);
+let previouslyFocused: HTMLElement | null = null;
+
+watch(() => props.open, async (isOpen) => {
+    if (isOpen) {
+        previouslyFocused = (document.activeElement as HTMLElement) ?? null;
+        await nextTick();
+        closeBtnRef.value?.focus();
+    } else if (previouslyFocused) {
+        previouslyFocused.focus();
+        previouslyFocused = null;
+    }
+});
+
+// Trap Tab cycling between the close button and the CTA. The map iframe is
+// deliberately skipped — its internal focus is owned by Google Maps and not
+// portable across browsers; keyboard users open the location via the CTA.
+const onKeydown = (e: KeyboardEvent) => {
+    if (e.key !== 'Tab') return;
+    const first = closeBtnRef.value;
+    const last = ctaRef.value;
+    if (!first || !last) return;
+    const active = document.activeElement;
+    if (e.shiftKey && active === first) {
+        e.preventDefault();
+        last.focus();
+    } else if (!e.shiftKey && active === last) {
+        e.preventDefault();
+        first.focus();
+    }
+};
 </script>
 
 <style scoped>

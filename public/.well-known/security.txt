@@ -1,0 +1,7 @@
+# security.txt — mykhayloplyskach.com
+# RFC 9116 — https://datatracker.ietf.org/doc/html/rfc9116
+
+Contact: mailto:privacy@mykhayloplyskach.com
+Expires: 2027-05-23T00:00:00.000Z
+Preferred-Languages: cs, en, uk
+Canonical: https://mykhayloplyskach.com/.well-known/security.txt

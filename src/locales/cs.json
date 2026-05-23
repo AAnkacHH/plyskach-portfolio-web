@@ -254,5 +254,291 @@
     },
     "file_preview": {
         "remove_file_title": "Odstranit soubor"
+    },
+    "legal": {
+        "backToHome": "Zpět na hlavní stránku",
+        "lastUpdated": "Naposledy aktualizováno",
+        "tocTitle": "Obsah",
+        "aiTranslationNote": "Poznámka: ukrajinská a anglická verze tohoto dokumentu jsou strojově asistované překlady české předlohy. V případě jakéhokoli rozporu je rozhodující česká verze; v případě dotazu pište na {privacyEmail}.",
+        "footerNav": {
+            "label": "Právní informace",
+            "privacy": "Zásady ochrany osobních údajů",
+            "terms": "Podmínky užívání",
+            "notice": "Právní upozornění"
+        },
+        "privacy": {
+            "metaTitle": "Zásady ochrany osobních údajů · Mykhaylo Plyskach",
+            "metaDescription": "Jak nakládám s osobními údaji návštěvníků webu mykhayloplyskach.com — v souladu s nařízením GDPR a českým zákonem č. 110/2019 Sb.",
+            "kicker": "Právní · Soukromí",
+            "title": "Zásady ochrany osobních údajů",
+            "effectiveDate": "23. května 2026",
+            "intro": "Vaše soukromí beru vážně. Tento dokument popisuje, jaké údaje shromažďuji při provozu webu mykhayloplyskach.com, proč je zpracovávám a jak můžete uplatnit svá práva podle Nařízení Evropského parlamentu a Rady (EU) 2016/679 (GDPR) a zákona č. 110/2019 Sb.",
+            "sections": [
+                {
+                    "id": "controller",
+                    "title": "1. Správce údajů",
+                    "paragraphs": [
+                        "Správcem osobních údajů je Mykhaylo Plyskach, OSVČ, se sídlem v Praze, Česká republika, IČO: 26369524, zapsán v živnostenském rejstříku. Plnou identifikaci a sídlo lze ověřit ve veřejném registru ARES na adrese https://ares.gov.cz.",
+                        "Kontakt pro záležitosti ochrany osobních údajů: {privacyEmail}. Obecný kontakt: {workEmail}.",
+                        "Pověřence pro ochranu osobních údajů (DPO) nemám ustanoveného — povinnost dle čl. 37 GDPR se na mou činnost nevztahuje."
+                    ]
+                },
+                {
+                    "id": "data-we-collect",
+                    "title": "2. Jaké údaje shromažďuji",
+                    "paragraphs": [
+                        "Při návštěvě webu jsou na serveru a u poskytovatelů infrastruktury automaticky zaznamenávány protokolové údaje: IP adresa, časové razítko požadavku, URL stránky, referrer, user-agent prohlížeče. Tyto údaje slouží k zajištění provozu a bezpečnosti.",
+                        "Pokud vyplníte kontaktní formulář, zpracovávám údaje, které sami zadáte — typicky jméno, e-mail, telefon, obsah zprávy a případně přílohy. Tyto údaje slouží výhradně k zodpovězení Vašeho dotazu a přípravě případné nabídky.",
+                        "Web nepoužívá analytické nástroje typu Google Analytics, Facebook Pixel ani podobné. Nepoužívám remarketingové cookies."
+                    ]
+                },
+                {
+                    "id": "cookies",
+                    "title": "3. Cookies a podobné technologie",
+                    "paragraphs": [
+                        "Web ukládá ve vašem prohlížeči pouze jeden technický záznam v localStorage:",
+                        "Tento záznam je nezbytně nutný k zapamatování vámi zvoleného jazyka mezi návštěvami. Není používán pro sledování ani profilování a nevyžaduje souhlas dle § 89 zákona č. 127/2005 Sb., o elektronických komunikacích."
+                    ],
+                    "list": [
+                        "user-locale (localStorage) — uloží zvolený jazyk (cs / en / uk); platnost: trvalá, dokud ji sami nesmažete; účel: uživatelský komfort."
+                    ]
+                },
+                {
+                    "id": "legal-basis",
+                    "title": "4. Právní základ zpracování",
+                    "paragraphs": [
+                        "Zpracování osobních údajů opírám o tyto právní tituly podle čl. 6 GDPR:"
+                    ],
+                    "list": [
+                        "Provoz a bezpečnost webu (protokoly serveru, technické cookies) — čl. 6 odst. 1 písm. f) GDPR, oprávněný zájem na zajištění provozu a bezpečnosti.",
+                        "Vyřízení dotazu z kontaktního formuláře — čl. 6 odst. 1 písm. b) GDPR, plnění opatření před uzavřením smlouvy na žádost subjektu údajů.",
+                        "Splnění zákonných povinností (např. účetní a daňové) — čl. 6 odst. 1 písm. c) GDPR."
+                    ]
+                },
+                {
+                    "id": "processors",
+                    "title": "5. Zpracovatelé a poskytovatelé služeb",
+                    "paragraphs": [
+                        "Pro provoz webu využívám tyto zpracovatele, kteří mají přístup k některým údajům pouze v nezbytném rozsahu a na základě smluv splňujících čl. 28 GDPR:"
+                    ],
+                    "list": [
+                        "Cloudflare, Inc., 101 Townsend Street, San Francisco, CA 94107, USA — DNS, CDN, reverzní proxy a ochrana před DDoS. Cloudflare při průchodu provozu zpracovává IP adresy a metadata HTTP požadavků. Předávání do USA je zajištěno v souladu s rámcem EU-US Data Privacy Framework (https://www.dataprivacyframework.gov) a Standardními smluvními doložkami.",
+                        "Poskytovatel hostingu (cloudová infrastruktura v EU) — provoz webu a aplikací. Servery jsou umístěny v Evropské unii.",
+                        "Poskytovatel SMTP / e-mailové schránky — předání obsahu kontaktního formuláře a doručení e-mailové korespondence na schránku správce. Provoz uvnitř EU; přístup chráněn TLS a autentizací."
+                    ]
+                },
+                {
+                    "id": "international-transfers",
+                    "title": "6. Předávání mimo EU/EHP",
+                    "paragraphs": [
+                        "Kromě průchodu provozu službou Cloudflare (viz výše) nedochází k systematickému předávání osobních údajů mimo EU/EHP. Pokud taková situace nastane, předávání probíhá výhradně na základě záruk uvedených v čl. 46 GDPR (Standardní smluvní doložky) nebo rozhodnutí o odpovídající ochraně dle čl. 45 GDPR."
+                    ]
+                },
+                {
+                    "id": "retention",
+                    "title": "7. Doba uchování",
+                    "paragraphs": [
+                        "Údaje uchovávám pouze po dobu nezbytně nutnou:"
+                    ],
+                    "list": [
+                        "Protokoly serveru (přístupové logy) — typicky 7 až 30 dní podle poskytovatele.",
+                        "E-mailová korespondence a zprávy z kontaktního formuláře — po dobu vyřízení dotazu a následně až 24 měsíců pro účely případného doplňujícího kontaktu, poté jsou smazány.",
+                        "Faktury a daňové doklady — po dobu stanovenou zákonem (zpravidla 10 let podle zákona č. 235/2004 Sb. o DPH a zákona č. 563/1991 Sb. o účetnictví)."
+                    ]
+                },
+                {
+                    "id": "rights",
+                    "title": "8. Vaše práva",
+                    "paragraphs": [
+                        "Jako subjekt údajů máte podle GDPR tato práva:"
+                    ],
+                    "list": [
+                        "Právo na přístup k údajům (čl. 15 GDPR).",
+                        "Právo na opravu (čl. 16 GDPR).",
+                        "Právo na výmaz / zapomenutí (čl. 17 GDPR) — v rozsahu, který neodporuje zákonné povinnosti uchování.",
+                        "Právo na omezení zpracování (čl. 18 GDPR).",
+                        "Právo na přenositelnost údajů (čl. 20 GDPR) — uplatnitelné pouze u zpracování založeného na souhlasu nebo smlouvě.",
+                        "Právo vznést námitku proti zpracování na základě oprávněného zájmu (čl. 21 GDPR).",
+                        "Právo nebýt předmětem výhradně automatizovaného rozhodování (čl. 22 GDPR) — automatizované rozhodování ani profilování neprovádím.",
+                        "Právo podat stížnost u dozorového úřadu (čl. 77 GDPR) — viz bod 9."
+                    ]
+                },
+                {
+                    "id": "supervisory-authority",
+                    "title": "9. Dozorový úřad",
+                    "paragraphs": [
+                        "Příslušným dozorovým úřadem v České republice je Úřad pro ochranu osobních údajů (ÚOOÚ), Pplk. Sochora 27, 170 00 Praha 7. Webové stránky: https://www.uoou.gov.cz. Stížnost můžete podat zde, pokud se domníváte, že je zpracování Vašich údajů v rozporu s GDPR nebo českým zákonem č. 110/2019 Sb."
+                    ]
+                },
+                {
+                    "id": "children",
+                    "title": "10. Údaje dětí",
+                    "paragraphs": [
+                        "Web není určen dětem mladším 16 let a vědomě nezpracovávám jejich osobní údaje. Pokud zjistím, že jsem takové údaje neúmyslně získal, neprodleně je smažu."
+                    ]
+                },
+                {
+                    "id": "changes",
+                    "title": "11. Změny zásad",
+                    "paragraphs": [
+                        "Tento dokument může být průběžně aktualizován. Aktuální verze je vždy dostupná na adrese https://mykhayloplyskach.com/privacy s vyznačeným datem poslední revize v záhlaví."
+                    ]
+                },
+                {
+                    "id": "contact",
+                    "title": "12. Kontakt",
+                    "paragraphs": [
+                        "S jakýmkoli dotazem ohledně zpracování osobních údajů, žádostí o uplatnění práv nebo námitkou se obraťte na {privacyEmail}. Reaguji v zákonné lhůtě do jednoho měsíce od přijetí žádosti."
+                    ]
+                }
+            ]
+        },
+        "terms": {
+            "metaTitle": "Podmínky užívání · Mykhaylo Plyskach",
+            "metaDescription": "Podmínky užívání webu mykhayloplyskach.com — duševní vlastnictví, povolené užití, výhrada strojového čtení obsahu pro tréning AI.",
+            "kicker": "Právní · Podmínky",
+            "title": "Podmínky užívání",
+            "effectiveDate": "23. května 2026",
+            "intro": "Tyto podmínky popisují pravidla pro užívání webu mykhayloplyskach.com (dále jen „web\"). Používáním webu vyjadřujete souhlas s těmito podmínkami. Pokud s nimi nesouhlasíte, web prosím nepoužívejte.",
+            "sections": [
+                {
+                    "id": "acceptance",
+                    "title": "1. Přijetí podmínek",
+                    "paragraphs": [
+                        "Vstupem na web a jeho používáním se stáváte „uživatelem\" a souhlasíte s těmito podmínkami v plném rozsahu. Tyto podmínky představují závazné ujednání mezi Vámi a provozovatelem webu (viz Právní upozornění)."
+                    ]
+                },
+                {
+                    "id": "permitted-use",
+                    "title": "2. Povolené užití",
+                    "paragraphs": [
+                        "Obsah webu (texty, fotografie, popisy služeb) je možné prohlížet pro osobní, nekomerční potřebu. Sdílení odkazu na konkrétní stránku je vítáno. Krátké citace s uvedením zdroje (jméno autora a URL) jsou povoleny v souladu s § 31 zákona č. 121/2000 Sb. (autorský zákon)."
+                    ]
+                },
+                {
+                    "id": "prohibited-use",
+                    "title": "3. Zakázané jednání",
+                    "paragraphs": [
+                        "Bez výslovného předchozího souhlasu provozovatele je zakázáno:"
+                    ],
+                    "list": [
+                        "Systematicky stahovat obsah webu (scraping, harvesting) nebo kopírovat větší část textů, fotografií či databází.",
+                        "Pokoušet se o neautorizovaný přístup k systémům, narušení provozu nebo útoky typu DDoS.",
+                        "Vydávat se za provozovatele, falšovat identitu nebo zveřejňovat zavádějící obsah ve spojení s jeho jménem.",
+                        "Používat obsah webu způsobem, který by porušoval platné právní předpisy, dobré mravy nebo práva třetích osob."
+                    ]
+                },
+                {
+                    "id": "intellectual-property",
+                    "title": "4. Duševní vlastnictví",
+                    "paragraphs": [
+                        "Veškerý obsah webu — fotografie realizací, popisy služeb, design rozhraní, zdrojový kód šablon a strukturovaná data — je chráněn autorským právem podle zákona č. 121/2000 Sb. a souvisejících předpisů Evropské unie. Vlastnická a autorská práva k obsahu náleží provozovateli nebo jeho licenčním partnerům.",
+                        "Použití chráněných prvků nad rámec povoleného užití (bod 2) vyžaduje předchozí písemný souhlas. Pro licenční dotazy: {workEmail}."
+                    ]
+                },
+                {
+                    "id": "ai-tdm-optout",
+                    "title": "5. Umělá inteligence a strojové zpracování",
+                    "paragraphs": [
+                        "Provozovatel webu uplatňuje výhradu strojového čtení (TDM opt-out) podle čl. 4 odst. 3 směrnice (EU) 2019/790 o autorském právu na jednotném digitálním trhu. Obsah tohoto webu nesmí být použit pro trénování modelů umělé inteligence, jazykových modelů ani pro budování datových sad k těmto účelům — s výjimkou explicitně povolené indexace vyhledávači a citačními asistenty (viz robots.txt).",
+                        "Tato výhrada je strojově čitelně vyznačena v souboru robots.txt a v metadatech webu. Jakékoli použití obsahu v rozporu s touto výhradou je porušením autorského práva."
+                    ]
+                },
+                {
+                    "id": "third-party",
+                    "title": "6. Obsah třetích stran a odkazy",
+                    "paragraphs": [
+                        "Na webu se mohou vyskytnout odkazy na externí stránky (např. Firemniprofil.cz, sociální sítě, certifikační autority). Provozovatel nenese odpovědnost za obsah, dostupnost ani bezpečnost těchto externích zdrojů."
+                    ]
+                },
+                {
+                    "id": "disclaimer",
+                    "title": "7. Vyloučení záruk",
+                    "paragraphs": [
+                        "Obsah webu je poskytován „tak, jak je\" (as-is), bez jakýchkoli záruk přesnosti, aktuálnosti nebo dostupnosti. Informace o cenách, dostupnosti termínů či rozsahu služeb jsou pouze informativní a nezakládají závaznou nabídku ve smyslu § 1732 zákona č. 89/2012 Sb. (občanský zákoník). Závazná smlouva vzniká až po individuálním ujednání mezi provozovatelem a zákazníkem.",
+                        "Drobné odchylky barev, struktury a finálního provedení od ilustračních fotografií jsou přirozenou součástí řemeslné práce a nepředstavují vadu plnění."
+                    ]
+                },
+                {
+                    "id": "liability",
+                    "title": "8. Omezení odpovědnosti",
+                    "paragraphs": [
+                        "Provozovatel neodpovídá za škody vzniklé v souvislosti s použitím nebo nedostupností webu, s výjimkou škod způsobených úmyslně nebo z hrubé nedbalosti. Toto omezení se neuplatní v rozsahu, v jakém je vyloučeno kogentními ustanoveními českého práva (zejména ochrana spotřebitele dle § 1812 a násl. OZ)."
+                    ]
+                },
+                {
+                    "id": "changes",
+                    "title": "9. Změny podmínek",
+                    "paragraphs": [
+                        "Provozovatel si vyhrazuje právo tyto podmínky kdykoli upravit. Změna nabývá účinnosti zveřejněním na adrese https://mykhayloplyskach.com/terms. Datum poslední revize je uvedeno v záhlaví tohoto dokumentu."
+                    ]
+                },
+                {
+                    "id": "governing-law",
+                    "title": "10. Rozhodné právo a příslušnost",
+                    "paragraphs": [
+                        "Tyto podmínky a veškeré právní vztahy z nich vyplývající se řídí právem České republiky, zejména občanským zákoníkem (zákon č. 89/2012 Sb.). K řešení sporů jsou příslušné obecné soudy České republiky; je-li uživatel spotřebitelem, není touto doložkou dotčeno právo obrátit se na soud podle místa bydliště spotřebitele."
+                    ]
+                }
+            ]
+        },
+        "notice": {
+            "metaTitle": "Právní upozornění · Mykhaylo Plyskach",
+            "metaDescription": "Identifikace provozovatele webu mykhayloplyskach.com podle § 435 občanského zákoníku — kontaktní údaje, IČO, dozorové orgány a copyright.",
+            "kicker": "Právní · Impressum",
+            "title": "Právní upozornění",
+            "effectiveDate": "23. května 2026",
+            "intro": "Identifikační údaje provozovatele webu mykhayloplyskach.com podle § 435 zákona č. 89/2012 Sb., občanského zákoníku.",
+            "sections": [
+                {
+                    "id": "provider",
+                    "title": "1. Provozovatel",
+                    "paragraphs": [
+                        "Mykhaylo Plyskach — OSVČ (osoba samostatně výdělečně činná)\nSídlo: Praha, Česká republika\nIČO: 26369524\nZapsán v živnostenském rejstříku.",
+                        "Plnou identifikaci provozovatele, včetně přesné adresy sídla, je možné ověřit ve veřejném registru ARES Ministerstva financí ČR na adrese https://ares.gov.cz podle uvedeného IČO. Provozovatel je plátcem DPH; daňové identifikační číslo (DIČ) je rovněž k nahlédnutí v registru ARES."
+                    ]
+                },
+                {
+                    "id": "contact",
+                    "title": "2. Kontakt",
+                    "paragraphs": [
+                        "Obecná korespondence: {workEmail}\nZáležitosti ochrany osobních údajů: {privacyEmail}\nTelefon: +420 777 444 973",
+                        "Provozovatel komunikuje primárně v češtině; angličtina a ukrajinština jsou možné po předchozí domluvě."
+                    ]
+                },
+                {
+                    "id": "supervisory",
+                    "title": "3. Dozorové orgány",
+                    "paragraphs": [
+                        "Živnostenské oprávnění uděluje a kontroluje příslušný živnostenský úřad městské části dle místa sídla; obecná evidence živnostenských oprávnění: Ministerstvo průmyslu a obchodu ČR.",
+                        "V oblasti ochrany spotřebitele dozoruje Česká obchodní inspekce (ČOI), Štěpánská 567/15, 120 00 Praha 2, https://www.coi.cz. Subjektem mimosoudního řešení spotřebitelských sporů je rovněž ČOI prostřednictvím https://adr.coi.cz.",
+                        "V oblasti ochrany osobních údajů dozoruje Úřad pro ochranu osobních údajů (ÚOOÚ), Pplk. Sochora 27, 170 00 Praha 7, https://www.uoou.gov.cz."
+                    ]
+                },
+                {
+                    "id": "copyright",
+                    "title": "4. Autorská práva",
+                    "paragraphs": [
+                        "© 2026 Mykhaylo Plyskach. Všechna práva vyhrazena. Texty, fotografie a grafický návrh webu jsou chráněny zákonem č. 121/2000 Sb., autorským zákonem, a souvisejícími předpisy. Použití nad rámec povolený zákonem nebo Podmínkami užívání vyžaduje předchozí souhlas autora."
+                    ]
+                },
+                {
+                    "id": "disclaimer",
+                    "title": "5. Vyloučení odpovědnosti",
+                    "paragraphs": [
+                        "Obsah webu je informativní povahy a je poskytován bez záruk přesnosti, aktuálnosti nebo úplnosti. Provozovatel nenese odpovědnost za případné technické výpadky, ztrátu dat ani škodu vzniklou v souvislosti s návštěvou webu, vyjma případů úmyslného jednání nebo hrubé nedbalosti.",
+                        "Externí odkazy slouží jako podpůrný materiál; provozovatel neodpovídá za obsah ani provoz třetích stran."
+                    ]
+                },
+                {
+                    "id": "communications",
+                    "title": "6. Nabídky a obchodní sdělení",
+                    "paragraphs": [
+                        "Informace zveřejněné na tomto webu — včetně cen a popisů služeb — mají informativní charakter a nepředstavují závaznou nabídku ve smyslu § 1732 občanského zákoníku. Závazná dohoda mezi provozovatelem a zákazníkem vzniká až individuálním ujednáním (obvykle e-mailem nebo na základě podepsané objednávky).",
+                        "Provozovatel nezasílá nevyžádaná obchodní sdělení ve smyslu § 7 zákona č. 480/2004 Sb., o některých službách informační společnosti. Zaslat svůj kontakt pro nabídku můžete vyplněním kontaktního formuláře — tím vyjadřujete oprávněný zájem o vypracování nabídky."
+                    ]
+                }
+            ]
+        }
     }
 }

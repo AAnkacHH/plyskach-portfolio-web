@@ -6,7 +6,7 @@
 // in by Agent C's index.html). For each non-default locale, writes a sibling HTML.
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
-import { join, dirname } from 'node:path';
+import { join } from 'node:path';
 import { LOCALES, SITE_URL, localeUrl } from './seo-content.mjs';
 
 const DIST_DIR = join(process.cwd(), 'dist');

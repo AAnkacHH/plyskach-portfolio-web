@@ -1,6 +1,11 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    { "source": "/en/:path+", "destination": "/en" },
+    { "source": "/uk/:path+", "destination": "/uk" },
+    { "source": "/:path+", "destination": "/" }
+  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -15,6 +20,10 @@
     },
     {
       "source": "/robots.txt",
+      "headers": [{ "key": "Content-Type", "value": "text/plain; charset=utf-8" }]
+    },
+    {
+      "source": "/.well-known/security.txt",
       "headers": [{ "key": "Content-Type", "value": "text/plain; charset=utf-8" }]
     }
   ]

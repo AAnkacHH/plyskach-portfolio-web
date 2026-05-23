@@ -31,4 +31,94 @@
     <xhtml:link rel="alternate" hreflang="uk" href="https://mykhayloplyskach.com/uk"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mykhayloplyskach.com/"/>
   </url>
+  <url>
+    <loc>https://mykhayloplyskach.com/privacy</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mykhayloplyskach.com/privacy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mykhayloplyskach.com/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mykhayloplyskach.com/uk/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mykhayloplyskach.com/privacy"/>
+  </url>
+  <url>
+    <loc>https://mykhayloplyskach.com/en/privacy</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mykhayloplyskach.com/privacy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mykhayloplyskach.com/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mykhayloplyskach.com/uk/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mykhayloplyskach.com/privacy"/>
+  </url>
+  <url>
+    <loc>https://mykhayloplyskach.com/uk/privacy</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mykhayloplyskach.com/privacy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mykhayloplyskach.com/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mykhayloplyskach.com/uk/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mykhayloplyskach.com/privacy"/>
+  </url>
+  <url>
+    <loc>https://mykhayloplyskach.com/terms</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mykhayloplyskach.com/terms"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mykhayloplyskach.com/en/terms"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mykhayloplyskach.com/uk/terms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mykhayloplyskach.com/terms"/>
+  </url>
+  <url>
+    <loc>https://mykhayloplyskach.com/en/terms</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mykhayloplyskach.com/terms"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mykhayloplyskach.com/en/terms"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mykhayloplyskach.com/uk/terms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mykhayloplyskach.com/terms"/>
+  </url>
+  <url>
+    <loc>https://mykhayloplyskach.com/uk/terms</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mykhayloplyskach.com/terms"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mykhayloplyskach.com/en/terms"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mykhayloplyskach.com/uk/terms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mykhayloplyskach.com/terms"/>
+  </url>
+  <url>
+    <loc>https://mykhayloplyskach.com/legal-notice</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mykhayloplyskach.com/legal-notice"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mykhayloplyskach.com/en/legal-notice"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mykhayloplyskach.com/uk/legal-notice"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mykhayloplyskach.com/legal-notice"/>
+  </url>
+  <url>
+    <loc>https://mykhayloplyskach.com/en/legal-notice</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mykhayloplyskach.com/legal-notice"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mykhayloplyskach.com/en/legal-notice"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mykhayloplyskach.com/uk/legal-notice"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mykhayloplyskach.com/legal-notice"/>
+  </url>
+  <url>
+    <loc>https://mykhayloplyskach.com/uk/legal-notice</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mykhayloplyskach.com/legal-notice"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mykhayloplyskach.com/en/legal-notice"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mykhayloplyskach.com/uk/legal-notice"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mykhayloplyskach.com/legal-notice"/>
+  </url>
 </urlset>

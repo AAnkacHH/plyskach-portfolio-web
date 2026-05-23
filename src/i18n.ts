@@ -8,8 +8,8 @@ type Locale = 'cs' | 'en' | 'uk';
 function detectLocale(): Locale {
     if (typeof window === 'undefined') return 'cs';
     const path = window.location.pathname;
-    if (path.startsWith('/en')) return 'en';
-    if (path.startsWith('/uk')) return 'uk';
+    if (/^\/en(\/|$)/.test(path)) return 'en';
+    if (/^\/uk(\/|$)/.test(path)) return 'uk';
     const stored = localStorage.getItem('user-locale') as Locale | null;
     return stored === 'en' || stored === 'uk' || stored === 'cs' ? stored : 'cs';
 }
