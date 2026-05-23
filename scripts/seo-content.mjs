@@ -11,7 +11,7 @@ export const PERSON = {
   familyName: 'Plyskach',
   alternateName: ['Plyskach', 'Mykhaylo Plyskach', 'Михайло Плискач'],
   jobTitle: 'Zedník — OSVČ',
-  image: `${SITE_URL}/profile.png`,
+  image: `${SITE_URL}/profile.webp`,
   email: 'mailto:maria.andrej@centrum.cz',
   telephone: '+420777444973',
   sameAs: [

@@ -4,7 +4,11 @@
         <div class="flex-shrink-0" data-aos="fade-right">
             <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                    src="/profile.png"
+                    src="/profile.webp"
+                    width="320"
+                    height="320"
+                    loading="lazy"
+                    decoding="async"
                     :alt="name"
                     class="w-full h-full object-cover"
                 />
