@@ -44,44 +44,44 @@
                 </div>
             </div>
 
-            <!-- Copyright Bar -->
+            <!-- Copyright + legal nav -->
             <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
                 <div class="text-center md:text-left">
                     <span>{{ t('footer.copyright') }}</span>
                 </div>
-                <div class="text-center md:text-right">
-                    <span>{{ t('footer.design_credit_prefix') }}</span>
-                    <a
-                        :href="t('footer.design_credit_link_url')"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="text-blue-400 hover:text-white transition-colors ml-1"
-                    >
-                        {{ t('footer.design_credit_link_text') }}
-                    </a>
-                </div>
+                <nav
+                    class="flex flex-wrap justify-center md:justify-end items-center gap-x-3 gap-y-2"
+                    :aria-label="t('legal.footerNav.label')"
+                >
+                    <RouterLink
+                        :to="legalPath('/privacy')"
+                        class="hover:text-white transition-colors"
+                    >{{ t('legal.footerNav.privacy') }}</RouterLink>
+                    <span aria-hidden="true" class="text-gray-700">·</span>
+                    <RouterLink
+                        :to="legalPath('/terms')"
+                        class="hover:text-white transition-colors"
+                    >{{ t('legal.footerNav.terms') }}</RouterLink>
+                    <span aria-hidden="true" class="text-gray-700">·</span>
+                    <RouterLink
+                        :to="legalPath('/legal-notice')"
+                        class="hover:text-white transition-colors"
+                    >{{ t('legal.footerNav.notice') }}</RouterLink>
+                </nav>
             </div>
 
-            <!-- Legal nav (bottom) -->
-            <nav
-                class="mt-8 pt-6 border-t border-gray-800 flex flex-wrap justify-center items-center gap-x-3 gap-y-2 text-xs text-gray-500"
-                :aria-label="t('legal.footerNav.label')"
-            >
-                <RouterLink
-                    :to="legalPath('/privacy')"
-                    class="hover:text-white transition-colors"
-                >{{ t('legal.footerNav.privacy') }}</RouterLink>
-                <span aria-hidden="true" class="text-gray-700">·</span>
-                <RouterLink
-                    :to="legalPath('/terms')"
-                    class="hover:text-white transition-colors"
-                >{{ t('legal.footerNav.terms') }}</RouterLink>
-                <span aria-hidden="true" class="text-gray-700">·</span>
-                <RouterLink
-                    :to="legalPath('/legal-notice')"
-                    class="hover:text-white transition-colors"
-                >{{ t('legal.footerNav.notice') }}</RouterLink>
-            </nav>
+            <!-- Powered-by line (always bottom) -->
+            <div class="mt-6 pt-4 border-t border-gray-800 text-center text-xs text-gray-500">
+                <span>{{ t('footer.powered_by') }}</span>
+                <a
+                    :href="t('footer.design_credit_link_url')"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-blue-400 hover:text-white transition-colors ml-1"
+                >
+                    {{ t('footer.design_credit_link_text') }}
+                </a>
+            </div>
         </div>
     </footer>
 </template>
