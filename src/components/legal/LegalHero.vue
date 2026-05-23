@@ -1,5 +1,5 @@
 <template>
-  <header class="bg-[#0f1219] text-white pt-32 pb-16 border-b border-white/10">
+  <header class="text-white pt-32 pb-16 border-b border-white/10 relative">
     <div class="container mx-auto px-6 md:px-12 lg:px-20 max-w-4xl">
       <p class="uppercase tracking-[0.2em] text-xs text-blue-400 mb-4">{{ kicker }}</p>
       <h1 class="text-4xl md:text-5xl font-bold mb-6 tracking-tight">{{ title }}</h1>

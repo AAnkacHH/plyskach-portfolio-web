@@ -3,7 +3,7 @@
     <!-- Hero photo lives on its own fixed compositing layer.
          Avoids the jank/flicker from `background-attachment: fixed`
          (which causes the browser to repaint the bg every scroll frame). -->
-    <div v-if="isHome" class="fixed-hero-bg" aria-hidden="true"></div>
+    <div class="fixed-hero-bg" aria-hidden="true"></div>
 
     <div class="content-stack">
       <Suspense>
@@ -26,19 +26,12 @@
 </template>
 
 <script setup>
-import { computed, defineAsyncComponent } from 'vue';
-import { useRoute } from 'vue-router';
+import { defineAsyncComponent } from 'vue';
 import loadingSpinner from './components/loadingSpinner.vue';
 
 const NavBar = defineAsyncComponent(() => import('./components/NavBar.vue'));
 const Footer = defineAsyncComponent(() => import('./components/Footer.vue'));
 const BackToTop = defineAsyncComponent(() => import('./components/BackToTop.vue'));
-
-const route = useRoute();
-const isHome = computed(() => {
-  const p = route.path.replace(/\/$/, '');
-  return p === '' || p === '/en' || p === '/uk';
-});
 </script>
 
 <style scoped>
