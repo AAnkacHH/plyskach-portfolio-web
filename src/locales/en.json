@@ -98,7 +98,7 @@
         ]
     },
     "about": {
-        "title": "About Me",
+        "title": "About Plyskach — mason in Prague",
         "subtitle_line1": "Mason in construction since 2004.",
         "subtitle_line2": "Prague and Central Bohemia.",
         "person_name": "Mykhaylo Plyskach",
@@ -200,10 +200,11 @@
         "trust_desc": "99% customer satisfaction on Poptávej.cz.",
         "trust_link": "Profile on Firemniprofil.cz →",
         "ico": "Reg. No. (IČO): 26369524",
-        "copyright": "© 2025 Mykhaylo Plyskach. All rights reserved.",
+        "copyright": "© 2025 Plyskach · Mykhaylo Plyskach. All rights reserved.",
         "design_credit_prefix": "Design & Development: Ing. Andrii Plyskach ·",
         "design_credit_link_text": "ankach.com",
-        "design_credit_link_url": "https://ankach.com"
+        "design_credit_link_url": "https://ankach.com",
+        "tagline_surname": "Plyskach — masonry craft with tradition."
     },
     "portfolio": {
         "title": "Work Gallery",

@@ -98,7 +98,7 @@
         ]
     },
     "about": {
-        "title": "Про мене",
+        "title": "Про Плискача — муляр у Празі",
         "subtitle_line1": "Муляр у будівництві з 2004 року.",
         "subtitle_line2": "Прага та Середньочеський край.",
         "person_name": "Михайло Плискач",
@@ -200,10 +200,11 @@
         "trust_desc": "99% задоволених клієнтів на Poptávej.cz.",
         "trust_link": "Профіль на Firemniprofil.cz →",
         "ico": "IČO: 26369524",
-        "copyright": "© 2025 Михайло Плискач. Всі права захищені.",
+        "copyright": "© 2025 Плискач · Михайло Плискач. Всі права захищені.",
         "design_credit_prefix": "Дизайн та розробка: Інж. Андрій Плискач ·",
         "design_credit_link_text": "ankach.com",
-        "design_credit_link_url": "https://ankach.com"
+        "design_credit_link_url": "https://ankach.com",
+        "tagline_surname": "Плискач — мулярське ремесло з традицією."
     },
     "portfolio": {
         "title": "Галерея робіт",
