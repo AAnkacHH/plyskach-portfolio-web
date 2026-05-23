@@ -44,36 +44,10 @@
                 </div>
             </div>
 
-            <!-- Surname tagline (entity reinforcement for "Plyskach" as standalone token) -->
-            <p class="text-gray-400 text-sm italic text-center mb-6">{{ t('footer.tagline_surname') }}</p>
-
-            <!-- Legal nav -->
-            <nav
-                class="flex flex-wrap justify-center items-center gap-x-3 gap-y-2 text-sm text-gray-400 mb-6"
-                :aria-label="t('legal.footerNav.label')"
-            >
-                <RouterLink
-                    :to="legalPath('/privacy')"
-                    class="hover:text-white transition-colors"
-                >{{ t('legal.footerNav.privacy') }}</RouterLink>
-                <span aria-hidden="true" class="text-gray-600">·</span>
-                <RouterLink
-                    :to="legalPath('/terms')"
-                    class="hover:text-white transition-colors"
-                >{{ t('legal.footerNav.terms') }}</RouterLink>
-                <span aria-hidden="true" class="text-gray-600">·</span>
-                <RouterLink
-                    :to="legalPath('/legal-notice')"
-                    class="hover:text-white transition-colors"
-                >{{ t('legal.footerNav.notice') }}</RouterLink>
-            </nav>
-
             <!-- Copyright Bar -->
             <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
-                <div class="flex flex-col md:flex-row md:items-center gap-1 md:gap-4 text-center md:text-left">
+                <div class="text-center md:text-left">
                     <span>{{ t('footer.copyright') }}</span>
-                    <span class="hidden md:inline">·</span>
-                    <span>{{ t('footer.ico') }}</span>
                 </div>
                 <div class="text-center md:text-right">
                     <span>{{ t('footer.design_credit_prefix') }}</span>
@@ -87,6 +61,27 @@
                     </a>
                 </div>
             </div>
+
+            <!-- Legal nav (bottom) -->
+            <nav
+                class="mt-8 pt-6 border-t border-gray-800 flex flex-wrap justify-center items-center gap-x-3 gap-y-2 text-xs text-gray-500"
+                :aria-label="t('legal.footerNav.label')"
+            >
+                <RouterLink
+                    :to="legalPath('/privacy')"
+                    class="hover:text-white transition-colors"
+                >{{ t('legal.footerNav.privacy') }}</RouterLink>
+                <span aria-hidden="true" class="text-gray-700">·</span>
+                <RouterLink
+                    :to="legalPath('/terms')"
+                    class="hover:text-white transition-colors"
+                >{{ t('legal.footerNav.terms') }}</RouterLink>
+                <span aria-hidden="true" class="text-gray-700">·</span>
+                <RouterLink
+                    :to="legalPath('/legal-notice')"
+                    class="hover:text-white transition-colors"
+                >{{ t('legal.footerNav.notice') }}</RouterLink>
+            </nav>
         </div>
     </footer>
 </template>
