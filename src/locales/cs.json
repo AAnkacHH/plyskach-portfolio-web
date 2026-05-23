@@ -94,6 +94,27 @@
                         "desc": "Rekonstrukce bytových jader, koupelen a navazující práce na klíč."
                     }
                 ]
+            },
+            {
+                "id": "plasters",
+                "title": "Omítky a stěrky",
+                "items": [
+                    {
+                        "id": "render",
+                        "title": "Vnitřní omítky",
+                        "desc": "Ruční i strojní omítání interiérů včetně přípravy podkladu."
+                    },
+                    {
+                        "id": "stucco",
+                        "title": "Štuky a hladké stěrky",
+                        "desc": "Jemné štukování a hladké stěrky pro malbu nebo dekorativní povrchy."
+                    },
+                    {
+                        "id": "decorative",
+                        "title": "Dekorativní stěrky",
+                        "desc": "Benátské stěrky, mikrocement a strukturované povrchy podle vzorníku."
+                    }
+                ]
             }
         ]
     },

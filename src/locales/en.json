@@ -94,6 +94,27 @@
                         "desc": "Bathroom and apartment-core renovations and related turnkey work."
                     }
                 ]
+            },
+            {
+                "id": "plasters",
+                "title": "Plasters & trowel finishes",
+                "items": [
+                    {
+                        "id": "render",
+                        "title": "Interior plasters",
+                        "desc": "Hand and machine plastering of interiors including substrate preparation."
+                    },
+                    {
+                        "id": "stucco",
+                        "title": "Stucco & smooth finishes",
+                        "desc": "Fine stucco and smooth trowel finishes ready for paint or decorative coats."
+                    },
+                    {
+                        "id": "decorative",
+                        "title": "Decorative finishes",
+                        "desc": "Venetian plasters, microcement and structured finishes to sample."
+                    }
+                ]
             }
         ]
     },
