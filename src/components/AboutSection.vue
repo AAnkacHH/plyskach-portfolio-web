@@ -59,8 +59,6 @@
                         @open="openCert(i)"
                     />
                 </div>
-
-                <p class="text-center text-sm text-gray-600 mt-12 italic">{{ t('about.certs_footer') }}</p>
             </div>
         </div>
 

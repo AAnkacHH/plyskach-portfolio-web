@@ -266,8 +266,8 @@ const cardImage = (id: string): string => {
   switch (id) {
     case 'tiles': return '/tiles.webp';
     case 'facades': return '/hero2.webp';
+    case 'masonry': return '/masonry.webp';
     case 'plasters': return projectHouse; // TODO: swap for a dedicated omítky photo when available
-    case 'masonry':
     default: return projectHouse;
   }
 };
