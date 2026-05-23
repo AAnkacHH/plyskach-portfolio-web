@@ -37,40 +37,110 @@
         <div class="paper-canvas relative w-full py-16">
             <div class="grain absolute inset-0 pointer-events-none"></div>
             <div class="relative container mx-auto px-6 md:px-12 lg:px-20">
-                <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-8 max-w-7xl mx-auto">
                     <CertificateCard
                         v-for="(cert, i) in certs"
-                        :key="i"
+                        :key="cert.slug"
                         :title="cert.title"
+                        :subtitle="cert.subtitle"
                         :issuer="cert.issuer"
-                        :year="cert.year"
+                        :year="cert.yearRange"
+                        :thumb="cert.thumb"
+                        :alt="cert.alt"
+                        :width="cert.width"
+                        :height="cert.height"
+                        :view-label="t('about.certs.view_label')"
+                        :session-count="cert.sessionCount"
+                        :sessions-text="cert.sessionCount && cert.sessionCount > 1
+                            ? t('about.certs.sessions_label', { count: cert.sessionCount })
+                            : ''"
                         data-aos="fade-up"
-                        :data-aos-delay="i * 150"
+                        :data-aos-delay="i * 120"
+                        @open="openCert(i)"
                     />
                 </div>
 
                 <p class="text-center text-sm text-gray-600 mt-12 italic">{{ t('about.certs_footer') }}</p>
             </div>
         </div>
+
+        <CertificateModal
+            v-if="activeCert"
+            :open="modalOpen"
+            :title="activeCert.title"
+            :subtitle="activeCert.subtitle"
+            :image="activeCert.image"
+            :alt="activeCert.alt"
+            :width="activeCert.width"
+            :height="activeCert.height"
+            :dates-full="activeCert.datesFull"
+            :issuer-url="activeCert.issuerUrl"
+            :course-label="t('about.certs.course_label')"
+            :issued-label="t('about.certs.issued_label')"
+            :issuer-link-label="t('about.certs.issuer_link_label')"
+            :close-label="t('about.certs.close_label')"
+            @update:open="modalOpen = $event"
+        />
     </section>
 </template>
 
-<script setup>
-import { computed } from 'vue';
+<script setup lang="ts">
+import { computed, ref } from 'vue';
 import { useScrollToSection } from '../lib/scrollToSection.ts';
 import { useI18n } from 'vue-i18n';
 import SectionHero from './editorial/SectionHero.vue';
 import AboutProfile from './about/AboutProfile.vue';
 import CertificateCard from './about/CertificateCard.vue';
+import CertificateModal from './about/CertificateModal.vue';
+import { CERTIFICATES } from '../constants/certificates';
 
 const { scrollToSection } = useScrollToSection();
 const { t, tm, rt } = useI18n();
 
-const certs = computed(() =>
-    tm('about.certs.items').map((c) => ({
-        title: rt(c.title),
-        issuer: rt(c.issuer),
-        year: rt(c.year)
-    }))
-);
+interface CertItem {
+    slug: string;
+    title: string;
+    subtitle: string;
+    issuer: string;
+    alt: string;
+    image: string;
+    thumb: string;
+    width: number;
+    height: number;
+    datesFull: string;
+    yearRange: string;
+    issuerUrl: string;
+    sessionCount?: number;
+}
+
+const certs = computed<CertItem[]>(() => {
+    const items = tm('about.certs.items') as Array<Record<string, string>>;
+    return CERTIFICATES.map((meta, i) => {
+        const item = items[i] ?? {};
+        return {
+            slug: meta.slug,
+            title: rt(item.title ?? ''),
+            subtitle: rt(item.subtitle ?? ''),
+            issuer: rt(item.issuer ?? ''),
+            alt: rt(item.alt ?? ''),
+            image: meta.image,
+            thumb: meta.thumb,
+            width: meta.width,
+            height: meta.height,
+            datesFull: meta.datesFull,
+            yearRange: meta.yearRange,
+            issuerUrl: meta.issuerUrl,
+            sessionCount: meta.sessionCount
+        };
+    });
+});
+
+const modalOpen = ref(false);
+const activeIndex = ref<number | null>(null);
+const activeCert = computed(() => (activeIndex.value !== null ? certs.value[activeIndex.value] : null));
+
+const openCert = (i: number) => {
+    activeIndex.value = i;
+    modalOpen.value = true;
+};
 </script>

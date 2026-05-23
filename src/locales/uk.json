@@ -108,24 +108,45 @@
         "bio_p3": "Працюю з кількома перевіреними співробітниками і не беру більше замовлень, ніж встигаю. Як домовилися — так і зроблю.",
         "contact_btn": "Зв'язатися",
         "certs_title": "СЕРТИФІКАТИ ТА НАВЧАННЯ",
-        "certs_subtitle": "Регулярно беру участь у навчаннях від виробників будівельної хімії. Скани повних сертифікатів надішлю на прохання.",
+        "certs_subtitle": "Регулярно беру участь у навчаннях від виробників будівельної хімії. Натисніть на сертифікат, щоб побачити оригінал.",
         "certs_footer": "Інші посвідчення та повне портфоліо — на прохання.",
         "certs": {
+            "view_label": "Переглянути сертифікат",
+            "close_label": "Закрити",
+            "sessions_label": "{count} навчання",
+            "issued_label": "Видано",
+            "course_label": "Курс",
+            "issuer_link_label": "decoritalia.cz",
             "items": [
                 {
-                    "title": "Нанесення декоративних штукатурок (stěrky)",
-                    "issuer": "Baumit Česko",
-                    "year": "2023"
+                    "title": "GRASSELLO 600",
+                    "subtitle": "Венеційський штук",
+                    "issuer": "Decor Italia · Colorificio Veneziano",
+                    "alt": "Сертифікат проходження навчання GRASSELLO 600 — венеційський штук, Decor Italia"
                 },
                 {
-                    "title": "ETICS — системи утеплення фасадів",
-                    "issuer": "Cemix",
-                    "year": "2020"
+                    "title": "MARMORINO FLOOR UNICO",
+                    "subtitle": "Епоксидна штукатурка для підлоги і стін",
+                    "issuer": "Decor Italia · Colorificio Veneziano",
+                    "alt": "Сертифікат проходження навчання MARMORINO FLOOR UNICO — епоксидна штукатурка, Decor Italia"
                 },
                 {
-                    "title": "Укладання плитки та великоформатних поверхонь",
-                    "issuer": "Mapei",
-                    "year": "2019"
+                    "title": "MARMORINO · TRAVERTINO",
+                    "subtitle": "Вапняні штукатурки",
+                    "issuer": "Decor Italia · Colorificio Veneziano",
+                    "alt": "Сертифікат проходження навчання Marmorino та Travertino — вапняні штукатурки, Decor Italia"
+                },
+                {
+                    "title": "VELATURE METALLICHE",
+                    "subtitle": "Металізовані покриття",
+                    "issuer": "Decor Italia · Colorificio Veneziano",
+                    "alt": "Сертифікат проходження навчання Velature Metalliche — металізовані покриття, Decor Italia"
+                },
+                {
+                    "title": "НАДІЙНИЙ ПОСТАЧАЛЬНИК",
+                    "subtitle": "99 % задоволених клієнтів",
+                    "issuer": "Poptávej.cz · IFORO Group",
+                    "alt": "Сертифікат надійного постачальника від Poptávej.cz — Mykhaylo Plyskach, 99 % задоволених клієнтів"
                 }
             ]
         }

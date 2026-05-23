@@ -108,24 +108,45 @@
         "bio_p3": "Pracuji s několika ověřenými spolupracovníky a neberu víc zakázek, než stíhám. Co domluvíme, to udělám.",
         "contact_btn": "Kontaktovat",
         "certs_title": "CERTIFIKÁTY A ŠKOLENÍ",
-        "certs_subtitle": "Pravidelně se účastním školení u výrobců stavební chemie. Sken kompletních certifikátů zašlu na vyžádání.",
+        "certs_subtitle": "Pravidelně se účastním školení u výrobců stavební chemie. Klikněte na kterýkoli certifikát a uvidíte originál.",
         "certs_footer": "Další osvědčení a kompletní portfolio na vyžádání.",
         "certs": {
+            "view_label": "Zobrazit certifikát",
+            "close_label": "Zavřít",
+            "sessions_label": "{count} školení",
+            "issued_label": "Vydáno",
+            "course_label": "Školení",
+            "issuer_link_label": "decoritalia.cz",
             "items": [
                 {
-                    "title": "Aplikace dekorativních stěrek",
-                    "issuer": "Baumit Česko",
-                    "year": "2023"
+                    "title": "GRASSELLO 600",
+                    "subtitle": "Benátský štuk",
+                    "issuer": "Decor Italia · Colorificio Veneziano",
+                    "alt": "Certifikát o absolvování školení GRASSELLO 600 — benátský štuk, Decor Italia"
                 },
                 {
-                    "title": "ETICS — zateplování fasád",
-                    "issuer": "Cemix",
-                    "year": "2020"
+                    "title": "MARMORINO FLOOR UNICO",
+                    "subtitle": "Pryskyřičná stěrka pro podlahy a stěny",
+                    "issuer": "Decor Italia · Colorificio Veneziano",
+                    "alt": "Certifikát o absolvování školení MARMORINO FLOOR UNICO — pryskyřičná stěrka, Decor Italia"
                 },
                 {
-                    "title": "Pokládka obkladů a dlažby",
-                    "issuer": "Mapei",
-                    "year": "2019"
+                    "title": "MARMORINO · TRAVERTINO",
+                    "subtitle": "Vápenné stěrky",
+                    "issuer": "Decor Italia · Colorificio Veneziano",
+                    "alt": "Certifikát o absolvování školení Marmorino a Travertino — vápenné stěrky, Decor Italia"
+                },
+                {
+                    "title": "VELATURE METALLICHE",
+                    "subtitle": "Metalické stěrky",
+                    "issuer": "Decor Italia · Colorificio Veneziano",
+                    "alt": "Certifikát o absolvování školení Velature Metalliche — metalické stěrky, Decor Italia"
+                },
+                {
+                    "title": "SPOLEHLIVÝ DODAVATEL",
+                    "subtitle": "99 % spokojenost zákazníků",
+                    "issuer": "Poptávej.cz · IFORO Group",
+                    "alt": "Certifikát spolehlivého dodavatele od Poptávej.cz — Mykhaylo Plyskach, 99 % spokojenost"
                 }
             ]
         }

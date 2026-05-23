@@ -108,24 +108,45 @@
         "bio_p3": "I work with a small group of trusted colleagues and never take on more jobs than I can handle. What we agree on is what gets done.",
         "contact_btn": "Contact Me",
         "certs_title": "CERTIFICATES & TRAINING",
-        "certs_subtitle": "I regularly attend training courses run by manufacturers of construction chemicals. Scans of full certificates available on request.",
+        "certs_subtitle": "I regularly attend training courses run by manufacturers of construction chemicals. Click any certificate to view the original.",
         "certs_footer": "Additional credentials and full portfolio available on request.",
         "certs": {
+            "view_label": "View certificate",
+            "close_label": "Close",
+            "sessions_label": "{count} sessions",
+            "issued_label": "Issued",
+            "course_label": "Course",
+            "issuer_link_label": "decoritalia.cz",
             "items": [
                 {
-                    "title": "Decorative plaster (stěrky) application",
-                    "issuer": "Baumit Czech Republic",
-                    "year": "2023"
+                    "title": "GRASSELLO 600",
+                    "subtitle": "Venetian stucco",
+                    "issuer": "Decor Italia · Colorificio Veneziano",
+                    "alt": "Certificate of completion — GRASSELLO 600, Venetian stucco training by Decor Italia"
                 },
                 {
-                    "title": "ETICS — façade insulation systems",
-                    "issuer": "Cemix",
-                    "year": "2020"
+                    "title": "MARMORINO FLOOR UNICO",
+                    "subtitle": "Resin-based trowel finish for floors and walls",
+                    "issuer": "Decor Italia · Colorificio Veneziano",
+                    "alt": "Certificate of completion — MARMORINO FLOOR UNICO, resin trowel finish training by Decor Italia"
                 },
                 {
-                    "title": "Tile and large-format installation",
-                    "issuer": "Mapei",
-                    "year": "2019"
+                    "title": "MARMORINO · TRAVERTINO",
+                    "subtitle": "Lime-based trowel finishes",
+                    "issuer": "Decor Italia · Colorificio Veneziano",
+                    "alt": "Certificate of completion — Marmorino and Travertino lime trowel finishes training by Decor Italia"
+                },
+                {
+                    "title": "VELATURE METALLICHE",
+                    "subtitle": "Metallic trowel finishes",
+                    "issuer": "Decor Italia · Colorificio Veneziano",
+                    "alt": "Certificate of completion — Velature Metalliche, metallic trowel finishes training by Decor Italia"
+                },
+                {
+                    "title": "RELIABLE SUPPLIER",
+                    "subtitle": "99% customer satisfaction",
+                    "issuer": "Poptávej.cz · IFORO Group",
+                    "alt": "Certificate of Reliable Supplier from Poptávej.cz — Mykhaylo Plyskach, 99% customer satisfaction"
                 }
             ]
         }
