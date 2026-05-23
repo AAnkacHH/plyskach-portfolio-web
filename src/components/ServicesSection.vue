@@ -264,7 +264,7 @@ const getRailMeta = (): string => {
 // TODO: replace with category-specific photos as they become available.
 const cardImage = (id: string): string => {
   switch (id) {
-    case 'tiles': return '/gpthero.webp';
+    case 'tiles': return '/tiles.webp';
     case 'facades': return '/hero2.webp';
     case 'masonry':
     default: return projectHouse;
