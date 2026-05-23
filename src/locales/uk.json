@@ -240,12 +240,10 @@
         "trust_title": "ПЕРЕВІРЕНИЙ МАЙСТЕР",
         "trust_desc": "99% задоволених клієнтів на Poptávej.cz.",
         "trust_link": "Профіль на Firemniprofil.cz →",
-        "ico": "IČO: 26369524",
         "copyright": "© 2025 Плискач · Михайло Плискач. Всі права захищені.",
         "design_credit_prefix": "Дизайн та розробка: Інж. Андрій Плискач ·",
         "design_credit_link_text": "ankach.com",
-        "design_credit_link_url": "https://ankach.com",
-        "tagline_surname": "Плискач — мулярське ремесло з традицією."
+        "design_credit_link_url": "https://ankach.com"
     },
     "portfolio": {
         "title": "Галерея робіт",
