@@ -3,18 +3,14 @@
     <!-- Hero photo lives on its own fixed compositing layer.
          Avoids the jank/flicker from `background-attachment: fixed`
          (which causes the browser to repaint the bg every scroll frame). -->
-    <div class="fixed-hero-bg" aria-hidden="true"></div>
+    <div v-if="isHome" class="fixed-hero-bg" aria-hidden="true"></div>
 
     <div class="content-stack">
       <Suspense>
         <template #default>
           <div>
             <NavBar />
-            <HeroSection />
-            <ServicesSection />
-            <LatestProjSection />
-            <ContactSection />
-            <AboutSection />
+            <RouterView />
             <Footer />
             <BackToTop />
           </div>
@@ -29,29 +25,20 @@
   </div>
 </template>
 
-<script>
-import { defineAsyncComponent } from 'vue';
-//Import components Asynchronously
-const NavBar = defineAsyncComponent(()=>import('./components/NavBar.vue'));
-const HeroSection = defineAsyncComponent(()=>import('./components/HeroSection.vue'));
-const ServicesSection = defineAsyncComponent(()=>import('./components/ServicesSection.vue'));
-const AboutSection = defineAsyncComponent(()=>import('./components/AboutSection.vue'));
-const TestimonialsSection = defineAsyncComponent(()=>import('./components/TestimonialsSection.vue'));
-const LatestProjSection = defineAsyncComponent(()=>import('./components/LatestProjSection.vue'));
-// const ExperienceAndSkills = defineAsyncComponent(()=>import('./components/ExperienceAndSkills.vue'));
-const ContactSection = defineAsyncComponent(()=>import('./components/ContactSection.vue'));
-const Footer = defineAsyncComponent(()=>import('./components/Footer.vue'));
-const BackToTop = defineAsyncComponent(()=>import('./components/BackToTop.vue'));
+<script setup>
+import { computed, defineAsyncComponent } from 'vue';
+import { useRoute } from 'vue-router';
 import loadingSpinner from './components/loadingSpinner.vue';
 
-export default {
-  components: {
-    NavBar,
-    BackToTop,
-    TestimonialsSection,
-    LatestProjSection,
-    HeroSection, ServicesSection, AboutSection, loadingSpinner, Footer, ContactSection},
-};
+const NavBar = defineAsyncComponent(() => import('./components/NavBar.vue'));
+const Footer = defineAsyncComponent(() => import('./components/Footer.vue'));
+const BackToTop = defineAsyncComponent(() => import('./components/BackToTop.vue'));
+
+const route = useRoute();
+const isHome = computed(() => {
+  const p = route.path.replace(/\/$/, '');
+  return p === '' || p === '/en' || p === '/uk';
+});
 </script>
 
 <style scoped>

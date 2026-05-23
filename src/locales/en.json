@@ -254,5 +254,291 @@
     },
     "file_preview": {
         "remove_file_title": "Remove File"
+    },
+    "legal": {
+        "backToHome": "Back to home",
+        "lastUpdated": "Last updated",
+        "tocTitle": "Contents",
+        "aiTranslationNote": "Note: the English and Ukrainian versions of this document are machine-assisted translations of the authoritative Czech original. In case of any discrepancy, the Czech version prevails. For clarification please write to {privacyEmail}.",
+        "footerNav": {
+            "label": "Legal information",
+            "privacy": "Privacy Policy",
+            "terms": "Terms of Use",
+            "notice": "Legal Notice"
+        },
+        "privacy": {
+            "metaTitle": "Privacy Policy · Mykhaylo Plyskach",
+            "metaDescription": "How personal data of visitors to mykhayloplyskach.com is handled — in line with GDPR and Czech Act 110/2019 Coll.",
+            "kicker": "Legal · Privacy",
+            "title": "Privacy Policy",
+            "effectiveDate": "23 May 2026",
+            "intro": "Your privacy matters. This document describes what data is collected when you use mykhayloplyskach.com, why it is processed, and how you can exercise your rights under Regulation (EU) 2016/679 (GDPR) and Czech Act No. 110/2019 Coll.",
+            "sections": [
+                {
+                    "id": "controller",
+                    "title": "1. Data Controller",
+                    "paragraphs": [
+                        "The data controller is Mykhaylo Plyskach, self-employed (OSVČ), registered place of business in Prague, Czech Republic, IČO (business ID): 26369524, recorded in the Czech Trade Register. Full identification and registered address can be verified in the public ARES registry at https://ares.gov.cz.",
+                        "Contact for privacy matters: {privacyEmail}. General contact: {workEmail}.",
+                        "A Data Protection Officer (DPO) has not been appointed — the obligation under Art. 37 GDPR does not apply to this activity."
+                    ]
+                },
+                {
+                    "id": "data-we-collect",
+                    "title": "2. What data is collected",
+                    "paragraphs": [
+                        "When you visit the site, log data is recorded automatically by the server and infrastructure providers: IP address, request timestamp, URL of the page, referrer and browser user-agent. This data is used to operate and secure the site.",
+                        "If you submit the contact form, the data you enter is processed — typically your name, email, phone, message and any attachments. It is used solely to respond to your enquiry and prepare a potential quote.",
+                        "The site does not use Google Analytics, Facebook Pixel or similar analytics tools. No remarketing cookies are set."
+                    ]
+                },
+                {
+                    "id": "cookies",
+                    "title": "3. Cookies and similar technologies",
+                    "paragraphs": [
+                        "The site stores only one technical entry in your browser's localStorage:",
+                        "This entry is strictly necessary to remember your language preference between visits. It is not used for tracking or profiling and does not require consent under § 89 of Czech Act 127/2005 Coll. on electronic communications."
+                    ],
+                    "list": [
+                        "user-locale (localStorage) — stores the selected language (cs / en / uk); validity: persists until you clear it; purpose: user experience."
+                    ]
+                },
+                {
+                    "id": "legal-basis",
+                    "title": "4. Legal basis for processing",
+                    "paragraphs": [
+                        "Processing of personal data relies on the following legal bases under Art. 6 GDPR:"
+                    ],
+                    "list": [
+                        "Operation and security of the site (server logs, technical cookies) — Art. 6(1)(f) GDPR, legitimate interest in operating and securing the service.",
+                        "Handling enquiries from the contact form — Art. 6(1)(b) GDPR, pre-contract measures at the request of the data subject.",
+                        "Compliance with statutory obligations (accounting, tax) — Art. 6(1)(c) GDPR."
+                    ]
+                },
+                {
+                    "id": "processors",
+                    "title": "5. Processors and service providers",
+                    "paragraphs": [
+                        "The following processors have access to some data only to the extent necessary, under contracts that meet Art. 28 GDPR:"
+                    ],
+                    "list": [
+                        "Cloudflare, Inc., 101 Townsend Street, San Francisco, CA 94107, USA — DNS, CDN, reverse proxy and DDoS protection. Cloudflare processes IP addresses and HTTP request metadata as traffic passes through. Transfer to the United States is covered by the EU-US Data Privacy Framework (https://www.dataprivacyframework.gov) and Standard Contractual Clauses.",
+                        "Hosting provider (cloud infrastructure in the EU) — operation of the site and applications. Servers are located within the European Union.",
+                        "SMTP / email mailbox provider — delivery of contact-form content and email correspondence to the controller's mailbox. Operated within the EU; access secured by TLS and authentication."
+                    ]
+                },
+                {
+                    "id": "international-transfers",
+                    "title": "6. Transfers outside the EU/EEA",
+                    "paragraphs": [
+                        "Apart from traffic passing through Cloudflare (see above), no systematic transfer of personal data outside the EU/EEA takes place. Where such a transfer occurs, it is carried out exclusively under safeguards listed in Art. 46 GDPR (Standard Contractual Clauses) or an adequacy decision under Art. 45 GDPR."
+                    ]
+                },
+                {
+                    "id": "retention",
+                    "title": "7. Retention",
+                    "paragraphs": [
+                        "Data is retained only for as long as necessary:"
+                    ],
+                    "list": [
+                        "Server access logs — typically 7 to 30 days, depending on the provider.",
+                        "Email correspondence and contact-form messages — for the duration of handling the enquiry and up to 24 months thereafter for potential follow-up; then deleted.",
+                        "Invoices and tax documents — for the period required by law (typically 10 years under Czech Act 235/2004 Coll. on VAT and Act 563/1991 Coll. on accounting)."
+                    ]
+                },
+                {
+                    "id": "rights",
+                    "title": "8. Your rights",
+                    "paragraphs": [
+                        "As a data subject you have the following rights under GDPR:"
+                    ],
+                    "list": [
+                        "Right of access (Art. 15 GDPR).",
+                        "Right to rectification (Art. 16 GDPR).",
+                        "Right to erasure / to be forgotten (Art. 17 GDPR) — to the extent not blocked by statutory retention duties.",
+                        "Right to restriction of processing (Art. 18 GDPR).",
+                        "Right to data portability (Art. 20 GDPR) — available only for processing based on consent or contract.",
+                        "Right to object to processing based on legitimate interest (Art. 21 GDPR).",
+                        "Right not to be subject to a decision based solely on automated processing (Art. 22 GDPR) — no automated decision-making or profiling is performed.",
+                        "Right to lodge a complaint with a supervisory authority (Art. 77 GDPR) — see section 9."
+                    ]
+                },
+                {
+                    "id": "supervisory-authority",
+                    "title": "9. Supervisory authority",
+                    "paragraphs": [
+                        "The competent supervisory authority in the Czech Republic is the Office for Personal Data Protection (Úřad pro ochranu osobních údajů, ÚOOÚ), Pplk. Sochora 27, 170 00 Praha 7. Website: https://www.uoou.gov.cz. You may lodge a complaint there if you believe the processing of your data infringes GDPR or Czech Act 110/2019 Coll."
+                    ]
+                },
+                {
+                    "id": "children",
+                    "title": "10. Children's data",
+                    "paragraphs": [
+                        "The site is not intended for children under 16 and their personal data is not knowingly processed. Any such data that may be received inadvertently will be deleted without delay."
+                    ]
+                },
+                {
+                    "id": "changes",
+                    "title": "11. Changes to this policy",
+                    "paragraphs": [
+                        "This document may be updated over time. The current version is always available at https://mykhayloplyskach.com/en/privacy with the date of the latest revision shown in the header."
+                    ]
+                },
+                {
+                    "id": "contact",
+                    "title": "12. Contact",
+                    "paragraphs": [
+                        "For any question regarding personal-data processing, requests to exercise rights, or objections, please contact {privacyEmail}. We will respond within the statutory one-month period from receipt of the request."
+                    ]
+                }
+            ]
+        },
+        "terms": {
+            "metaTitle": "Terms of Use · Mykhaylo Plyskach",
+            "metaDescription": "Terms of use for mykhayloplyskach.com — intellectual property, permitted use, machine-reading opt-out for AI training.",
+            "kicker": "Legal · Terms",
+            "title": "Terms of Use",
+            "effectiveDate": "23 May 2026",
+            "intro": "These terms describe the rules for using mykhayloplyskach.com (the \"site\"). By using the site you agree to these terms. If you do not agree, please do not use the site.",
+            "sections": [
+                {
+                    "id": "acceptance",
+                    "title": "1. Acceptance of terms",
+                    "paragraphs": [
+                        "By entering and using the site you become a \"user\" and accept these terms in full. These terms constitute a binding agreement between you and the operator of the site (see Legal Notice)."
+                    ]
+                },
+                {
+                    "id": "permitted-use",
+                    "title": "2. Permitted use",
+                    "paragraphs": [
+                        "The content of the site (texts, photographs, service descriptions) may be viewed for personal, non-commercial use. Sharing a link to a particular page is welcome. Short quotations with attribution (author's name and URL) are allowed in line with § 31 of Czech Act 121/2000 Coll. (Copyright Act)."
+                    ]
+                },
+                {
+                    "id": "prohibited-use",
+                    "title": "3. Prohibited use",
+                    "paragraphs": [
+                        "Without prior express consent of the operator, the following is prohibited:"
+                    ],
+                    "list": [
+                        "Systematic downloading of site content (scraping, harvesting) or copying large parts of texts, photographs or databases.",
+                        "Attempting unauthorized access to systems, disruption of operation or denial-of-service attacks.",
+                        "Impersonating the operator, falsifying identity or publishing misleading content in association with the operator's name.",
+                        "Using site content in a way that infringes applicable law, public morals or third-party rights."
+                    ]
+                },
+                {
+                    "id": "intellectual-property",
+                    "title": "4. Intellectual property",
+                    "paragraphs": [
+                        "All content on the site — project photographs, service descriptions, interface design, source code of templates and structured data — is protected by copyright under Czech Act 121/2000 Coll. and related EU legislation. Ownership and copyright belong to the operator or its licensors.",
+                        "Use of protected elements beyond the scope permitted in section 2 requires prior written consent. For licensing enquiries: {workEmail}."
+                    ]
+                },
+                {
+                    "id": "ai-tdm-optout",
+                    "title": "5. Artificial intelligence and automated processing",
+                    "paragraphs": [
+                        "The operator expressly reserves the rights of text and data mining (TDM opt-out) under Art. 4(3) of Directive (EU) 2019/790 on copyright in the Digital Single Market. The content of this site may not be used to train AI models, language models or to build datasets for those purposes — except for the indexing explicitly allowed for search engines and citation assistants (see robots.txt).",
+                        "This reservation is also expressed in machine-readable form in robots.txt and site metadata. Any use of content in breach of this reservation constitutes infringement of copyright."
+                    ]
+                },
+                {
+                    "id": "third-party",
+                    "title": "6. Third-party content and links",
+                    "paragraphs": [
+                        "The site may contain links to external resources (e.g. Firemniprofil.cz, social networks, certification authorities). The operator is not responsible for the content, availability or security of these external sources."
+                    ]
+                },
+                {
+                    "id": "disclaimer",
+                    "title": "7. Disclaimer",
+                    "paragraphs": [
+                        "Content is provided \"as is\" without warranties of accuracy, currency or availability. Information about prices, availability of dates or scope of services is informational only and does not constitute a binding offer within the meaning of § 1732 of Czech Act 89/2012 Coll. (Civil Code). A binding contract is formed only on individual agreement between the operator and the customer.",
+                        "Minor variations in colour, texture and finish from illustrative photographs are a natural part of craft work and do not constitute defective performance."
+                    ]
+                },
+                {
+                    "id": "liability",
+                    "title": "8. Limitation of liability",
+                    "paragraphs": [
+                        "The operator is not liable for damages incurred in connection with use or unavailability of the site, except for damages caused intentionally or through gross negligence. This limitation does not apply to the extent excluded by mandatory provisions of Czech law (in particular consumer protection under § 1812 et seq. of the Civil Code)."
+                    ]
+                },
+                {
+                    "id": "changes",
+                    "title": "9. Changes to terms",
+                    "paragraphs": [
+                        "The operator reserves the right to modify these terms at any time. Changes take effect on publication at https://mykhayloplyskach.com/en/terms. The date of the latest revision is shown in the header of this document."
+                    ]
+                },
+                {
+                    "id": "governing-law",
+                    "title": "10. Governing law and jurisdiction",
+                    "paragraphs": [
+                        "These terms and any legal relations arising from them are governed by the law of the Czech Republic, in particular the Civil Code (Act 89/2012 Coll.). Czech general courts have jurisdiction; if the user is a consumer, this clause does not affect the right to sue at the consumer's place of residence."
+                    ]
+                }
+            ]
+        },
+        "notice": {
+            "metaTitle": "Legal Notice · Mykhaylo Plyskach",
+            "metaDescription": "Identification of the operator of mykhayloplyskach.com under § 435 of the Czech Civil Code — contact details, business ID, supervisory bodies and copyright.",
+            "kicker": "Legal · Impressum",
+            "title": "Legal Notice",
+            "effectiveDate": "23 May 2026",
+            "intro": "Identification of the operator of mykhayloplyskach.com under § 435 of Czech Act 89/2012 Coll., Civil Code.",
+            "sections": [
+                {
+                    "id": "provider",
+                    "title": "1. Operator",
+                    "paragraphs": [
+                        "Mykhaylo Plyskach — self-employed (OSVČ)\nRegistered place of business: Prague, Czech Republic\nBusiness ID (IČO): 26369524\nRecorded in the Czech Trade Register (Živnostenský rejstřík).",
+                        "Full identification of the operator, including the exact registered address, can be verified in the public ARES registry of the Czech Ministry of Finance at https://ares.gov.cz by the business ID above. The operator is a VAT payer; the VAT identification number (DIČ) is likewise available in the ARES registry."
+                    ]
+                },
+                {
+                    "id": "contact",
+                    "title": "2. Contact",
+                    "paragraphs": [
+                        "General correspondence: {workEmail}\nPrivacy matters: {privacyEmail}\nPhone: +420 777 444 973",
+                        "The operator communicates primarily in Czech; English and Ukrainian are possible upon prior arrangement."
+                    ]
+                },
+                {
+                    "id": "supervisory",
+                    "title": "3. Supervisory bodies",
+                    "paragraphs": [
+                        "The trade licence is granted and supervised by the trade licensing office of the relevant municipal district at the place of business; the general register of trade licences is maintained by the Czech Ministry of Industry and Trade.",
+                        "In matters of consumer protection, supervision is performed by the Czech Trade Inspection (Česká obchodní inspekce, ČOI), Štěpánská 567/15, 120 00 Praha 2, https://www.coi.cz. Out-of-court consumer dispute resolution is also handled by ČOI at https://adr.coi.cz.",
+                        "In matters of personal-data protection, supervision is performed by the Office for Personal Data Protection (ÚOOÚ), Pplk. Sochora 27, 170 00 Praha 7, https://www.uoou.gov.cz."
+                    ]
+                },
+                {
+                    "id": "copyright",
+                    "title": "4. Copyright",
+                    "paragraphs": [
+                        "© 2026 Mykhaylo Plyskach. All rights reserved. Texts, photographs and graphic design of the site are protected by Czech Act 121/2000 Coll., the Copyright Act, and related legislation. Use beyond the scope permitted by law or by the Terms of Use requires prior consent of the author."
+                    ]
+                },
+                {
+                    "id": "disclaimer",
+                    "title": "5. Disclaimer",
+                    "paragraphs": [
+                        "Site content is informational in nature and is provided without warranties of accuracy, currency or completeness. The operator is not liable for any technical outages, data loss or damage arising in connection with site use, save in cases of intentional act or gross negligence.",
+                        "External links serve as supporting material; the operator is not responsible for the content or operation of third parties."
+                    ]
+                },
+                {
+                    "id": "communications",
+                    "title": "6. Offers and commercial communications",
+                    "paragraphs": [
+                        "Information published on this site — including prices and service descriptions — is informational and does not constitute a binding offer within the meaning of § 1732 of the Civil Code. A binding agreement between operator and customer is formed only on individual arrangement (typically by email or signed order).",
+                        "The operator does not send unsolicited commercial communications within the meaning of § 7 of Czech Act 480/2004 Coll. on certain information-society services. You may submit your contact for a quote via the contact form — this expresses a legitimate interest in receiving a quote."
+                    ]
+                }
+            ]
+        }
     }
 }
