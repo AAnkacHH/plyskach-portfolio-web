@@ -94,11 +94,32 @@
                         "desc": "Rekonstrukce bytových jader, koupelen a navazující práce na klíč."
                     }
                 ]
+            },
+            {
+                "id": "plasters",
+                "title": "Omítky a stěrky",
+                "items": [
+                    {
+                        "id": "render",
+                        "title": "Vnitřní omítky",
+                        "desc": "Ruční i strojní omítání interiérů včetně přípravy podkladu."
+                    },
+                    {
+                        "id": "stucco",
+                        "title": "Štuky a hladké stěrky",
+                        "desc": "Jemné štukování a hladké stěrky pro malbu nebo dekorativní povrchy."
+                    },
+                    {
+                        "id": "decorative",
+                        "title": "Dekorativní stěrky",
+                        "desc": "Benátské stěrky, mikrocement a strukturované povrchy podle vzorníku."
+                    }
+                ]
             }
         ]
     },
     "about": {
-        "title": "O mně",
+        "title": "O Plyskachovi — zedník v Praze",
         "subtitle_line1": "Zedník ve stavebnictví od roku 2004.",
         "subtitle_line2": "Praha a Středočeský kraj.",
         "person_name": "Mykhaylo Plyskach",
@@ -221,10 +242,11 @@
         "trust_desc": "99% spokojenost zákazníků na Poptávej.cz.",
         "trust_link": "Profil na Firemniprofil.cz →",
         "ico": "IČO: 26369524",
-        "copyright": "© 2025 Mykhaylo Plyskach. Všechna práva vyhrazena.",
+        "copyright": "© 2025 Plyskach · Mykhaylo Plyskach. Všechna práva vyhrazena.",
         "design_credit_prefix": "Design & Vývoj: Ing. Andrii Plyskach ·",
         "design_credit_link_text": "ankach.com",
-        "design_credit_link_url": "https://ankach.com"
+        "design_credit_link_url": "https://ankach.com",
+        "tagline_surname": "Plyskach — zednické řemeslo s tradicí."
     },
     "portfolio": {
         "title": "Galerie prací",

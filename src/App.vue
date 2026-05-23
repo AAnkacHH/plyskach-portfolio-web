@@ -86,7 +86,7 @@ export default {
       rgba(15, 18, 25, 0.30) 50%,
       rgba(15, 18, 25, 0.20) 100%
     ),
-    url('/hero2.png');
+    url('/hero2.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -108,7 +108,7 @@ export default {
         rgba(15, 18, 25, 0.40) 40%,
         rgba(15, 18, 25, 0.50) 100%
       ),
-      url('/hero2.png');
+      url('/hero2.webp');
   }
 }
 </style>

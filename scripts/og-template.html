@@ -1,0 +1,191 @@
+<!--
+  Source template for public/og-image.jpg (1200×630, used by og:image / twitter:image).
+  Regenerate after editing this file:
+
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+      --headless=new --disable-gpu --hide-scrollbars \
+      --window-size=1200,630 --virtual-time-budget=8000 \
+      --screenshot="$(pwd)/scripts/og-image.png" \
+      "file://$(pwd)/scripts/og-template.html"
+    sips -s format jpeg -s formatOptions 88 scripts/og-image.png --out public/og-image.jpg
+    rm scripts/og-image.png
+
+  Portrait is loaded from ../public/profile.webp via a relative file:// path so the
+  template works from disk without a server. Updating profile.webp flows into the
+  OG image on the next regeneration.
+-->
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=block');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    color: #f4eedf;
+    background:
+      radial-gradient(circle at 78% 18%, rgba(245, 125, 31, 0.18), transparent 55%),
+      radial-gradient(circle at 12% 82%, rgba(80, 110, 180, 0.22), transparent 60%),
+      linear-gradient(135deg, #182338 0%, #1e2a4a 50%, #131c30 100%);
+    position: relative;
+  }
+
+  .grain {
+    position: absolute; inset: 0;
+    background-image:
+      repeating-linear-gradient(0deg, rgba(255,255,255,0.015) 0 1px, transparent 1px 3px),
+      repeating-linear-gradient(90deg, rgba(0,0,0,0.025) 0 1px, transparent 1px 4px);
+    pointer-events: none;
+  }
+
+  .frame {
+    position: absolute;
+    inset: 22px;
+    border: 1px solid rgba(244, 238, 223, 0.16);
+    border-radius: 14px;
+  }
+
+  .layout {
+    position: relative;
+    display: grid;
+    grid-template-columns: 460px 1fr;
+    gap: 56px;
+    padding: 56px 70px 56px 64px;
+    width: 100%; height: 100%;
+    align-items: center;
+  }
+
+  .portrait-wrap {
+    position: relative;
+    width: 420px;
+    height: 510px;
+  }
+  .portrait-wrap::before {
+    content: '';
+    position: absolute;
+    inset: 14px -14px -14px 14px;
+    border: 1px solid rgba(245, 125, 31, 0.55);
+    border-radius: 10px;
+  }
+  .portrait {
+    position: relative;
+    width: 100%; height: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    object-position: center 22%;
+    box-shadow: 0 18px 50px rgba(0,0,0,0.55);
+    filter: contrast(1.05) saturate(0.92);
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding-right: 12px;
+  }
+  .eyebrow {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    letter-spacing: 0.42em;
+    color: #f57d1f;
+    text-transform: uppercase;
+  }
+  .brand {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 1.02;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    margin-top: 4px;
+  }
+  .surname {
+    color: #f57d1f;
+    display: block;
+  }
+  .tagline {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 28px;
+    color: #f4eedf;
+    margin-top: 18px;
+    line-height: 1.25;
+  }
+  .divider {
+    width: 88px;
+    height: 2px;
+    background: linear-gradient(90deg, #f57d1f 0%, transparent 100%);
+    margin: 20px 0 10px;
+  }
+  .meta {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: rgba(244, 238, 223, 0.92);
+  }
+  .meta .phone {
+    color: #ffffff;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  .meta small {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(244, 238, 223, 0.55);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .footer-bar {
+    position: absolute;
+    left: 64px;
+    right: 70px;
+    bottom: 34px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: rgba(244, 238, 223, 0.6);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .domain {
+    color: #ffffff;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+  }
+</style>
+</head>
+<body>
+  <div class="grain"></div>
+  <div class="frame"></div>
+  <div class="layout">
+    <div class="portrait-wrap">
+      <img class="portrait" src="../public/profile.webp" alt="">
+    </div>
+    <div class="content">
+      <div class="eyebrow">Zedník · OSVČ · 25 let praxe</div>
+      <div class="brand">Mykhaylo<br><span class="surname">Plyskach</span></div>
+      <div class="tagline">Zednické práce, obklady<br>a fasády · Praha</div>
+      <div class="divider"></div>
+      <div class="meta">
+        <small>Kontakt</small>
+        <span class="phone">+420 777 444 973</span>
+        <span>IČO 26369524 · Středočeský kraj</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bar">
+    <span>Mykhaylo Plyskach</span>
+    <span class="domain">mykhayloplyskach.com</span>
+  </div>
+</body>
+</html>

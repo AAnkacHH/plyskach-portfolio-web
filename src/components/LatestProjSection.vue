@@ -77,10 +77,10 @@ const captions: Record<string, Record<string, string>> = {
 const gallery = computed(() => {
     const c = captions[locale.value] || captions.cs;
     return [
-        { src: '/gallery/rekonstrukce-pokoje.jpg', caption: c.rekonstrukce },
-        { src: '/gallery/pokladka-dlazby.jpg', caption: c.pokladka },
-        { src: '/gallery/dlazby.jpg', caption: c.dlazby },
-        { src: '/gallery/projekt-04.jpg', caption: c.detail }
+        { src: '/gallery/rekonstrukce-pokoje.webp', caption: c.rekonstrukce },
+        { src: '/gallery/pokladka-dlazby.webp', caption: c.pokladka },
+        { src: '/gallery/dlazby.webp', caption: c.dlazby },
+        { src: '/gallery/projekt-04.webp', caption: c.detail }
     ];
 });
 </script>

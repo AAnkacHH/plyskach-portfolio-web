@@ -183,7 +183,7 @@
 import { ref, computed, onMounted, onUnmounted } from 'vue';
 import { useScrollToSection } from '../lib/scrollToSection.ts';
 import { useI18n } from 'vue-i18n';
-import projectHouse from '../assets/project_house.png';
+import projectHouse from '../assets/project_house.webp';
 import EditorialRule from './editorial/EditorialRule.vue';
 import EditorialStamp from './editorial/EditorialStamp.vue';
 
@@ -264,8 +264,9 @@ const getRailMeta = (): string => {
 // TODO: replace with category-specific photos as they become available.
 const cardImage = (id: string): string => {
   switch (id) {
-    case 'tiles': return '/gpthero.png';
-    case 'facades': return '/hero2.png';
+    case 'tiles': return '/tiles.webp';
+    case 'facades': return '/hero2.webp';
+    case 'plasters': return projectHouse; // TODO: swap for a dedicated omítky photo when available
     case 'masonry':
     default: return projectHouse;
   }

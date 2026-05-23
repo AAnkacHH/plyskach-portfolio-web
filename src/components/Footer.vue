@@ -44,6 +44,9 @@
                 </div>
             </div>
 
+            <!-- Surname tagline (entity reinforcement for "Plyskach" as standalone token) -->
+            <p class="text-gray-400 text-sm italic text-center mb-6">{{ t('footer.tagline_surname') }}</p>
+
             <!-- Copyright Bar -->
             <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
                 <div class="flex flex-col md:flex-row md:items-center gap-1 md:gap-4 text-center md:text-left">

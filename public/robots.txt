@@ -1,0 +1,10 @@
+# robots.txt — mykhayloplyskach.com
+# Policy: allow all crawlers, including AI training and citation bots
+# (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, OAI-SearchBot, etc.).
+# Goal: maximum search and AI-product visibility.
+# Updated: 2026-05-23
+
+User-agent: *
+Allow: /
+
+Sitemap: https://mykhayloplyskach.com/sitemap.xml
