@@ -58,19 +58,28 @@ const captions: Record<string, Record<string, string>> = {
         rekonstrukce: 'Rekonstrukce pokoje',
         pokladka: 'Pokládka dlažby',
         dlazby: 'Dlažby',
-        detail: 'Dekorativní obklad'
+        detail: 'Dekorativní obklad',
+        stuk: 'Dekorativní štuk s plátkovým zlatem',
+        mural: 'Umělecký mural',
+        mural_detail: 'Mural — atmosférní pohled'
     },
     en: {
         rekonstrukce: 'Room renovation',
         pokladka: 'Tile laying',
         dlazby: 'Tile samples',
-        detail: 'Decorative tile'
+        detail: 'Decorative tile',
+        stuk: 'Decorative stucco with gold leaf',
+        mural: 'Artistic mural',
+        mural_detail: 'Mural — atmospheric view'
     },
     uk: {
         rekonstrukce: 'Реконструкція кімнати',
         pokladka: 'Укладання плитки',
         dlazby: 'Зразки плитки',
-        detail: 'Декоративна плитка'
+        detail: 'Декоративна плитка',
+        stuk: 'Декоративна штукатурка з сухозліткою',
+        mural: 'Художній мурал',
+        mural_detail: 'Мурал — атмосферний вид'
     }
 };
 
@@ -80,7 +89,10 @@ const gallery = computed(() => {
         { src: '/gallery/rekonstrukce-pokoje.webp', caption: c.rekonstrukce },
         { src: '/gallery/pokladka-dlazby.webp', caption: c.pokladka },
         { src: '/gallery/dlazby.webp', caption: c.dlazby },
-        { src: '/gallery/projekt-04.webp', caption: c.detail }
+        { src: '/gallery/projekt-04.webp', caption: c.detail },
+        { src: '/gallery/dekorativni-stuk-koral.webp', caption: c.stuk },
+        { src: '/gallery/mural-portret.webp', caption: c.mural },
+        { src: '/gallery/mural-portret-detail.webp', caption: c.mural_detail }
     ];
 });
 </script>
