@@ -84,7 +84,7 @@ const { t, tm, rt, locale } = useI18n();
 
 const emailParams = {
   privacyEmail: 'privacy@mykhayloplyskach.com',
-  workEmail: 'maria.andrej@centrum.cz',
+  workEmail: 'info@mykhayloplyskach.com',
 };
 
 const sections = computed<Section[]>(() => {
