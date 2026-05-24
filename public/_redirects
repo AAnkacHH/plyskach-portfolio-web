@@ -1,0 +1,4 @@
+# Cloudflare Pages — SPA fallback for Vue Router (history mode)
+# Any non-asset path falls through to index.html so client-side routing
+# (/en, /uk, /privacy, /terms, /legal-notice etc.) keeps working.
+/*    /index.html    200

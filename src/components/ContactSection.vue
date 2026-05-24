@@ -235,8 +235,9 @@ const MAP_COORDS_LABEL = `${MAP_LAT.toFixed(4)}° N · ${MAP_LNG.toFixed(4)}° E
 const mapEmbedUrl = `https://www.google.com/maps?q=${MAP_LAT},${MAP_LNG}&z=17&output=embed`;
 const googleMapsLink = `https://www.google.com/maps/search/?api=1&query=${MAP_LAT},${MAP_LNG}`;
 
-// We assume the API endpoint /api/send-email exists.
-const hasEmailToken = true;
+// Email backend is not yet wired up on Cloudflare Pages — re-enable
+// once the Pages Function / Resend integration is in place.
+const hasEmailToken = false;
 
 const name = ref('');
 const email = ref('');
