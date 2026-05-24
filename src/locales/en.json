@@ -217,7 +217,36 @@
             "submit_btn": "Send Inquiry",
             "submitting_btn": "Sending...",
             "success_msg": "Message sent. I usually respond within 24 hours.",
-            "error_msg": "Error sending. Please try again or call."
+            "error_msg": "Error sending. Please try again or call.",
+            "owner": {
+                "subject": "New inquiry: {service} — {name}",
+                "eyebrow": "Bricklayer · OSVČ · 25 years' experience",
+                "heading": "New inquiry from the website",
+                "fields": {
+                    "name": "Name",
+                    "email": "Email",
+                    "phone": "Phone",
+                    "service": "Service"
+                },
+                "message_label": "Message"
+            },
+            "ack": {
+                "subject": "Thank you for your inquiry — Mykhaylo Plyskach",
+                "eyebrow": "Bricklayer · OSVČ · 25 years' experience",
+                "greeting": "Hello {name},",
+                "intro": "thank you for your inquiry. I usually reply within 24 hours. Below is a copy of the details you submitted.",
+                "summary_label": "Summary of your inquiry",
+                "fields": {
+                    "name": "Name",
+                    "email": "Email",
+                    "phone": "Phone",
+                    "service": "Service"
+                },
+                "message_label": "Message",
+                "signoff": "Best regards,",
+                "signoff_name": "Mykhaylo Plyskach",
+                "footer": "This message was sent automatically. Please do not reply to this email — I will reach out from my personal address."
+            }
         },
         "validation": {
             "name_required": "Name is required.",

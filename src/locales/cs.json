@@ -217,7 +217,36 @@
             "submit_btn": "Odeslat poptávku",
             "submitting_btn": "Odesílání...",
             "success_msg": "Zpráva byla odeslána. Ozvu se obvykle do 24 hodin.",
-            "error_msg": "Chyba při odesílání. Zkuste to prosím znovu nebo zavolejte."
+            "error_msg": "Chyba při odesílání. Zkuste to prosím znovu nebo zavolejte.",
+            "owner": {
+                "subject": "Nová poptávka: {service} — {name}",
+                "eyebrow": "Zedník · OSVČ · 25 let praxe",
+                "heading": "Nová poptávka přes web",
+                "fields": {
+                    "name": "Jméno",
+                    "email": "Email",
+                    "phone": "Telefon",
+                    "service": "Služba"
+                },
+                "message_label": "Zpráva"
+            },
+            "ack": {
+                "subject": "Děkujeme za vaši poptávku — Mykhaylo Plyskach",
+                "eyebrow": "Zedník · OSVČ · 25 let praxe",
+                "greeting": "Dobrý den {name},",
+                "intro": "děkuji za vaši poptávku. Ozvu se vám obvykle do 24 hodin. Níže najdete kopii údajů, které jste odeslal/a.",
+                "summary_label": "Souhrn vaší poptávky",
+                "fields": {
+                    "name": "Jméno",
+                    "email": "Email",
+                    "phone": "Telefon",
+                    "service": "Služba"
+                },
+                "message_label": "Zpráva",
+                "signoff": "S pozdravem,",
+                "signoff_name": "Mykhaylo Plyskach",
+                "footer": "Tato zpráva byla odeslána automaticky. Na tento e-mail prosím neodpovídejte — odpovím vám z osobní adresy."
+            }
         },
         "validation": {
             "name_required": "Jméno je povinné.",

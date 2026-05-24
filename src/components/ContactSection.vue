@@ -220,6 +220,7 @@ import EditorialRule from './editorial/EditorialRule.vue';
 import ContactRegisterRow from './contact/ContactRegisterRow.vue';
 import InquiryFormField from './contact/InquiryFormField.vue';
 import MapModal from './contact/MapModal.vue';
+import { buildOwnerEmail, buildAckEmail } from '../lib/emailTemplates.js';
 
 const { t } = useI18n();
 
@@ -363,24 +364,42 @@ const handleSubmit = async () => {
     submitStatus.value = null;
 
     try {
-        const esc = (s) => String(s)
-            .replace(/&/g, '&amp;')
-            .replace(/</g, '&lt;')
-            .replace(/>/g, '&gt;')
-            .replace(/"/g, '&quot;')
-            .replace(/'/g, '&#39;');
+        const formData = {
+            name: name.value,
+            email: email.value,
+            phone: phone.value,
+            service: serviceType.value,
+            message: message.value,
+        };
 
-        const html = [
-            '<h2 style="margin:0 0 16px;font:600 18px/1.3 system-ui,sans-serif">Nová poptávka přes web</h2>',
-            '<table style="border-collapse:collapse;font:14px/1.5 system-ui,sans-serif">',
-            `<tr><td style="padding:4px 12px 4px 0;color:#666"><strong>Jméno</strong></td><td>${esc(name.value)}</td></tr>`,
-            `<tr><td style="padding:4px 12px 4px 0;color:#666"><strong>Email</strong></td><td><a href="mailto:${esc(email.value)}">${esc(email.value)}</a></td></tr>`,
-            `<tr><td style="padding:4px 12px 4px 0;color:#666"><strong>Telefon</strong></td><td><a href="tel:${esc(phone.value.replace(/\s/g, ''))}">${esc(phone.value)}</a></td></tr>`,
-            `<tr><td style="padding:4px 12px 4px 0;color:#666"><strong>Služba</strong></td><td>${esc(serviceType.value)}</td></tr>`,
-            '</table>',
-            '<h3 style="margin:20px 0 8px;font:600 15px/1.3 system-ui,sans-serif">Zpráva</h3>',
-            `<p style="margin:0;white-space:pre-wrap;font:14px/1.5 system-ui,sans-serif">${esc(message.value)}</p>`,
-        ].join('');
+        const ownerHtml = buildOwnerEmail(formData, {
+            eyebrow: t('contact.form.owner.eyebrow'),
+            heading: t('contact.form.owner.heading'),
+            fields: {
+                name: t('contact.form.owner.fields.name'),
+                email: t('contact.form.owner.fields.email'),
+                phone: t('contact.form.owner.fields.phone'),
+                service: t('contact.form.owner.fields.service'),
+            },
+            message_label: t('contact.form.owner.message_label'),
+        });
+
+        const ackHtml = buildAckEmail(formData, {
+            eyebrow: t('contact.form.ack.eyebrow'),
+            greeting: t('contact.form.ack.greeting', { name: name.value }),
+            intro: t('contact.form.ack.intro'),
+            summary_label: t('contact.form.ack.summary_label'),
+            fields: {
+                name: t('contact.form.ack.fields.name'),
+                email: t('contact.form.ack.fields.email'),
+                phone: t('contact.form.ack.fields.phone'),
+                service: t('contact.form.ack.fields.service'),
+            },
+            message_label: t('contact.form.ack.message_label'),
+            signoff: t('contact.form.ack.signoff'),
+            signoff_name: t('contact.form.ack.signoff_name'),
+            footer: t('contact.form.ack.footer'),
+        });
 
         const attachments = files.value.map((f) => ({
             filename: f.name,
@@ -389,8 +408,15 @@ const handleSubmit = async () => {
         }));
 
         const payload = {
-            subject: `Nová poptávka: ${serviceType.value} — ${name.value}`,
-            html,
+            owner: {
+                subject: t('contact.form.owner.subject', { service: serviceType.value, name: name.value }),
+                html: ownerHtml,
+            },
+            visitor: {
+                to: email.value,
+                subject: t('contact.form.ack.subject'),
+                html: ackHtml,
+            },
             ...(attachments.length > 0 ? { attachments } : {}),
         };
 
