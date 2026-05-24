@@ -235,9 +235,7 @@ const MAP_COORDS_LABEL = `${MAP_LAT.toFixed(4)}° N · ${MAP_LNG.toFixed(4)}° E
 const mapEmbedUrl = `https://www.google.com/maps?q=${MAP_LAT},${MAP_LNG}&z=17&output=embed`;
 const googleMapsLink = `https://www.google.com/maps/search/?api=1&query=${MAP_LAT},${MAP_LNG}`;
 
-// Email backend is not yet wired up on Cloudflare Pages — re-enable
-// once the Pages Function / Resend integration is in place.
-const hasEmailToken = false;
+const hasEmailToken = true;
 
 const name = ref('');
 const email = ref('');
@@ -254,8 +252,6 @@ const serviceError = ref('');
 
 const files = ref([]);
 const fileError = ref('');
-// Vercel Serverless Payload limit is 4.5MB. Files are sent base64-encoded
-// (~33% wire-size inflation), so a 3MB raw cap stays under the limit.
 const MAX_TOTAL_SIZE = 3 * 1024 * 1024;
 
 const removeFile = (index) => {
@@ -367,19 +363,35 @@ const handleSubmit = async () => {
     submitStatus.value = null;
 
     try {
-        const payload = {
-            from: email.value,
-            subject: `Nová poptávka: ${serviceType.value} - ${name.value}`,
-            text: `
-                Jméno: ${name.value}
-                Email: ${email.value}
-                Telefon: ${phone.value}
-                Služba: ${serviceType.value}
+        const esc = (s) => String(s)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
 
-                Zpráva:
-                ${message.value}
-            `,
-            files: files.value
+        const html = [
+            '<h2 style="margin:0 0 16px;font:600 18px/1.3 system-ui,sans-serif">Nová poptávka přes web</h2>',
+            '<table style="border-collapse:collapse;font:14px/1.5 system-ui,sans-serif">',
+            `<tr><td style="padding:4px 12px 4px 0;color:#666"><strong>Jméno</strong></td><td>${esc(name.value)}</td></tr>`,
+            `<tr><td style="padding:4px 12px 4px 0;color:#666"><strong>Email</strong></td><td><a href="mailto:${esc(email.value)}">${esc(email.value)}</a></td></tr>`,
+            `<tr><td style="padding:4px 12px 4px 0;color:#666"><strong>Telefon</strong></td><td><a href="tel:${esc(phone.value.replace(/\s/g, ''))}">${esc(phone.value)}</a></td></tr>`,
+            `<tr><td style="padding:4px 12px 4px 0;color:#666"><strong>Služba</strong></td><td>${esc(serviceType.value)}</td></tr>`,
+            '</table>',
+            '<h3 style="margin:20px 0 8px;font:600 15px/1.3 system-ui,sans-serif">Zpráva</h3>',
+            `<p style="margin:0;white-space:pre-wrap;font:14px/1.5 system-ui,sans-serif">${esc(message.value)}</p>`,
+        ].join('');
+
+        const attachments = files.value.map((f) => ({
+            filename: f.name,
+            content: f.data,
+            type: f.mimeType,
+        }));
+
+        const payload = {
+            subject: `Nová poptávka: ${serviceType.value} — ${name.value}`,
+            html,
+            ...(attachments.length > 0 ? { attachments } : {}),
         };
 
         const response = await fetch('/api/send-email', {
