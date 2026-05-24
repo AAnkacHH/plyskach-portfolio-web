@@ -5,6 +5,7 @@ const HomePage = () => import('./components/HomePage.vue');
 const PrivacyPolicy = () => import('./components/legal/PrivacyPolicy.vue');
 const TermsOfUse = () => import('./components/legal/TermsOfUse.vue');
 const LegalNotice = () => import('./components/legal/LegalNotice.vue');
+const EmailPreview = () => import('./components/EmailPreview.vue');
 
 type Locale = 'cs' | 'en' | 'uk';
 const LOCALES: Locale[] = ['cs', 'en', 'uk'];
@@ -22,6 +23,7 @@ const routes: RouteRecordRaw[] = [
     ...makeLocalisedRoutes('', 'cs'),
     ...makeLocalisedRoutes('/en', 'en'),
     ...makeLocalisedRoutes('/uk', 'uk'),
+    { path: '/__email-preview', component: EmailPreview },
     { path: '/:pathMatch(.*)*', redirect: '/' },
 ];
 

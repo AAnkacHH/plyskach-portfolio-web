@@ -6,5 +6,6 @@
 
 User-agent: *
 Allow: /
+Disallow: /__email-preview
 
 Sitemap: https://mykhayloplyskach.com/sitemap.xml
