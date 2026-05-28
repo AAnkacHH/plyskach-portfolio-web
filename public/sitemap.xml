@@ -32,6 +32,36 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mykhayloplyskach.com/"/>
   </url>
   <url>
+    <loc>https://mykhayloplyskach.com/galerie</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mykhayloplyskach.com/galerie"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mykhayloplyskach.com/en/galerie"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mykhayloplyskach.com/uk/galerie"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mykhayloplyskach.com/galerie"/>
+  </url>
+  <url>
+    <loc>https://mykhayloplyskach.com/en/galerie</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mykhayloplyskach.com/galerie"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mykhayloplyskach.com/en/galerie"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mykhayloplyskach.com/uk/galerie"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mykhayloplyskach.com/galerie"/>
+  </url>
+  <url>
+    <loc>https://mykhayloplyskach.com/uk/galerie</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mykhayloplyskach.com/galerie"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mykhayloplyskach.com/en/galerie"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mykhayloplyskach.com/uk/galerie"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mykhayloplyskach.com/galerie"/>
+  </url>
+  <url>
     <loc>https://mykhayloplyskach.com/privacy</loc>
     <lastmod>2026-05-23</lastmod>
     <changefreq>yearly</changefreq>

@@ -5,6 +5,7 @@ const HomePage = () => import('./components/HomePage.vue');
 const PrivacyPolicy = () => import('./components/legal/PrivacyPolicy.vue');
 const TermsOfUse = () => import('./components/legal/TermsOfUse.vue');
 const LegalNotice = () => import('./components/legal/LegalNotice.vue');
+const GalleryPage = () => import('./components/GalleryPage.vue');
 const EmailPreview = () => import('./components/EmailPreview.vue');
 
 type Locale = 'cs' | 'en' | 'uk';
@@ -13,6 +14,7 @@ const LOCALES: Locale[] = ['cs', 'en', 'uk'];
 function makeLocalisedRoutes(prefix: string, locale: Locale): RouteRecordRaw[] {
     return [
         { path: `${prefix}`, component: HomePage, meta: { locale } },
+        { path: `${prefix}/galerie`, component: GalleryPage, meta: { locale } },
         { path: `${prefix}/privacy`, component: PrivacyPolicy, meta: { locale } },
         { path: `${prefix}/terms`, component: TermsOfUse, meta: { locale } },
         { path: `${prefix}/legal-notice`, component: LegalNotice, meta: { locale } },

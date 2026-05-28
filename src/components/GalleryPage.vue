@@ -1,25 +1,26 @@
 <template>
-    <section class="scroll-mt-28" id="projects">
-        <!-- Header -->
-        <div class="relative w-full h-80 flex items-center justify-center text-center text-white">
-            <div class="relative z-10 px-4 max-w-3xl">
-                <h2 class="font-display text-4xl md:text-5xl font-bold mb-4 uppercase tracking-tight">
-                    {{ t('portfolio.title') }}
-                </h2>
-                <p class="text-lg md:text-xl text-gray-200">{{ t('portfolio.subtitle') }}</p>
+    <article class="bg-white text-gray-900">
+        <header class="gallery-hero text-white pt-32 pb-16 border-b border-white/10 relative">
+            <div class="relative container mx-auto px-6 md:px-12 lg:px-20 max-w-4xl">
+                <p class="uppercase tracking-[0.2em] text-xs text-orange-400 mb-4">
+                    {{ t('gallery.kicker') }}
+                </p>
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
+                    {{ t('gallery.title') }}
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
+                    {{ t('gallery.intro') }}
+                </p>
             </div>
-        </div>
+        </header>
 
-        <!-- Gallery Grid -->
-        <div class="w-full bg-white/90 backdrop-blur-sm py-16">
+        <section class="w-full bg-white py-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6" data-aos="fade-up">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
                     <figure
-                        v-for="(item, index) in teaser"
+                        v-for="(item, index) in items"
                         :key="item.src"
                         class="gallery-tile group relative overflow-hidden aspect-[4/5] bg-gray-200"
-                        :data-aos-delay="index * 100"
-                        data-aos="fade-up"
                     >
                         <button
                             type="button"
@@ -43,24 +44,26 @@
                     </figure>
                 </div>
 
-                <!-- CTA to full gallery -->
-                <div class="text-center mt-12">
-                    <RouterLink :to="localePath('/galerie')" class="view-all-cta">
-                        <span>{{ t('portfolio.viewAll') }}</span>
-                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                <div class="mt-16 pt-8 border-t border-gray-200 text-center">
+                    <RouterLink
+                        :to="localePath('/')"
+                        class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium"
+                    >
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                         </svg>
+                        {{ t('gallery.backToHome') }}
                     </RouterLink>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <GalleryModal :items="teaser" v-model:index="lightboxIndex" />
-    </section>
+        <GalleryModal :items="items" v-model:index="lightboxIndex" />
+    </article>
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue';
+import { onBeforeUnmount, onMounted, ref, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { RouterLink } from 'vue-router';
 import { useGallery } from '../lib/gallery';
@@ -70,16 +73,60 @@ import GalleryModal from './gallery/GalleryModal.vue';
 const { t } = useI18n();
 const { items } = useGallery();
 
-const teaser = computed(() => items.value.slice(0, 4));
-
 const lightboxIndex = ref<number | null>(null);
 
 const openAt = (i: number) => {
     lightboxIndex.value = i;
 };
+
+let previousTitle = '';
+
+const applyTitle = () => {
+    document.title = `${t('gallery.title')} — Mykhaylo Plyskach`;
+};
+
+onMounted(() => {
+    previousTitle = document.title;
+    applyTitle();
+});
+
+onBeforeUnmount(() => {
+    if (previousTitle) document.title = previousTitle;
+});
+
+watch(() => t('gallery.title'), applyTitle);
 </script>
 
 <style scoped>
+.gallery-hero {
+    background-color: #0f1219;
+    background-image:
+        linear-gradient(
+            to right,
+            rgba(15, 18, 25, 0.7) 0%,
+            rgba(15, 18, 25, 0.40) 50%,
+            rgba(15, 18, 25, 0.30) 100%
+        ),
+        url('/hero2.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+    .gallery-hero {
+        background-position: 35% center;
+        background-image:
+            linear-gradient(
+                to bottom,
+                rgba(15, 18, 25, 0.60) 0%,
+                rgba(15, 18, 25, 0.45) 40%,
+                rgba(15, 18, 25, 0.55) 100%
+            ),
+            url('/hero2.webp');
+    }
+}
+
 .gallery-tile-button {
     display: block;
     width: 100%;
@@ -139,44 +186,10 @@ const openAt = (i: number) => {
     letter-spacing: 0.04em;
 }
 
-/* Always show caption on touch — no hover */
 @media (pointer: coarse) {
     .gallery-caption {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-.view-all-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.65rem;
-    padding: 0.85rem 1.5rem;
-    background: var(--orange);
-    color: var(--ink);
-    font-family: var(--display-font);
-    font-weight: 700;
-    font-size: 0.85rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.view-all-cta:hover,
-.view-all-cta:focus-visible {
-    background: var(--orange-hover);
-    outline: none;
-}
-
-.view-all-cta svg { transition: transform 0.2s ease; }
-.view-all-cta:hover svg,
-.view-all-cta:focus-visible svg { transform: translateX(4px); }
-
-@media (prefers-reduced-motion: reduce) {
-    .view-all-cta,
-    .view-all-cta svg { transition: none !important; }
 }
 </style>

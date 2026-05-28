@@ -277,7 +277,21 @@
     "portfolio": {
         "title": "Work Gallery",
         "subtitle": "Examples from my projects. I collect photos as I go — happy to send more on request.",
-        "note": "More references and photos available on request."
+        "note": "More references and photos available on request.",
+        "viewAll": "View full gallery",
+        "lightbox": {
+            "eyebrow": "Gallery",
+            "stampLabel": "PHOTO",
+            "prevLabel": "Previous",
+            "nextLabel": "Next",
+            "closeLabel": "Close"
+        }
+    },
+    "gallery": {
+        "kicker": "Work",
+        "title": "Work Gallery",
+        "intro": "Selected projects from recent years — tiling, stucco, façades and decorative finishes. More photos and references available on request.",
+        "backToHome": "Back to home"
     },
     "file_preview": {
         "remove_file_title": "Remove File"

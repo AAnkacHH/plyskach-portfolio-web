@@ -277,7 +277,21 @@
     "portfolio": {
         "title": "Galerie prací",
         "subtitle": "Ukázky z mých realizací. Fotodokumentaci sbírám průběžně — další pošlu na vyžádání.",
-        "note": "Další reference a fotografie zašlu na vyžádání."
+        "note": "Další reference a fotografie zašlu na vyžádání.",
+        "viewAll": "Zobrazit celou galerii",
+        "lightbox": {
+            "eyebrow": "Galerie",
+            "stampLabel": "FOTO",
+            "prevLabel": "Předchozí",
+            "nextLabel": "Další",
+            "closeLabel": "Zavřít"
+        }
+    },
+    "gallery": {
+        "kicker": "Práce",
+        "title": "Galerie prací",
+        "intro": "Vybrané realizace z posledních let — obklady, štuky, fasády a dekorativní povrchy. Další fotografie a reference rád zašlu na vyžádání.",
+        "backToHome": "Zpět na hlavní stránku"
     },
     "file_preview": {
         "remove_file_title": "Odstranit soubor"
