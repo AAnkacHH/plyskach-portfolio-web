@@ -10,57 +10,66 @@
             </div>
         </div>
 
-        <!-- Gallery Grid -->
+        <!-- Gallery marquee -->
         <div class="w-full bg-white/90 backdrop-blur-sm py-16">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6" data-aos="fade-up">
-                    <figure
-                        v-for="(item, index) in teaser"
-                        :key="item.src"
-                        class="gallery-tile group relative overflow-hidden aspect-[4/5] bg-gray-200"
-                        :data-aos-delay="index * 100"
-                        data-aos="fade-up"
+            <div
+                class="marquee"
+                :class="{ 'marquee--static': reduceMotion }"
+                data-aos="fade-up"
+                role="group"
+                :aria-label="t('portfolio.title')"
+            >
+                <ul
+                    class="marquee__track"
+                    :style="reduceMotion ? undefined : { animationDuration: duration }"
+                >
+                    <li
+                        v-for="(item, i) in marqueeItems"
+                        :key="i"
+                        class="gallery-tile group"
+                        :aria-hidden="i >= items.length ? 'true' : undefined"
                     >
                         <button
                             type="button"
                             class="gallery-tile-button"
                             :aria-label="item.caption"
-                            @click="openAt(index)"
+                            :tabindex="i >= items.length ? -1 : undefined"
+                            @click="openAt(i % items.length)"
                         >
                             <img
                                 :src="item.src"
-                                :alt="item.caption"
+                                :alt="i >= items.length ? '' : item.caption"
                                 loading="lazy"
                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                             />
                         </button>
                         <figcaption class="gallery-caption" aria-hidden="true">
                             <span class="gallery-caption-num">
-                                Nº {{ String(index + 1).padStart(2, '0') }}
+                                Nº {{ String((i % items.length) + 1).padStart(2, '0') }}
                             </span>
                             <span class="gallery-caption-text">{{ item.caption }}</span>
                         </figcaption>
-                    </figure>
-                </div>
+                    </li>
+                </ul>
+            </div>
 
-                <!-- CTA to full gallery -->
-                <div class="text-center mt-12">
-                    <RouterLink :to="localePath('/galerie')" class="view-all-cta">
-                        <span>{{ t('portfolio.viewAll') }}</span>
-                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                        </svg>
-                    </RouterLink>
-                </div>
+            <!-- CTA to full gallery -->
+            <div class="text-center mt-12">
+                <RouterLink :to="localePath('/galerie')" class="view-all-cta">
+                    <span>{{ t('portfolio.viewAll') }}</span>
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                </RouterLink>
             </div>
         </div>
 
-        <GalleryModal :items="teaser" v-model:index="lightboxIndex" />
+        <GalleryModal :items="items" v-model:index="lightboxIndex" />
     </section>
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue';
+import { computed, onMounted, onUnmounted, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { RouterLink } from 'vue-router';
 import { useGallery } from '../lib/gallery';
@@ -70,16 +79,103 @@ import GalleryModal from './gallery/GalleryModal.vue';
 const { t } = useI18n();
 const { items } = useGallery();
 
-const teaser = computed(() => items.value.slice(0, 4));
+// Duplicate the set once so the loop can translate by -50% seamlessly.
+const marqueeItems = computed(() =>
+    reduceMotion.value ? items.value : [...items.value, ...items.value],
+);
+
+// ~4.5 s of travel per photo — calm, readable pace regardless of count.
+const duration = computed(() => `${Math.max(items.value.length * 4.5, 20)}s`);
 
 const lightboxIndex = ref<number | null>(null);
-
 const openAt = (i: number) => {
     lightboxIndex.value = i;
 };
+
+const reduceMotion = ref(false);
+let mq: MediaQueryList | null = null;
+const onMqChange = (e: MediaQueryListEvent) => {
+    reduceMotion.value = e.matches;
+};
+onMounted(() => {
+    mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    reduceMotion.value = mq.matches;
+    mq.addEventListener('change', onMqChange);
+});
+onUnmounted(() => {
+    mq?.removeEventListener('change', onMqChange);
+});
 </script>
 
 <style scoped>
+.marquee {
+    position: relative;
+    overflow: hidden;
+    /* Soft fade on both edges so tiles ease in/out of view. */
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0,
+        #000 6%,
+        #000 94%,
+        transparent 100%
+    );
+    mask-image: linear-gradient(
+        to right,
+        transparent 0,
+        #000 6%,
+        #000 94%,
+        transparent 100%
+    );
+}
+
+.marquee__track {
+    display: flex;
+    width: max-content;
+    gap: 1rem;
+    padding: 0 0.5rem;
+    margin: 0;
+    list-style: none;
+    animation: marquee-scroll linear infinite;
+}
+
+/* Right-to-left: content slides leftwards by exactly one set. */
+@keyframes marquee-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+.marquee:hover .marquee__track,
+.marquee:focus-within .marquee__track {
+    animation-play-state: paused;
+}
+
+.gallery-tile {
+    position: relative;
+    flex: 0 0 auto;
+    width: clamp(200px, 22vw, 300px);
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: #e5e7eb;
+}
+
+/* Reduced motion: no animation, fall back to a manual horizontal scroll. */
+.marquee--static {
+    -webkit-mask-image: none;
+    mask-image: none;
+}
+
+.marquee--static .marquee__track {
+    width: auto;
+    animation: none;
+    overflow-x: auto;
+    padding-bottom: 0.75rem;
+    scroll-snap-type: x mandatory;
+}
+
+.marquee--static .gallery-tile {
+    scroll-snap-align: start;
+}
+
 .gallery-tile-button {
     display: block;
     width: 100%;
@@ -176,6 +272,7 @@ const openAt = (i: number) => {
 .view-all-cta:focus-visible svg { transform: translateX(4px); }
 
 @media (prefers-reduced-motion: reduce) {
+    .marquee__track { animation: none !important; }
     .view-all-cta,
     .view-all-cta svg { transition: none !important; }
 }
