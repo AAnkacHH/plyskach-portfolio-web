@@ -184,13 +184,15 @@
             "phone": "Телефон",
             "email": "E-mail",
             "address": "Адреса",
-            "hours": "Робочі години"
+            "hours": "Робочі години",
+            "reviews": "Відгуки"
         },
         "info": {
             "phone": "+420 777 444 973",
             "email": "info{'@'}mykhayloplyskach.com",
             "address": "Na líše 1231/11, 141 00 Praha 4 - Michle",
-            "hours": "Пн-Пт: 8:00 - 18:00, Сб за домовленістю"
+            "hours": "Пн-Пт: 8:00 - 18:00, Сб за домовленістю",
+            "reviews": "Залишити відгук у Google"
         },
         "form": {
             "title": "Безкоштовний запит",

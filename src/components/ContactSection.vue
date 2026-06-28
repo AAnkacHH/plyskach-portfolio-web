@@ -80,6 +80,16 @@
                                 data-aos="fade-up"
                                 data-aos-delay="240"
                             />
+                            <ContactRegisterRow
+                                num="05"
+                                :label="t('contact.labels.reviews')"
+                                :value="t('contact.info.reviews')"
+                                variant="link"
+                                :href="reviewLink"
+                                external
+                                data-aos="fade-up"
+                                data-aos-delay="320"
+                            />
                         </ol>
                     </div>
 
@@ -235,6 +245,9 @@ const MAP_LNG = 14.46622;
 const MAP_COORDS_LABEL = `${MAP_LAT.toFixed(4)}° N · ${MAP_LNG.toFixed(4)}° E`;
 const mapEmbedUrl = `https://www.google.com/maps?q=${MAP_LAT},${MAP_LNG}&z=17&output=embed`;
 const googleMapsLink = `https://www.google.com/maps/search/?api=1&query=${MAP_LAT},${MAP_LNG}`;
+
+// Google Business Profile "write a review" short link
+const reviewLink = 'https://g.page/r/Ca9cudZEmZqFEBM/review';
 
 const hasEmailToken = true;
 
