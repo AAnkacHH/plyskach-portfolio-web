@@ -12,7 +12,7 @@ test.describe('Homepage', () => {
         test(`loads ${path}`, async ({ page }) => {
             await page.goto(path);
             await expect(page).toHaveTitle(new RegExp(expectedTitleSubstr));
-            // The 4-photo teaser CTA must be present and point at the localised gallery.
+            // The gallery teaser CTA must be present and point at the localised gallery.
             const ctaLink = page.getByRole('link', { name: /View full gallery|Zobrazit celou galerii|Переглянути всю галерею/ });
             await expect(ctaLink).toBeVisible();
             const href = await ctaLink.getAttribute('href');
@@ -23,10 +23,13 @@ test.describe('Homepage', () => {
 
 test.describe('Gallery page', () => {
     for (const path of ['/galerie', '/en/galerie', '/uk/galerie']) {
-        test(`renders 7 photos at ${path}`, async ({ page }) => {
+        test(`renders the photo grid at ${path}`, async ({ page }) => {
             await page.goto(path);
             const tiles = page.locator('figure.gallery-tile button');
-            await expect(tiles).toHaveCount(7);
+            // Don't pin an exact count (the set grows); just guard against an
+            // empty/broken grid.
+            await expect(tiles.first()).toBeVisible();
+            expect(await tiles.count()).toBeGreaterThanOrEqual(8);
         });
     }
 });
@@ -39,16 +42,17 @@ test('Lightbox: open, navigate with arrows, close with Esc', async ({ page }) =>
 
     const dialog = page.getByRole('dialog');
     await expect(dialog).toBeVisible();
-    await expect(dialog).toContainText(/Nº 03 \/ 07/);
+    // Total count is dynamic (\d+); only the running index is asserted.
+    await expect(dialog).toContainText(/Nº 03 \/ \d+/);
 
     // ArrowRight → photo 4.
     await page.keyboard.press('ArrowRight');
-    await expect(dialog).toContainText(/Nº 04 \/ 07/);
+    await expect(dialog).toContainText(/Nº 04 \/ \d+/);
 
-    // ArrowLeft twice → wrap-around to photo 02.
+    // ArrowLeft twice → back to photo 02.
     await page.keyboard.press('ArrowLeft');
     await page.keyboard.press('ArrowLeft');
-    await expect(dialog).toContainText(/Nº 02 \/ 07/);
+    await expect(dialog).toContainText(/Nº 02 \/ \d+/);
 
     // Esc closes.
     await page.keyboard.press('Escape');
